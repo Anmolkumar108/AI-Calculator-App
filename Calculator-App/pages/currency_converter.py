@@ -1,20 +1,10 @@
 import customtkinter as ctk
 
 def clear_content(content):
-
     for widget in content.winfo_children():
         widget.destroy()
-# =========================================================
-# CURRENCY CONVERTER FEATURE
-# EXISTING CALCULATOR PROJECT KE LIYE
-# =========================================================
-
-# =========================================================
-# ALL CURRENCIES
-# =========================================================
 
 currencies = {
-
     "🇺🇸 USD": 1,
     "🇪🇺 EUR": 0.92,
     "🇯🇵 JPY": 155,
@@ -112,27 +102,15 @@ currencies = {
     "🇿🇲 ZMW": 27,
 }
 
-# =========================================================
-# CURRENCY CONVERTER FUNCTION
-# =========================================================
-
 def currency_converter(content):
-
-    # PURANA CONTENT REMOVE
-    for widget in content.winfo_children():
-        widget.destroy()
-
-    # TITLE
+    clear_content(content)
 
     title = ctk.CTkLabel(
         content,
         text="🌍 Universal Currency Converter",
         font=("Arial", 30, "bold")
     )
-
     title.pack(pady=20)
-
-    # AMOUNT ENTRY
 
     amount_entry = ctk.CTkEntry(
         content,
@@ -141,14 +119,9 @@ def currency_converter(content):
         height=45,
         font=("Arial", 18)
     )
-
     amount_entry.pack(pady=20)
 
-    # CURRENCY LIST
-
     currency_list = list(currencies.keys())
-
-    # FROM CURRENCY
 
     from_currency = ctk.CTkComboBox(
         content,
@@ -157,12 +130,8 @@ def currency_converter(content):
         height=40,
         font=("Arial", 16)
     )
-
     from_currency.set("🇮🇳 INR")
-
     from_currency.pack(pady=10)
-
-    # TO CURRENCY
 
     to_currency = ctk.CTkComboBox(
         content,
@@ -171,51 +140,30 @@ def currency_converter(content):
         height=40,
         font=("Arial", 16)
     )
-
     to_currency.set("🇺🇸 USD")
-
     to_currency.pack(pady=10)
-
-    # RESULT LABEL
 
     result = ctk.CTkLabel(
         content,
         text="",
         font=("Arial", 28, "bold")
     )
-
     result.pack(pady=35)
 
-    # CONVERT FUNCTION
-
     def convert_currency():
-
         try:
-
             amount = float(amount_entry.get())
-
             from_curr = from_currency.get()
-
             to_curr = to_currency.get()
-
             from_rate = currencies[from_curr]
-
             to_rate = currencies[to_curr]
-
             usd_amount = amount / from_rate
-
             converted_amount = usd_amount * to_rate
-
             result.configure(
-                text=f"{amount} {from_curr}\n=\n{round(converted_amount,2)} {to_curr}"
+                text=f"{amount} {from_curr}\n=\n{round(converted_amount, 2)} {to_curr}"
             )
-
-        except:
-
-            result.configure(
-                text="❌ Invalid Input")
-
-    # CONVERT BUTTON
+        except Exception:
+            result.configure(text="❌ Invalid Input")
 
     convert_button = ctk.CTkButton(
         content,
@@ -226,5 +174,4 @@ def currency_converter(content):
         font=("Arial", 20, "bold"),
         corner_radius=12
     )
-
     convert_button.pack(pady=20)

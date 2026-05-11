@@ -1,241 +1,23 @@
-# import customtkinter as ctk
-# import math
-# import sympy
-
-# def clear_content(content):
-
-#     for widget in content.winfo_children():
-#         widget.destroy()
-
-# def ai_section(content):
-
-#     clear_content(content)
-
-#     ctk.CTkLabel(
-
-#         content,
-
-#         text="🤖 AI Assistant",
-
-#         font=("Arial", 30, "bold")
-
-#     ).pack(pady=20)
-
-#     # =========================
-#     # CHAT BOX
-#     # =========================
-
-#     chat_box = ctk.CTkTextbox(
-
-#         content,
-
-#         width=750,
-
-#         height=400,
-
-#         font=("Arial", 16)
-
-#     )
-
-#     chat_box.pack(pady=10)
-
-#     # =========================
-#     # INPUT BOX
-#     # =========================
-
-#     user_input = ctk.CTkEntry(
-
-#         content,
-
-#         width=500,
-
-#         placeholder_text="Ask Anything..."
-
-#     )
-
-#     user_input.pack(pady=10)
-
-#     # =========================
-#     # SEND MESSAGE
-#     # =========================
-
-#     def send_message():
-
-#         message = user_input.get()
-
-#         if message == "":
-#             return
-
-#         chat_box.insert(
-#             "end",
-#             f"\n🧑 You: {message}\n"
-#         )
-
-#         lower = message.lower()
-
-#         # =========================
-#         # SIMPLE CHAT
-#         # =========================
-
-#         if "hello" in lower:
-
-#             reply = "Hello Anmol 👋"
-
-#         elif "how are you" in lower:
-
-#             reply = "I am Fine 😄"
-
-#         elif "your name" in lower:
-
-#             reply = "I am Your AI Assistant 🤖"
-
-#         elif "bye" in lower:
-
-#             reply = "Good Bye 👋"
-
-#         # =========================
-#         # CALCULATOR
-#         # =========================
-
-#         else:
-
-#             try:
-
-#                 # Replace symbols
-
-#                 expression = lower.replace("^", "**")
-
-#                 result = sympy.sympify(expression)
-
-#                 reply = f"Answer = {result}"
-
-#             except:
-
-#                 # Scientific Functions
-
-#                 try:
-
-#                     if "sqrt" in lower:
-
-#                         number = float(
-#                             lower.replace("sqrt", "")
-#                         )
-
-#                         result = math.sqrt(number)
-
-#                         reply = f"√{number} = {result}"
-
-#                     elif "sin" in lower:
-
-#                         number = float(
-#                             lower.replace("sin", "")
-#                         )
-
-#                         result = math.sin(
-#                             math.radians(number)
-#                         )
-
-#                         reply = f"sin({number}) = {result}"
-
-#                     elif "cos" in lower:
-
-#                         number = float(
-#                             lower.replace("cos", "")
-#                         )
-
-#                         result = math.cos(
-#                             math.radians(number)
-#                         )
-
-#                         reply = f"cos({number}) = {result}"
-
-#                     else:
-
-#                         reply = "Sorry, I don't understand 😅"
-
-#                 except:
-
-#                     reply = "Invalid Calculation ❌"
-
-#         # =========================
-#         # SHOW AI MESSAGE
-#         # =========================
-
-#         chat_box.insert(
-#             "end",
-#             f"🤖 AI: {reply}\n"
-#         )
-
-#         user_input.delete(0, "end")
-
-#     # =========================
-#     # BUTTON
-#     # =========================
-
-#     ctk.CTkButton(
-
-#         content,
-
-#         text="Send",
-
-#         width=200,
-
-#         command=send_message
-
-#     ).pack(pady=10)
-
-
-
-
 import customtkinter as ctk
 import math
 import sympy as sp
 
-# =========================================
-# WINDOW SETTINGS
-# =========================================
-
-ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("blue")
-
-# =========================================
-# SYMBOLS
-# =========================================
-
-x, y, z = sp.symbols("x y z")
-
-# =========================================
-# MAIN FUNCTION
-# =========================================
+x = sp.symbols("x")
 
 def clear_content(content):
-
     for widget in content.winfo_children():
         widget.destroy()
 
-# =========================================
-# AI SECTION
-# =========================================
 
 def ai_section(content):
-
     clear_content(content)
-
-    # =====================================
-    # TITLE
-    # =====================================
 
     title = ctk.CTkLabel(
         content,
         text="🤖 Sanskari AI Assistant",
         font=("Arial", 32, "bold")
     )
-
     title.pack(pady=20)
-
-    # =====================================
-    # CHAT BOX
-    # =====================================
 
     chat_box = ctk.CTkTextbox(
         content,
@@ -244,13 +26,12 @@ def ai_section(content):
         font=("Arial", 16),
         corner_radius=15
     )
-
     chat_box.pack(pady=10)
 
     chat_box.insert(
         "end",
         "🤖 AI: Hello Anmol 👋\n"
-        "I can solve advanced math problems.\n\n"
+        "I can solve math problems and answer simple questions.\n\n"
         "Examples:\n"
         "5+8*2\n"
         "sqrt 25\n"
@@ -260,24 +41,13 @@ def ai_section(content):
         "x+5=10\n"
         "integrate x**2\n"
         "differentiate x**3\n"
-        "expand (x+2)^2\n"
-        "simplify (x^2+2x+1)\n\n"
+        "expand (x+2)**2\n"
+        "simplify (x**2+2*x+1)\n\n"
     )
+    chat_box.see("end")
 
-    # =====================================
-    # INPUT FRAME
-    # =====================================
-
-    input_frame = ctk.CTkFrame(
-        content,
-        fg_color="transparent"
-    )
-
+    input_frame = ctk.CTkFrame(content, fg_color="transparent")
     input_frame.pack(pady=10)
-
-    # =====================================
-    # INPUT BOX
-    # =====================================
 
     user_input = ctk.CTkEntry(
         input_frame,
@@ -286,333 +56,108 @@ def ai_section(content):
         font=("Arial", 16),
         placeholder_text="Ask Any Math Problem..."
     )
-
     user_input.grid(row=0, column=0, padx=10)
 
-    # =====================================
-    # MAIN AI FUNCTION
-    # =====================================
+    def parse_number(text):
+        return float(text.replace("(", "").replace(")", "").strip())
 
     def solve_math(message):
-
         lower = message.lower().strip()
 
-        # =================================
-        # SIMPLE CHAT
-        # =================================
-
         if lower in ["hello", "hi", "hey"]:
-
             return "Hello Anmol 👋"
-
-        elif "how are you" in lower:
-
+        if "how are you" in lower:
             return "I am Fine 😄"
-
-        elif "your name" in lower:
-
+        if "your name" in lower:
             return "I am Sanskari AI Assistant 🤖"
-
-        elif "bye" in lower:
-
+        if "bye" in lower:
             return "Good Bye 👋"
 
-        # =================================
-        # SQRT
-        # =================================
-
-        elif "sqrt" in lower:
-
-            number = float(
-                lower.replace("sqrt", "").strip()
-            )
-
-            result = math.sqrt(number)
-
-            return f"""
-√{number} = {result}
-
-Explanation:
-Square root means a number multiplied by itself.
-"""
-
-        # =================================
-        # SIN
-        # =================================
-
-        elif "sin" in lower:
-
-            number = float(
-                lower.replace("sin", "").strip()
-            )
-
-            result = math.sin(
-                math.radians(number)
-            )
-
-            return f"""
-sin({number}) = {result}
-
-Explanation:
-Sine function calculates angle ratio.
-"""
-
-        # =================================
-        # COS
-        # =================================
-
-        elif "cos" in lower:
-
-            number = float(
-                lower.replace("cos", "").strip()
-            )
-
-            result = math.cos(
-                math.radians(number)
-            )
-
-            return f"""
-cos({number}) = {result}
-
-Explanation:
-Cosine calculates adjacent/hypotenuse ratio.
-"""
-
-        # =================================
-        # TAN
-        # =================================
-
-        elif "tan" in lower:
-
-            number = float(
-                lower.replace("tan", "").strip()
-            )
-
-            result = math.tan(
-                math.radians(number)
-            )
-
-            return f"""
-tan({number}) = {result}
-"""
-
-        # =================================
-        # LOG
-        # =================================
-
-        elif "log" in lower:
-
-            number = float(
-                lower.replace("log", "").strip()
-            )
-
-            result = math.log10(number)
-
-            return f"""
-log({number}) = {result}
-"""
-
-        # =================================
-        # FACTORIAL
-        # =================================
-
-        elif "factorial" in lower:
-
-            number = int(
-                lower.replace("factorial", "").strip()
-            )
-
-            result = math.factorial(number)
-
-            return f"""
-{number}! = {result}
-"""
-
-        # =================================
-        # DIFFERENTIATION
-        # =================================
-
-        elif "differentiate" in lower:
-
-            expression = lower.replace(
-                "differentiate",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.diff(expr, x)
-
-            return f"""
-Derivative:
-{result}
-
-Explanation:
-Differentiation completed successfully.
-"""
-
-        # =================================
-        # INTEGRATION
-        # =================================
-
-        elif "integrate" in lower:
-
-            expression = lower.replace(
-                "integrate",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.integrate(expr, x)
-
-            return f"""
-Integration:
-{result}
-"""
-
-        # =================================
-        # EXPAND
-        # =================================
-
-        elif "expand" in lower:
-
-            expression = lower.replace(
-                "expand",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.expand(expr)
-
-            return f"""
-Expanded Form:
-{result}
-"""
-
-        # =================================
-        # SIMPLIFY
-        # =================================
-
-        elif "simplify" in lower:
-
-            expression = lower.replace(
-                "simplify",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.simplify(expr)
-
-            return f"""
-Simplified Form:
-{result}
-"""
-
-        # =================================
-        # EQUATION SOLVER
-        # =================================
-
-        elif "=" in lower:
-
-            left, right = lower.split("=")
-
-            left = left.replace("^", "**")
-            right = right.replace("^", "**")
-
-            equation = sp.Eq(
-                sp.sympify(left),
-                sp.sympify(right)
-            )
-
-            solution = sp.solve(equation, x)
-
-            return f"""
-Solution:
-x = {solution}
-
-Explanation:
-Equation solved successfully.
-"""
-
-        # =================================
-        # NORMAL CALCULATOR
-        # =================================
-
-        else:
+        try:
+            if lower.startswith("sqrt"):
+                number = parse_number(lower.replace("sqrt", ""))
+                result = math.sqrt(number)
+                return f"\n√{number} = {result}\n\nExplanation:\nSquare root returns the number whose square is the given value."
+
+            if lower.startswith("sin"):
+                number = parse_number(lower.replace("sin", ""))
+                result = math.sin(math.radians(number))
+                return f"\nsin({number}) = {result}\n\nExplanation:\nSine calculates the ratio of the opposite side to the hypotenuse."
+
+            if lower.startswith("cos"):
+                number = parse_number(lower.replace("cos", ""))
+                result = math.cos(math.radians(number))
+                return f"\ncos({number}) = {result}\n\nExplanation:\nCosine calculates the ratio of the adjacent side to the hypotenuse."
+
+            if lower.startswith("tan"):
+                number = parse_number(lower.replace("tan", ""))
+                result = math.tan(math.radians(number))
+                return f"\ntan({number}) = {result}\n"
+
+            if lower.startswith("log"):
+                number = parse_number(lower.replace("log", ""))
+                result = math.log10(number)
+                return f"\nlog({number}) = {result}\n"
+
+            if lower.startswith("factorial"):
+                number = int(parse_number(lower.replace("factorial", "")))
+                result = math.factorial(number)
+                return f"\n{number}! = {result}\n"
+
+            if lower.startswith("differentiate"):
+                expression = lower.replace("differentiate", "").strip()
+                expression = expression.replace("^", "**")
+                expr = sp.sympify(expression)
+                result = sp.diff(expr, x)
+                return f"\nDerivative:\n{result}\n\nExplanation:\nDifferentiation completed successfully."
+
+            if lower.startswith("integrate"):
+                expression = lower.replace("integrate", "").strip()
+                expression = expression.replace("^", "**")
+                expr = sp.sympify(expression)
+                result = sp.integrate(expr, x)
+                return f"\nIntegration:\n{result}\n"
+
+            if lower.startswith("expand"):
+                expression = lower.replace("expand", "").strip()
+                expression = expression.replace("^", "**")
+                expr = sp.sympify(expression)
+                result = sp.expand(expr)
+                return f"\nExpanded Form:\n{result}\n"
+
+            if lower.startswith("simplify"):
+                expression = lower.replace("simplify", "").strip()
+                expression = expression.replace("^", "**")
+                expr = sp.sympify(expression)
+                result = sp.simplify(expr)
+                return f"\nSimplified Form:\n{result}\n"
+
+            if "=" in lower:
+                left, right = lower.split("=", 1)
+                left = left.replace("^", "**")
+                right = right.replace("^", "**")
+                equation = sp.Eq(sp.sympify(left), sp.sympify(right))
+                solution = sp.solve(equation, x)
+                if not solution:
+                    return "\nNo solution found for the equation."
+                return f"\nSolution:\nx = {solution}\n\nExplanation:\nEquation solved successfully."
 
             expression = lower.replace("^", "**")
-
             result = sp.sympify(expression)
-
-            return f"""
-Answer = {result}
-
-Explanation:
-Calculation completed successfully.
-"""
-
-    # =====================================
-    # SEND MESSAGE
-    # =====================================
+            return f"\nAnswer = {result}\n\nExplanation:\nCalculation completed successfully."
+        except Exception as exc:
+            return f"❌ Invalid Input\n\nError:\n{exc}"
 
     def send_message():
-
         message = user_input.get().strip()
-
         if message == "":
             return
 
-        # USER MESSAGE
-
-        chat_box.insert(
-            "end",
-            f"\n🧑 You: {message}\n\n"
-        )
-
-        # AI RESPONSE
-
-        try:
-
-            reply = solve_math(message)
-
-        except Exception as e:
-
-            reply = f"""
-❌ Invalid Input
-
-Error:
-{e}
-"""
-
-        # SHOW RESPONSE
-
-        chat_box.insert(
-            "end",
-            f"🤖 AI: {reply}\n\n"
-        )
-
-        # AUTO SCROLL
-
+        chat_box.insert("end", f"\n🧑 You: {message}\n\n")
+        reply = solve_math(message)
+        chat_box.insert("end", f"🤖 AI: {reply}\n\n")
         chat_box.see("end")
-
-        # CLEAR INPUT
-
         user_input.delete(0, "end")
-
-    # =====================================
-    # SEND BUTTON
-    # =====================================
 
     send_btn = ctk.CTkButton(
         input_frame,
@@ -622,14 +167,6 @@ Error:
         font=("Arial", 16, "bold"),
         command=send_message
     )
-
     send_btn.grid(row=0, column=1, padx=10)
 
-    # =====================================
-    # ENTER KEY SUPPORT
-    # =====================================
-
-    user_input.bind(
-        "<Return>",
-        lambda event: send_message()
-    )
+    user_input.bind("<Return>", lambda event: send_message())
