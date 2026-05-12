@@ -165,3 +165,4 @@ def dob_calculator(content):
         height=40,
         font=("Arial", 18, "bold")
     ).pack(pady=10)
+    
