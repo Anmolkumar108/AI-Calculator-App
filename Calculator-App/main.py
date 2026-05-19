@@ -292,6 +292,7 @@
 
 #     ("📦 Unit Converter", unit_converter),
 
+#     ("🌡️ Temperature Converter", temperature_calculator),
 #     ("📜 History", show_history),
 #     ("🤖 AI", ai_section)
 
@@ -347,6 +348,7 @@ from pages.bmi_calculator import bmi_calculator
 from pages.dob_calculator import dob_calculator
 from pages.currency_converter import currency_converter
 from pages.unit_converter import unit_converter
+from pages.temperature_calculator import temperature_calculator
 from pages.history_page import show_history
 from pages.ai_section import ai_section
 
@@ -678,6 +680,8 @@ buttons = [
     ("📏 Length Converter", length_converter),
 
     ("📦 Unit Converter", unit_converter),
+    
+    ("🌡️ Temperature", temperature_calculator),
 
     ("📜 History", show_history),
 
