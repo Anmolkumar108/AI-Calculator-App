@@ -150,4 +150,53 @@ def create_area_calculator(content):
                 placeholder_text="Height"
             )
 
-            
+            entry2.pack(pady=10)
+
+    # =========================
+    # CALCULATE AREA
+    # =========================
+    def calculate_area():
+
+        try:
+
+            shape = shape_var.get()
+
+            v1 = float(entry1.get())
+
+            if shape == "Rectangle":
+
+                v2 = float(entry2.get())
+
+                area = v1 * v2
+
+            elif shape == "Square":
+
+                area = v1 * v1
+
+            elif shape == "Circle":
+
+                area = math.pi * (v1 ** 2)
+
+            elif shape == "Triangle":
+
+                v2 = float(entry2.get())
+
+                area = 0.5 * v1 * v2
+
+            elif shape == "Parallelogram":
+
+                v2 = float(entry2.get())
+
+                area = v1 * v2
+
+            result_label.configure(
+                text=f"Area = {area:.2f}"
+            )
+
+        except:
+
+            result_label.configure(
+                text="❌ Invalid Input"
+            )
+
+    
