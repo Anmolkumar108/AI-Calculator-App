@@ -348,6 +348,7 @@ from pages.dob_calculator import dob_calculator
 from pages.currency_converter import currency_converter
 from pages.unit_converter import unit_converter
 from pages.temperature_calculator import temperature_calculator
+from pages.area import create_area_calculator as area
 from pages.history_page import show_history
 from pages.ai_section import ai_section
 
@@ -681,6 +682,8 @@ buttons = [
     ("📦 Unit Converter", unit_converter),
 
     ("🌡️ Temperature", temperature_calculator),
+
+    ("📐 Area", area),
 
     ("📜 History", show_history),
 
