@@ -98,4 +98,56 @@ def create_area_calculator(content):
     # =========================
     def update_placeholders():
 
-        
+        shape = shape_var.get()
+
+        if shape == "Rectangle":
+
+            entry1.configure(
+                placeholder_text="Length"
+            )
+
+            entry2.configure(
+                placeholder_text="Width"
+            )
+
+            entry2.pack(pady=10)
+
+        elif shape == "Square":
+
+            entry1.configure(
+                placeholder_text="Side"
+            )
+
+            entry2.pack_forget()
+
+        elif shape == "Circle":
+
+            entry1.configure(
+                placeholder_text="Radius"
+            )
+
+            entry2.pack_forget()
+
+        elif shape == "Triangle":
+
+            entry1.configure(
+                placeholder_text="Base"
+            )
+
+            entry2.configure(
+                placeholder_text="Height"
+            )
+
+            entry2.pack(pady=10)
+
+        elif shape == "Parallelogram":
+
+            entry1.configure(
+                placeholder_text="Base"
+            )
+
+            entry2.configure(
+                placeholder_text="Height"
+            )
+
+            
