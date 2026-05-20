@@ -199,4 +199,20 @@ def create_area_calculator(content):
                 text="❌ Invalid Input"
             )
 
-    
+    # =========================
+    # BUTTON
+    # =========================
+    calc_btn = ctk.CTkButton(
+        main_scroll,
+        text="Calculate Area",
+        command=calculate_area,
+        width=250,
+        height=50
+    )
+
+    calc_btn.pack(pady=20)
+
+    # =========================
+    # INITIAL SETUP
+    # =========================
+    update_placeholders()
