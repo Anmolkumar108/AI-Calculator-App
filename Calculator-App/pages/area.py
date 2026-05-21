@@ -105,4 +105,46 @@ def create_area_converter(content):
         pady=(10, 20)
     )
 
-    
+    # =========================
+    # TO UNIT
+    # =========================
+    to_unit = ctk.StringVar(
+        value="Square meters"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=to_unit,
+        width=400,
+        height=50,
+        font=("Arial", 18),
+        dropdown_font=("Arial", 16),
+        state="readonly"
+    )
+
+    to_menu.pack(
+        pady=(0, 40)
+    )
+
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+    def convert_area(event=None):
+
+        try:
+
+            value = float(input_entry.get())
+
+            from_value = area_units[
+                from_unit.get()
+            ]
+
+            to_value = area_units[
+                to_unit.get()
+            ]
+
+            # Convert to square meter
+            square_meter = value / from_value
+
+            
