@@ -147,4 +147,31 @@ def create_area_converter(content):
             # Convert to square meter
             square_meter = value / from_value
 
-            
+            # Convert to target unit
+            result = square_meter * to_value
+
+            result_label.configure(
+                text=f"{result:.6f}"
+            )
+
+        except:
+
+            result_label.configure(
+                text="Invalid"
+            )
+
+    # =========================
+    # AUTO CONVERT
+    # =========================
+    input_entry.bind(
+        "<KeyRelease>",
+        convert_area
+    )
+
+    from_menu.configure(
+        command=lambda x: convert_area()
+    )
+
+    to_menu.configure(
+        command=lambda x: convert_area()
+    )
