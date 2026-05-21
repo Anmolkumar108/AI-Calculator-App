@@ -55,4 +55,41 @@ def create_area_converter(content):
         pady=(10, 30)
     )
 
+    # =========================
+    # INPUT VALUE
+    # =========================
+    input_entry = ctk.CTkEntry(
+        main_frame,
+        width=400,
+        height=60,
+        font=("Arial", 28),
+        placeholder_text="0"
+    )
+
+    input_entry.pack(
+        pady=(0, 20)
+    )
+
+    # =========================
+    # FROM UNIT
+    # =========================
+    from_unit = ctk.StringVar(
+        value="Square millimeters"
+    )
+
+    from_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=from_unit,
+        width=400,
+        height=50,
+        font=("Arial", 18),
+        dropdown_font=("Arial", 16),
+        state="readonly"
+    )
+
+    from_menu.pack(
+        pady=(0, 30)
+    )
+
     
