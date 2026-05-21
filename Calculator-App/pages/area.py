@@ -1,7 +1,6 @@
 import customtkinter as ctk
-import math
 
-def create_area_calculator(content):
+def create_area_converter(content):
 
     # =========================
     # CLEAR PAGE
@@ -10,209 +9,45 @@ def create_area_calculator(content):
         widget.destroy()
 
     # =========================
-    # MAIN SCROLL FRAME
+    # MAIN FRAME
     # =========================
-    main_scroll = ctk.CTkScrollableFrame(content)
+    main_frame = ctk.CTkFrame(
+        content,
+        fg_color="transparent"
+    )
 
-    main_scroll.pack(
+    main_frame.pack(
         fill="both",
         expand=True,
-        padx=10,
-        pady=10
+        padx=20,
+        pady=20
     )
+
+    # =========================
+    # AREA UNITS
+    # Base Unit = Square Meter
+    # =========================
+    area_units = {
+
+        "Square millimeters": 1000000,
+        "Square centimeters": 10000,
+        "Square meters": 1,
+        "Hectares": 0.0001,
+        "Square kilometers": 0.000001,
+        "Square inches": 1550.0031,
+        "Square feet": 10.7639,
+        "Square yards": 1.19599,
+        "Acres": 0.000247105,
+        "Square miles": 0.000000386102
+    }
 
     # =========================
     # TITLE
     # =========================
     title = ctk.CTkLabel(
-        main_scroll,
-        text="📐 Area Measurement Calculator",
-        font=("Arial", 28, "bold")
+        main_frame,
+        text="Area",
+        font=("Arial", 32, "bold")
     )
 
-    title.pack(pady=20)
-
-    # =========================
-    # SHAPE VARIABLE
-    # =========================
-    shape_var = ctk.StringVar(value="Rectangle")
-
-    # =========================
-    # SHAPE COMBOBOX
-    # =========================
-    shape_menu = ctk.CTkComboBox(
-        main_scroll,
-        values=[
-            "Rectangle",
-            "Square",
-            "Circle",
-            "Triangle",
-            "Parallelogram"
-        ],
-        variable=shape_var,
-        width=300,
-        height=45,
-        state="readonly",
-        command=lambda x: update_placeholders()
-    )
-
-    shape_menu.pack(pady=15)
-
-    # =========================
-    # ENTRY 1
-    # =========================
-    entry1 = ctk.CTkEntry(
-        main_scroll,
-        width=350,
-        height=50,
-        font=("Arial", 18)
-    )
-
-    entry1.pack(pady=10)
-
-    # =========================
-    # ENTRY 2
-    # =========================
-    entry2 = ctk.CTkEntry(
-        main_scroll,
-        width=350,
-        height=50,
-        font=("Arial", 18)
-    )
-
-    entry2.pack(pady=10)
-
-    # =========================
-    # RESULT LABEL
-    # =========================
-    result_label = ctk.CTkLabel(
-        main_scroll,
-        text="Area = ",
-        font=("Arial", 24, "bold")
-    )
-
-    result_label.pack(pady=20)
-
-    # =========================
-    # UPDATE PLACEHOLDER
-    # =========================
-    def update_placeholders():
-
-        shape = shape_var.get()
-
-        if shape == "Rectangle":
-
-            entry1.configure(
-                placeholder_text="Length"
-            )
-
-            entry2.configure(
-                placeholder_text="Width"
-            )
-
-            entry2.pack(pady=10)
-
-        elif shape == "Square":
-
-            entry1.configure(
-                placeholder_text="Side"
-            )
-
-            entry2.pack_forget()
-
-        elif shape == "Circle":
-
-            entry1.configure(
-                placeholder_text="Radius"
-            )
-
-            entry2.pack_forget()
-
-        elif shape == "Triangle":
-
-            entry1.configure(
-                placeholder_text="Base"
-            )
-
-            entry2.configure(
-                placeholder_text="Height"
-            )
-
-            entry2.pack(pady=10)
-
-        elif shape == "Parallelogram":
-
-            entry1.configure(
-                placeholder_text="Base"
-            )
-
-            entry2.configure(
-                placeholder_text="Height"
-            )
-
-            entry2.pack(pady=10)
-
-    # =========================
-    # CALCULATE AREA
-    # =========================
-    def calculate_area():
-
-        try:
-
-            shape = shape_var.get()
-
-            v1 = float(entry1.get())
-
-            if shape == "Rectangle":
-
-                v2 = float(entry2.get())
-
-                area = v1 * v2
-
-            elif shape == "Square":
-
-                area = v1 * v1
-
-            elif shape == "Circle":
-
-                area = math.pi * (v1 ** 2)
-
-            elif shape == "Triangle":
-
-                v2 = float(entry2.get())
-
-                area = 0.5 * v1 * v2
-
-            elif shape == "Parallelogram":
-
-                v2 = float(entry2.get())
-
-                area = v1 * v2
-
-            result_label.configure(
-                text=f"Area = {area:.2f}"
-            )
-
-        except:
-
-            result_label.configure(
-                text="❌ Invalid Input"
-            )
-
-    # =========================
-    # BUTTON
-    # =========================
-    calc_btn = ctk.CTkButton(
-        main_scroll,
-        text="Calculate Area",
-        command=calculate_area,
-        width=250,
-        height=50
-    )
-
-    calc_btn.pack(pady=20)
-
-    # =========================
-    # INITIAL SETUP
-    # =========================
-    update_placeholders()
+    
