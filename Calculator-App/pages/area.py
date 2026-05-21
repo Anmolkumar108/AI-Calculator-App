@@ -160,4 +160,18 @@ def create_area_converter(content):
                 text="Invalid"
             )
 
-    
+    # =========================
+    # AUTO CONVERT
+    # =========================
+    input_entry.bind(
+        "<KeyRelease>",
+        convert_area
+    )
+
+    from_menu.configure(
+        command=lambda x: convert_area()
+    )
+
+    to_menu.configure(
+        command=lambda x: convert_area()
+    )
