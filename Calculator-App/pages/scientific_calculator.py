@@ -1,104 +1,109 @@
 
-import customtkinter as ctk
-import math
+# import customtkinter as ctk
+# import math
 
-def clear_content(content):
+# def clear_content(content):
 
-    for widget in content.winfo_children():
-        widget.destroy()
+#     for widget in content.winfo_children():
+#         widget.destroy()
 
-def scientific_calculator(content):
+# def scientific_calculator(content):
 
-    clear_content(content)
+#     clear_content(content)
 
-    ctk.CTkLabel(
+#     ctk.CTkLabel(
 
-        content,
+#         content,
 
-        text="🔬 Scientific Calculator",
+#         text="🔬 Scientific Calculator",
 
-        font=("Arial", 25, "bold")
+#         font=("Arial", 25, "bold")
 
-    ).pack(pady=20)
+#     ).pack(pady=20)
 
-    number = ctk.CTkEntry(
+#     number = ctk.CTkEntry(
 
-        content,
+#         content,
 
-        placeholder_text="Enter Number"
+#         placeholder_text="Enter Number"
 
-    )
+#     )
 
-    number.pack(pady=10)
+#     number.pack(pady=10)
 
-    result = ctk.CTkLabel(
+#     result = ctk.CTkLabel(
 
-        content,
+#         content,
 
-        text="",
+#         text="",
 
-        font=("Arial", 20)
+#         font=("Arial", 20)
 
-    )
+#     )
 
-    result.pack(pady=20)
+#     result.pack(pady=20)
 
-    def square_root():
+#     def square_root():
 
-        n = float(number.get())
+#         n = float(number.get())
 
-        ans = math.sqrt(n)
+#         ans = math.sqrt(n)
 
-        result.configure(
-            text=f"√{n} = {ans}"
-        )
+#         result.configure(
+#             text=f"√{n} = {ans}"
+#         )
 
-    def sine():
+#     def sine():
 
-        n = float(number.get())
+#         n = float(number.get())
 
-        ans = math.sin(math.radians(n))
+#         ans = math.sin(math.radians(n))
 
-        result.configure(
-            text=f"sin({n}) = {ans}"
-        )
+#         result.configure(
+#             text=f"sin({n}) = {ans}"
+#         )
 
-    def cosine():
+#     def cosine():
 
-        n = float(number.get())
+#         n = float(number.get())
 
-        ans = math.cos(math.radians(n))
+#         ans = math.cos(math.radians(n))
 
-        result.configure(
-            text=f"cos({n}) = {ans}"
-        )
+#         result.configure(
+#             text=f"cos({n}) = {ans}"
+#         )
 
-    ctk.CTkButton(
+#     ctk.CTkButton(
 
-        content,
+#         content,
 
-        text="Square Root",
+#         text="Square Root",
 
-        command=square_root
+#         command=square_root
 
-    ).pack(pady=5)
+#     ).pack(pady=5)
 
-    ctk.CTkButton(
+#     ctk.CTkButton(
 
-        content,
+#         content,
 
-        text="Sin",
+#         text="Sin",
 
-        command=sine
+#         command=sine
 
-    ).pack(pady=5)
+#     ).pack(pady=5)
 
-    ctk.CTkButton(
+#     ctk.CTkButton(
 
-        content,
+#         content,
 
-        text="Cos",
+#         text="Cos",
 
-        command=cosine
+#         command=cosine
 
-    ).pack(pady=5)
+#     ).pack(pady=5)
+
+
+
+
+
