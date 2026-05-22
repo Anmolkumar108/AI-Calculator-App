@@ -370,19 +370,4 @@ def scientific_calculator(content):
 
         return btn
 
-    # ==========================================
-    # DROPDOWN MENUS
-    # ==========================================
-    trig_frame = ctk.CTkFrame(
-        btn_frame,
-        fg_color="#3a3a3a",
-        corner_radius=12
-    )
-
-    func_frame = ctk.CTkFrame(
-        btn_frame,
-        fg_color="#3a3a3a",
-        corner_radius=12
-    )
-
     
