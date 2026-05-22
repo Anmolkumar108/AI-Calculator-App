@@ -559,4 +559,95 @@ def scientific_calculator(content):
         ("+", 6, 3),
     ]
 
-    
+    # ==========================================
+    # CREATE MAIN BUTTONS
+    # ==========================================
+    for text, row, col in buttons:
+
+        if text == "√":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("sqrt")
+            )
+
+        elif text == "log":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("log")
+            )
+
+        elif text == "ln":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("ln")
+            )
+
+        elif text == "+/-":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: press("-")
+            )
+
+        else:
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda t=text: press(t)
+            )
+
+    # ==========================================
+    # BACKSPACE
+    # ==========================================
+    create_btn(
+        "⌫",
+        2,
+        4,
+        backspace
+    )
+
+    # ==========================================
+    # CLEAR BUTTON
+    # ==========================================
+    create_btn(
+        "C",
+        3,
+        4,
+        clear,
+        "#a83232"
+    )
+
+    # ==========================================
+    # EQUAL BUTTON
+    # ==========================================
+    equal_btn = ctk.CTkButton(
+        btn_frame,
+        text="=",
+        command=calculate,
+        fg_color="#45b6ff",
+        hover_color="#1d9fff",
+        font=("Arial", 30, "bold"),
+        corner_radius=12
+    )
+
+    equal_btn.grid(
+        row=4,
+        column=4,
+        rowspan=3,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
