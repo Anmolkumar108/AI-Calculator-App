@@ -316,4 +316,73 @@ def scientific_calculator(content):
 
             update_display()
 
+    # ==========================================
+    # BUTTON FRAME
+    # ==========================================
+    btn_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="#1b1b1b"
+    )
+
+    btn_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    # ==========================================
+    # GRID CONFIG
+    # ==========================================
+    for i in range(10):
+        btn_frame.rowconfigure(i, weight=1)
+
+    for j in range(5):
+        btn_frame.columnconfigure(j, weight=1)
+
+    # ==========================================
+    # BUTTON STYLE
+    # ==========================================
+    def create_btn(text, row, col, cmd,
+                   color="#2f2f2f",
+                   height=60,
+                   colspan=1):
+
+        btn = ctk.CTkButton(
+            btn_frame,
+            text=text,
+            command=cmd,
+            height=height,
+            corner_radius=10,
+            fg_color=color,
+            hover_color="#444",
+            font=("Arial", 20)
+        )
+
+        btn.grid(
+            row=row,
+            column=col,
+            columnspan=colspan,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
+        return btn
+
+    # ==========================================
+    # DROPDOWN MENUS
+    # ==========================================
+    trig_frame = ctk.CTkFrame(
+        btn_frame,
+        fg_color="#3a3a3a",
+        corner_radius=12
+    )
+
+    func_frame = ctk.CTkFrame(
+        btn_frame,
+        fg_color="#3a3a3a",
+        corner_radius=12
+    )
+
     
