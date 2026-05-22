@@ -437,4 +437,95 @@ def scientific_calculator(content):
 
             func_menu_visible = True
 
+    # ==========================================
+    # TOP MENU BUTTONS
+    # ==========================================
+    create_btn(
+        "Trigonometry ▼",
+        0,
+        0,
+        toggle_trig,
+        "#262626",
+        50,
+        2
+    )
+
+    create_btn(
+        "ƒ Function ▼",
+        0,
+        2,
+        toggle_func,
+        "#262626",
+        50,
+        2
+    )
+
+    # ==========================================
+    # TRIGONOMETRY MENU
+    # ==========================================
+    trig_buttons = [
+
+        ("sin", 0, 0),
+        ("cos", 0, 1),
+        ("tan", 0, 2),
+
+        ("sec", 1, 0),
+        ("csc", 1, 1),
+        ("cot", 1, 2),
+    ]
+
+    for txt, r, c in trig_buttons:
+
+        btn = ctk.CTkButton(
+            trig_frame,
+            text=txt,
+            command=lambda t=txt: scientific(t),
+            height=55,
+            fg_color="#444",
+            hover_color="#555",
+            font=("Arial", 18)
+        )
+
+        btn.grid(
+            row=r,
+            column=c,
+            padx=3,
+            pady=3,
+            sticky="nsew"
+        )
+
+    # ==========================================
+    # FUNCTION MENU
+    # ==========================================
+    func_buttons = [
+
+        ("|x|", "abs", 0, 0),
+        ("⌊x⌋", "floor", 0, 1),
+        ("⌈x⌉", "ceil", 0, 2),
+
+        ("rand", "rand", 1, 0),
+        ("x²", "square", 1, 1),
+        ("x³", "cube", 1, 2),
+    ]
+
+    for txt, val, r, c in func_buttons:
+
+        btn = ctk.CTkButton(
+            func_frame,
+            text=txt,
+            command=lambda v=val: scientific(v),
+            height=55,
+            fg_color="#444",
+            hover_color="#555",
+            font=("Arial", 18)
+        )
+
+        btn.grid(
+            row=r,
+            column=c,
+            padx=3,
+            pady=3,
+            sticky="nsew"
+        )
+
     
