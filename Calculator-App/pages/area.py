@@ -574,4 +574,13 @@ def create_area_converter(content):
                 sticky="nsew"
             )
 
-   
+    # =========================
+    # AUTO CONVERT
+    # =========================
+    from_menu.configure(
+        command=lambda x: convert_area()
+    )
+
+    to_menu.configure(
+        command=lambda x: convert_area()
+    )
