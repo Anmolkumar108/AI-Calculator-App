@@ -278,4 +278,105 @@ def create_area_converter(content):
         pady=(10, 20)
     )
 
+    # =========================
+    # FROM UNIT
+    # =========================
+    from_unit = ctk.StringVar(
+        value="Square meters"
+    )
+
+    from_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=from_unit,
+        height=55,
+        font=("Arial", 18, "bold"),
+        dropdown_font=("Arial", 16),
+        corner_radius=15,
+        state="readonly"
+    )
+
+    from_menu.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
+    # =========================
+    # TO UNIT
+    # =========================
+    to_unit = ctk.StringVar(
+        value="Square feet"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=to_unit,
+        height=55,
+        font=("Arial", 18, "bold"),
+        dropdown_font=("Arial", 16),
+        corner_radius=15,
+        state="readonly"
+    )
+
+    to_menu.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
+    # =========================
+    # LAST HISTORY
+    # =========================
+    last_history = ""
+
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+    def convert_area():
+
+        nonlocal last_history
+
+        try:
+
+            value = float(input_entry.get())
+
+            from_text = from_unit.get()
+
+            to_text = to_unit.get()
+
+            from_value = area_units[from_text]
+
+            to_value = area_units[to_text]
+
+            # Convert
+            square_meter = value / from_value
+
+            result = square_meter * to_value
+
+            result_text = f"{result:.6f}"
+
+            result_label.configure(
+                text=result_text
+            )
+
+            # SAVE HISTORY
+            history_text = (
+                f"{value} {from_text} = "
+                f"{result_text} {to_text}"
+            )
+
+            if history_text != last_history:
+
+                save_history(history_text)
+
+                last_history = history_text
+
+        except:
+
+            result_label.configure(
+                text="Invalid ❌"
+            )
+
     
