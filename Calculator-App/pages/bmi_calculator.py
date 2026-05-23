@@ -246,4 +246,36 @@ def bmi_calculator(content):
         pady=(0, 10)
     )
 
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+    active_entry = weight
+
+    def set_weight_active(event):
+
+        nonlocal active_entry
+
+        active_entry = weight
+
+    def set_height_active(event):
+
+        nonlocal active_entry
+
+        active_entry = height
+
+    weight.bind("<FocusIn>", set_weight_active)
+
+    height.bind("<FocusIn>", set_height_active)
+
+    # =========================
+    # BUTTON CLICK
+    # =========================
+    def button_click(value):
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current + str(value))
+
     
