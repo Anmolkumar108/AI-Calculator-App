@@ -324,4 +324,104 @@ def currency_converter(content):
         pady=8
     )
 
-   
+    # =========================
+    # RESULT FRAME
+    # =========================
+    result_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=18,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=20,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="Converted Result",
+        font=("Arial", 16)
+    ).pack(
+        pady=(10, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0",
+        font=("Arial", 30, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 15)
+    )
+
+    # =========================
+    # BUTTON FUNCTIONS
+    # =========================
+    def button_click(value):
+
+        current = amount_entry.get()
+
+        amount_entry.delete(0, "end")
+
+        amount_entry.insert(0, current + str(value))
+
+    def clear():
+
+        amount_entry.delete(0, "end")
+
+    def backspace():
+
+        current = amount_entry.get()
+
+        amount_entry.delete(0, "end")
+
+        amount_entry.insert(0, current[:-1])
+
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+    def convert_currency():
+
+        try:
+
+            amount = float(amount_entry.get())
+
+            from_curr = from_currency.get()
+
+            to_curr = to_currency.get()
+
+            from_rate = currencies[from_curr]
+
+            to_rate = currencies[to_curr]
+
+            usd_amount = amount / from_rate
+
+            converted_amount = usd_amount * to_rate
+
+            final_result = round(converted_amount, 2)
+
+            result.configure(
+                text=f"{final_result} {to_curr}"
+            )
+
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"{amount} {from_curr} = "
+                f"{final_result} {to_curr}"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    
