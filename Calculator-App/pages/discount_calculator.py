@@ -1,5 +1,7 @@
 
 import customtkinter as ctk
+from database import save_history
+
 
 def clear_content(content):
 
@@ -9,6 +11,80 @@ def clear_content(content):
 def discount_calculator(content):
 
     clear_content(content)
+
+    # =========================
+    # MAIN FRAME
+    # =========================
+    main_frame = ctk.CTkFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    main_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        main_frame,
+        text = "🏷️ Discount Calculator",
+        font = ("Arial", 25, "bold")
+    ).pack(
+        pady=(20, 10)
+
+    )
+
+    # =========================
+    # DISPLAY FRAME
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+    display_frame.pack(
+        fill='x',
+        padx=20,
+        pady=10
+    )
+
+    # =========================
+    # WEIGHT ENTRY
+    # =========================
+    weight = ctk.CTkEntry(
+        display_frame,
+        height=40,
+        font=("Arial", 22,"bold"),
+        justify="right",
+        placeholder_text="Enter Price"
+    )
+    weight.pack(
+        fill='x',
+        padx=10,
+        pady=(10, 5)
+    )
+    # =========================
+    # HEIGHT ENTRY
+    # =========================
+    height = ctk.CTkEntry(
+        display_frame,
+        height=40,
+        font=("Arial", 22, "bold"),
+        justify="right",
+        placeholder_text="Enter Height"
+    )
+    height.pack(
+        fill='x',
+        padx=10,
+        pady=(5, 10)
+
+    )
+
+    #
+
 
     ctk.CTkLabel(
 
