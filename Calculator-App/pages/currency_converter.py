@@ -424,4 +424,77 @@ def currency_converter(content):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # SWAP FUNCTION
+    # =========================
+    def swap_currency():
+
+        temp = from_currency.get()
+
+        from_currency.set(to_currency.get())
+
+        to_currency.set(temp)
+
+    # =========================
+    # ACTION BUTTON FRAME
+    # =========================
+    action_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=10
+    )
+
+    # =========================
+    # CONVERT BUTTON
+    # =========================
+    ctk.CTkButton(
+        action_frame,
+        text="Convert",
+        command=convert_currency,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12
+    ).grid(
+        row=0,
+        column=0,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # SWAP BUTTON
+    # =========================
+    ctk.CTkButton(
+        action_frame,
+        text="Swap",
+        command=swap_currency,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12,
+        fg_color="orange",
+        hover_color="darkorange"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=10
+    )
+
     
