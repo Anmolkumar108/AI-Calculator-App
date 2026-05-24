@@ -258,4 +258,70 @@ def currency_converter(content):
         pady=10
     )
 
-    
+    # =========================
+    # AMOUNT ENTRY
+    # =========================
+    amount_entry = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 24, "bold"),
+        justify="right",
+        placeholder_text="Enter Amount"
+    )
+
+    amount_entry.pack(
+        fill="x",
+        padx=15,
+        pady=15
+    )
+
+    # =========================
+    # CURRENCY LIST
+    # =========================
+    currency_list = list(currencies.keys())
+
+    # =========================
+    # FROM CURRENCY
+    # =========================
+    from_currency = ctk.StringVar(
+        value="🇮🇳 INR"
+    )
+
+    from_menu = ctk.CTkComboBox(
+        main_frame,
+        values=currency_list,
+        variable=from_currency,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    from_menu.pack(
+        fill="x",
+        padx=20,
+        pady=8
+    )
+
+    # =========================
+    # TO CURRENCY
+    # =========================
+    to_currency = ctk.StringVar(
+        value="🇺🇸 USD"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=currency_list,
+        variable=to_currency,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    to_menu.pack(
+        fill="x",
+        padx=20,
+        pady=8
+    )
+
+   
