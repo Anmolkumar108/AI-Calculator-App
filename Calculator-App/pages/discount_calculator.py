@@ -150,4 +150,93 @@ def discount_calculator(content):
 
         active_entry.insert(0, current + str(value))
 
+    # =========================
+    # CLEAR
+    # =========================
+    def clear():
+
+        active_entry.delete(0, "end")
+
+    # =========================
+    # BACKSPACE
+    # =========================
+    def backspace():
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current[:-1])
+
+    # =========================
+    # CALCULATE DISCOUNT
+    # =========================
+    def calculate_discount():
+
+        try:
+
+            original_price = price.get()
+
+            original_discount = discount.get()
+
+            p = float(original_price)
+
+            d = float(original_discount)
+
+            final_price = p - ((p * d) / 100)
+
+            saved_amount = (p * d) / 100
+
+            result.configure(
+                text=f"₹{round(final_price,2)}"
+            )
+
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"Price: ₹{original_price}, "
+                f"Discount: {original_discount}% "
+                f"= Final ₹{round(final_price,2)} "
+                f"(Saved ₹{round(saved_amount,2)})"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    # =========================
+    # BUTTON FRAME
+    # =========================
+    action_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=5
+    )
+
+    # =========================
+    # CALCULATE BUTTON
+    # =========================
+    ctk.CTkButton(
+        action_frame,
+        text="Calculate",
+        command=calculate_discount,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12
+    ).grid(
+        row=0,
+        column=0,
+        padx=8,
+        pady=5
+    )
+
     
