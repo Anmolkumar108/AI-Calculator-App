@@ -267,4 +267,4 @@ def discount_calculator(content):
         pady=5
     )
 
-    
+   
