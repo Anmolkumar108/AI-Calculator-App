@@ -197,6 +197,36 @@ def clear_content(content):
         pady=(0, 20)
     )
 
+ # =========================
+    # ACTIVE ENTRY
+    # =========================
+    active_entry = birth_day
+
+    def set_active(entry):
+
+        nonlocal active_entry
+
+        active_entry = entry
+
+    entries = [
+
+        birth_day,
+        birth_month,
+        birth_year,
+        current_day,
+        current_month,
+        current_year
+
+    ]
+
+    for entry in entries:
+
+        entry.bind(
+            "<FocusIn>",
+            lambda event, e=entry: set_active(e)
+        )
+
+        
 
 
 
