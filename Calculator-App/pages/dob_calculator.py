@@ -70,7 +70,48 @@ def clear_content(content):
             # =========================
             # BIRTH DATE ENTRY
             # =========================
-            
+        birth_day = ctk.CTkEntry(
+            display_frame,
+            height=55,
+            font=("Arial", 18, "bold"),
+            justify="right",
+            placeholder_text="DD"
+        )
+        birth_day.pack(
+            fill="x",
+            padx=15,
+            pady=5
+        )
+
+        birth_month = ctk.CTkEntry(
+            display_frame,
+            height=45,
+            font=("Arial", 18, "bold"),
+            justify="right",
+            placeholder_text="MM"
+        )
+
+        birth_month.pack(
+            fill="x",
+            padx=15,
+            pady=5
+        )
+        birth_year = ctk.CTkEntry(
+            display_frame,
+            height=45,
+            font=("Arial", 18, "bold"),
+            justify="right",
+            placeholder_text="YYYY"
+
+        )
+        birth_year.pack(
+            fill="x",
+            padx=15,
+            pady=(5, 15)
+        )
+
+        
+
 
 
 
