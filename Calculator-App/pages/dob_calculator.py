@@ -42,5 +42,36 @@ def clear_content(content):
     ).pack(
         pady=(10, 20)
     )
+            # =========================
+            # DISPLAY FRAME
+            # =========================
+        display_frame = ctk.CTkFrame(
+               scroll,
+               corner_radius=20
+           )
+        
+        display_frame.pack(
+            fill="x",
+            padx=15,
+            pady=10
+        )
+
+            # =========================
+            # BIRTH DATE TITLE
+            # =========================
+        ctk.CTkLabel(
+            display_frame,
+            text="Birth Date",
+            font=("Arial", 18, "bold")
+        ).pack(
+            pady(15,10)
+        )
+
+            # =========================
+            # BIRTH DATE ENTRY
+            # =========================
+            
+
+
 
 
