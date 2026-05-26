@@ -110,7 +110,21 @@ def clear_content(content):
             pady=(5, 15)
         )
 
+        # =========================
+        # CURRENT DATE TITLE
+        # =========================
+        ctk.CTkLabel(
+            display_frame,
+            text="Current Date",
+            font=("Arial", 18, "bold")
+
+        ).pack(
+            pady=(5, 10)
+        )
+
         
+
+
 
 
 
