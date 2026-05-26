@@ -32,3 +32,15 @@ def clear_content(content):
         pady=10
     )
 
+            # =========================
+            # TITLE
+            # =========================
+            ctk.CTkLabel(
+        scroll,
+        text="🎂 Age Calculator",
+        font=("Arial", 30, "bold")
+    ).pack(
+        pady=(10, 20)
+    )
+
+
