@@ -139,7 +139,37 @@ def clear_content(content):
             pady=5
         )
 
+        current_month = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="MM"
+    )
+        current_month.pack(
+            fill="x",
+            padx=15,
+            pady=5
+        )
+        current_year = ctk.CTkEntry(
+            display_frame,
+            height=45,
+            font=("Arial", 18, "bold"),
+            justify="right",
+            placeholder_text="YYYY"
+        )
+        current_year.pack(
+            fill="x",
+            padx=15,
+            pady=(5, 15)
+        )
+
+        # =========================
+        # RESULT FRAME
+        # =========================
         
+
+
 
 
 
