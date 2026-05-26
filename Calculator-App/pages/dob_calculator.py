@@ -167,7 +167,36 @@ def clear_content(content):
         # =========================
         # RESULT FRAME
         # =========================
-        
+        result_frame = ctk.CTkFrame(
+            scroll,
+            corner_radius=20,
+            fg_color="#1E293B"
+        )
+        result_frame.pack(
+            fill="x",
+            padx=15,
+            pady=20
+        )
+
+        ctk.CTkLabel(
+        result_frame,
+        text="Your Age",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0 Years",
+        font=("Arial", 28, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 20)
+    )
+
 
 
 
