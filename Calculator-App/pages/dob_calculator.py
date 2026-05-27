@@ -203,4 +203,84 @@ def dob_calculator(content):
         pady=(0, 20)
     )
 
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+    active_entry = birth_day
+
+    def set_active(entry):
+
+        nonlocal active_entry
+
+        active_entry = entry
+
+    entries = [
+
+        birth_day,
+        birth_month,
+        birth_year,
+        current_day,
+        current_month,
+        current_year
+
+    ]
+
+    for entry in entries:
+
+        entry.bind(
+            "<FocusIn>",
+            lambda event, e=entry: set_active(e)
+        )
+
+    # =========================
+    # BUTTON CLICK
+    # =========================
+    def button_click(value):
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(
+            0,
+            current + str(value)
+        )
+
+    # =========================
+    # CLEAR
+    # =========================
+    def clear():
+
+        active_entry.delete(0, "end")
+
+    # =========================
+    # BACKSPACE
+    # =========================
+    def backspace():
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(
+            0,
+            current[:-1]
+        )
+
+    # =========================
+    # TODAY DATE
+    # =========================
+    def fill_today():
+
+        today = date.today()
+
+        current_day.delete(0, "end")
+        current_day.insert(0, today.day)
+
+        current_month.delete(0, "end")
+        current_month.insert(0, today.month)
+
+        current_year.delete(0, "end")
+        current_year.insert(0, today.year)
+
     
