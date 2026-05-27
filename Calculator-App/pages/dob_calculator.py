@@ -113,4 +113,94 @@ def dob_calculator(content):
         pady=(5, 15)
     )
 
+    # =========================
+    # CURRENT DATE TITLE
+    # =========================
+    ctk.CTkLabel(
+        display_frame,
+        text="Current Date",
+        font=("Arial", 18, "bold")
+    ).pack(
+        pady=(5, 10)
+    )
+
+    # =========================
+    # CURRENT DATE ENTRIES
+    # =========================
+    current_day = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="DD"
+    )
+
+    current_day.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    current_month = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="MM"
+    )
+
+    current_month.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    current_year = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="YYYY"
+    )
+
+    current_year.pack(
+        fill="x",
+        padx=15,
+        pady=(5, 15)
+    )
+
+    # =========================
+    # RESULT FRAME
+    # =========================
+    result_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=15,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="Your Age",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0 Years",
+        font=("Arial", 28, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 20)
+    )
+
     
