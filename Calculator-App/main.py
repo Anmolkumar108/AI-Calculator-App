@@ -337,6 +337,7 @@
 
 
 
+
 import customtkinter as ctk
 
 from pages.normal_calculator import normal_calculator

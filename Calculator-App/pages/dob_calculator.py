@@ -2,7 +2,6 @@ import customtkinter as ctk
 from datetime import date
 from database import save_history
 
-
 # =========================
 # CLEAR OLD CONTENT
 # =========================
@@ -11,229 +10,51 @@ def clear_content(content):
     for widget in content.winfo_children():
         widget.destroy()
 
-        # =========================
-        # DOB CALCULATOR
-        # =========================
-        def dob_calculator(content):
+# =========================
+# DOB CALCULATOR
+# =========================
+def dob_calculator(content):
 
-            clear_content(content)
+    clear_content(content)
 
-            # =========================
-            # MAIN SCROLL FRAME
-            # =========================
-            scroll = ctk.CTkScrollableFrame(
-                content,
-                fg_color="transparent"
-            )
-            scroll.pack(
+    # =========================
+    # MAIN SCROLL FRAME
+    # =========================
+    scroll = ctk.CTkScrollableFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    scroll.pack(
         fill="both",
         expand=True,
         padx=10,
         pady=10
     )
 
-            # =========================
-            # TITLE
-            # =========================
-            ctk.CTkLabel(
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
         scroll,
         text="🎂 Age Calculator",
         font=("Arial", 30, "bold")
     ).pack(
         pady=(10, 20)
     )
-            # =========================
-            # DISPLAY FRAME
-            # =========================
-        display_frame = ctk.CTkFrame(
-               scroll,
-               corner_radius=20
-           )
-        
-        display_frame.pack(
-            fill="x",
-            padx=15,
-            pady=10
-        )
 
-            # =========================
-            # BIRTH DATE TITLE
-            # =========================
-        ctk.CTkLabel(
-            display_frame,
-            text="Birth Date",
-            font=("Arial", 18, "bold")
-        ).pack(
-            pady(15,10)
-        )
-
-            # =========================
-            # BIRTH DATE ENTRY
-            # =========================
-        birth_day = ctk.CTkEntry(
-            display_frame,
-            height=55,
-            font=("Arial", 18, "bold"),
-            justify="right",
-            placeholder_text="DD"
-        )
-        birth_day.pack(
-            fill="x",
-            padx=15,
-            pady=5
-        )
-
-        birth_month = ctk.CTkEntry(
-            display_frame,
-            height=45,
-            font=("Arial", 18, "bold"),
-            justify="right",
-            placeholder_text="MM"
-        )
-
-        birth_month.pack(
-            fill="x",
-            padx=15,
-            pady=5
-        )
-        birth_year = ctk.CTkEntry(
-            display_frame,
-            height=45,
-            font=("Arial", 18, "bold"),
-            justify="right",
-            placeholder_text="YYYY"
-
-        )
-        birth_year.pack(
-            fill="x",
-            padx=15,
-            pady=(5, 15)
-        )
-
-        # =========================
-        # CURRENT DATE TITLE
-        # =========================
-        ctk.CTkLabel(
-            display_frame,
-            text="Current Date",
-            font=("Arial", 18, "bold")
-
-        ).pack(
-            pady=(5, 10)
-        )
-
-        # =========================
-        # CURRENT DATE ENTRIES
-        # =========================
-        current_day = ctk.CTkEntry(
-            display_frame,
-            height=45,
-            font=("Arial", 18, "bold"),
-            justify="right",
-            placeholder_text="DD"
-        )
-
-        current_day.pack(
-            fill="x",
-            padx=15,
-            pady=5
-        )
-
-        current_month = ctk.CTkEntry(
-        display_frame,
-        height=45,
-        font=("Arial", 18, "bold"),
-        justify="right",
-        placeholder_text="MM"
-    )
-        current_month.pack(
-            fill="x",
-            padx=15,
-            pady=5
-        )
-        current_year = ctk.CTkEntry(
-            display_frame,
-            height=45,
-            font=("Arial", 18, "bold"),
-            justify="right",
-            placeholder_text="YYYY"
-        )
-        current_year.pack(
-            fill="x",
-            padx=15,
-            pady=(5, 15)
-        )
-
-        # =========================
-        # RESULT FRAME
-        # =========================
-        result_frame = ctk.CTkFrame(
-            scroll,
-            corner_radius=20,
-            fg_color="#1E293B"
-        )
-        result_frame.pack(
-            fill="x",
-            padx=15,
-            pady=20
-        )
-
-        ctk.CTkLabel(
-        result_frame,
-        text="Your Age",
-        font=("Arial", 18)
-    ).pack(
-        pady=(15, 5)
-    )
-
-    result = ctk.CTkLabel(
-        result_frame,
-        text="0 Years",
-        font=("Arial", 28, "bold"),
-        text_color="#38BDF8"
-    )
-
-    result.pack(
-        pady=(0, 20)
-    )
-
- # =========================
-    # ACTIVE ENTRY
     # =========================
-    active_entry = birth_day
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20
+    )
 
-    def set_active(entry):
+    display_frame.pack(
+        fill="x",
+        padx=15,
+        pady=10
+    )
 
-        nonlocal active_entry
-
-        active_entry = entry
-
-    entries = [
-
-        birth_day,
-        birth_month,
-        birth_year,
-        current_day,
-        current_month,
-        current_year
-
-    ]
-
-    for entry in entries:
-
-        entry.bind(
-            "<FocusIn>",
-            lambda event, e=entry: set_active(e)
-        )
-
-        
-
-
-
-
-
-
-
-
-
-
+    
