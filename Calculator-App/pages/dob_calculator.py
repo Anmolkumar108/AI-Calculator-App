@@ -57,4 +57,60 @@ def dob_calculator(content):
         pady=10
     )
 
+    # =========================
+    # BIRTH DATE TITLE
+    # =========================
+    ctk.CTkLabel(
+        display_frame,
+        text="Birth Date",
+        font=("Arial", 18, "bold")
+    ).pack(
+        pady=(15, 10)
+    )
+
+    # =========================
+    # BIRTH DATE ENTRIES
+    # =========================
+    birth_day = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="DD"
+    )
+
+    birth_day.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    birth_month = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="MM"
+    )
+
+    birth_month.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    birth_year = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="YYYY"
+    )
+
+    birth_year.pack(
+        fill="x",
+        padx=15,
+        pady=(5, 15)
+    )
+
     
