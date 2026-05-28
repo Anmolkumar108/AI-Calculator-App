@@ -172,4 +172,55 @@ def gst_calculator(content):
 
         active_entry.delete(0, "end")
 
-    
+    # =========================
+    # BACKSPACE
+    # =========================
+
+    def backspace():
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current[:-1])
+
+    # =========================
+    # ADD GST
+    # =========================
+
+    def add_gst(event=None):
+
+        try:
+
+            a = float(amount.get())
+
+            g = float(gst.get())
+
+            gst_amount = (a * g) / 100
+
+            total = a + gst_amount
+
+            result.configure(
+                text=(
+                    f"Original : ₹{round(a,2)}\n"
+                    f"GST : ₹{round(gst_amount,2)}\n"
+                    f"Total : ₹{round(total,2)}"
+                )
+            )
+
+            # SAVE HISTORY
+            history_text = (
+                f"GST Added | "
+                f"Amount: ₹{a} | "
+                f"GST: {g}% | "
+                f"Total: ₹{round(total,2)}"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
