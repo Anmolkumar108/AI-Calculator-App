@@ -224,3 +224,44 @@ def gst_calculator(content):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # REMOVE GST
+    # =========================
+
+    def remove_gst(event=None):
+
+        try:
+
+            total = float(amount.get())
+
+            g = float(gst.get())
+
+            original = total / (1 + g / 100)
+
+            gst_amount = total - original
+
+            result.configure(
+                text=(
+                    f"Original : ₹{round(original,2)}\n"
+                    f"GST : ₹{round(gst_amount,2)}\n"
+                    f"Final : ₹{round(total,2)}"
+                )
+            )
+
+            # SAVE HISTORY
+            history_text = (
+                f"GST Removed | "
+                f"Final: ₹{total} | "
+                f"GST: {g}% | "
+                f"Original: ₹{round(original,2)}"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    
