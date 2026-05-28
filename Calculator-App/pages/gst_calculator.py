@@ -132,4 +132,44 @@ def gst_calculator(content):
         pady=(0, 20)
     )
 
-   
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+
+    active_entry = amount
+
+    def set_amount_active(event):
+
+        nonlocal active_entry
+        active_entry = amount
+
+    def set_gst_active(event):
+
+        nonlocal active_entry
+        active_entry = gst
+
+    amount.bind("<FocusIn>", set_amount_active)
+
+    gst.bind("<FocusIn>", set_gst_active)
+
+    # =========================
+    # BUTTON CLICK
+    # =========================
+
+    def button_click(value):
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current + str(value))
+
+    # =========================
+    # CLEAR
+    # =========================
+
+    def clear():
+
+        active_entry.delete(0, "end")
+
+    
