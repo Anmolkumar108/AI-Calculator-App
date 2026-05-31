@@ -6,24 +6,7 @@
 #    
 
 #     
-#     # =========================
-#     # AUTO CONVERT
-#     # =========================
-#     input_entry.bind(
-#         "<KeyRelease>",
-#         convert_area
-#     )
-
-#     from_menu.configure(
-#         command=lambda x: convert_area()
-#     )
-
-#     to_menu.configure(
-#         command=lambda x: convert_area()
-#     )
-
-
-
+#     
 import customtkinter as ctk
 from database import save_history
 
