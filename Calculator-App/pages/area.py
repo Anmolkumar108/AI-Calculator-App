@@ -1,12 +1,3 @@
-
-#     
-#     
-#     
-
-#    
-
-#     
-#     
 import customtkinter as ctk
 from database import save_history
 
