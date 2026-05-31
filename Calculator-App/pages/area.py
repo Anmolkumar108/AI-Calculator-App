@@ -1,40 +1,7 @@
 
 #     
 #     
-#     # =========================
-#     # FROM UNIT
-#     # =========================
-#     from_unit = ctk.StringVar(
-#         value="Square millimeters"
-#     )
-
-#     from_menu = ctk.CTkComboBox(
-#         main_frame,
-#         values=list(area_units.keys()),
-#         variable=from_unit,
-#         width=400,
-#         height=50,
-#         font=("Arial", 18),
-#         dropdown_font=("Arial", 16),
-#         state="readonly"
-#     )
-
-#     from_menu.pack(
-#         pady=(0, 30)
-#     )
-
-#     # =========================
-#     # RESULT LABEL
-#     # =========================
-#     result_label = ctk.CTkLabel(
-#         main_frame,
-#         text="0",
-#         font=("Arial", 40, "bold")
-#     )
-
-#     result_label.pack(
-#         pady=(10, 20)
-#     )
+#     
 
 #     # =========================
 #     # TO UNIT
