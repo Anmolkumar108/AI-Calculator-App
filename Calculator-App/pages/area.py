@@ -1,34 +1,6 @@
 
 #     
-#     # =========================
-#     # TITLE
-#     # =========================
-#     title = ctk.CTkLabel(
-#         main_frame,
-#         text="Area",
-#         font=("Arial", 32, "bold")
-#     )
-
-#     title.pack(
-#         anchor="w",
-#         pady=(10, 30)
-#     )
-
-#     # =========================
-#     # INPUT VALUE
-#     # =========================
-#     input_entry = ctk.CTkEntry(
-#         main_frame,
-#         width=400,
-#         height=60,
-#         font=("Arial", 28),
-#         placeholder_text="0"
-#     )
-
-#     input_entry.pack(
-#         pady=(0, 20)
-#     )
-
+#     
 #     # =========================
 #     # FROM UNIT
 #     # =========================
