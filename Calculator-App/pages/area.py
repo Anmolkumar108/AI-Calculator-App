@@ -1,12 +1,3 @@
-# import customtkinter as ctk
-
-# def create_area_converter(content):
-
-#     # =========================
-#     # CLEAR PAGE
-#     # =========================
-#     for widget in content.winfo_children():
-#         widget.destroy()
 
 #     # =========================
 #     # MAIN FRAME
