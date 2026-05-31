@@ -5,39 +5,7 @@
 
 #    
 
-#     # =========================
-#     # CONVERT FUNCTION
-#     # =========================
-#     def convert_area(event=None):
-
-#         try:
-
-#             value = float(input_entry.get())
-
-#             from_value = area_units[
-#                 from_unit.get()
-#             ]
-
-#             to_value = area_units[
-#                 to_unit.get()
-#             ]
-
-#             # Convert to square meter
-#             square_meter = value / from_value
-
-#             # Convert to target unit
-#             result = square_meter * to_value
-
-#             result_label.configure(
-#                 text=f"{result:.6f}"
-#             )
-
-#         except:
-
-#             result_label.configure(
-#                 text="Invalid"
-#             )
-
+#     
 #     # =========================
 #     # AUTO CONVERT
 #     # =========================
