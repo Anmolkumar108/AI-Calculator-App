@@ -408,4 +408,46 @@ def length_converter(content):
         pady=10
     )
 
+    # =========================
+    # CONVERT BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="➡️ Convert",
+        command=convert,
+        width=120,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="#2563EB",
+        hover_color="#1D4ED8"
+    ).grid(
+        row=0,
+        column=0,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # REVERSE BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="⬅️ Reverse",
+        command=reverse_convert,
+        width=120,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="green",
+        hover_color="darkgreen"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
     
