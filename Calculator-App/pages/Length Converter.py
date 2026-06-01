@@ -185,4 +185,54 @@ def length_converter(content):
         pady=(0, 15)
     )
 
+    # =========================
+    # RESULT FRAME
+    # =========================
+
+    result_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=15,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="Conversion Result",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result_label = ctk.CTkLabel(
+        result_frame,
+        text="0",
+        font=("Arial", 28, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.pack(
+        pady=(0, 20)
+    )
+
+    # =========================
+    # EXAMPLE LABEL
+    # =========================
+
+    example_label = ctk.CTkLabel(
+        scroll,
+        text="Example: 1 Meter = 100 Centimeter",
+        font=("Arial", 15),
+        text_color="lightgreen"
+    )
+
+    example_label.pack(
+        pady=5
+    )
+
     
