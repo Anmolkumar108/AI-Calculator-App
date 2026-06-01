@@ -337,4 +337,75 @@ def length_converter(content):
                 text="Invalid ❌"
             )
 
-   
+    # =========================
+    # REVERSE CONVERT
+    # =========================
+
+    def reverse_convert(event=None):
+
+        try:
+
+            value = float(entry_to.get())
+
+            from_u = from_unit.get()
+            to_u = to_unit.get()
+
+            meter = value * units_in_meter[to_u]
+
+            result = meter / units_in_meter[from_u]
+
+            entry_from.delete(0, "end")
+            entry_from.insert(0, str(round(result, 10)))
+
+            result_label.configure(
+                text=f"{value} {to_u}\n=\n{round(result, 10)} {from_u}"
+            )
+
+            # SAVE HISTORY
+            history_text = (
+                f"Length Reverse | "
+                f"{value} {to_u} = {round(result, 10)} {from_u}"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result_label.configure(
+                text="Invalid ❌"
+            )
+
+    # =========================
+    # SWAP FUNCTION
+    # =========================
+
+    def swap_units():
+
+        temp = from_unit.get()
+
+        from_unit.set(to_unit.get())
+        to_unit.set(temp)
+
+        update_example()
+
+    # =========================
+    # ENTER BUTTON SUPPORT
+    # =========================
+
+    entry_from.bind("<Return>", convert)
+    entry_to.bind("<Return>", reverse_convert)
+
+    # =========================
+    # BUTTON FRAME
+    # =========================
+
+    action_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=10
+    )
+
+    
