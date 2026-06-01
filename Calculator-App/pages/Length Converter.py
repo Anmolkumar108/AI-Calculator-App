@@ -485,4 +485,48 @@ def length_converter(content):
         pady=15
     )
 
-    
+# =========================
+    # BUTTONS
+    # =========================
+
+    buttons = [
+
+        ("7", 0, 0),
+        ("8", 0, 1),
+        ("9", 0, 2),
+        ("⌫", 0, 3),
+
+        ("4", 1, 0),
+        ("5", 1, 1),
+        ("6", 1, 2),
+        ("C", 1, 3),
+
+        ("1", 2, 0),
+        ("2", 2, 1),
+        ("3", 2, 2),
+        (".", 2, 3),
+
+        ("0", 3, 0)
+    ]
+
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+
+    for (text, row, col) in buttons:
+
+        # CLEAR BUTTON
+        if text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
