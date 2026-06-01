@@ -530,3 +530,47 @@ def length_converter(content):
                 hover_color="darkred"
             )
 
+        # BACKSPACE BUTTON
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="#F59E0B",
+                hover_color="#D97706"
+            )
+
+        # NORMAL BUTTONS
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=55,
+                height=55,
+                font=("Arial", 18, "bold"),
+                corner_radius=14
+            )
+
+        btn.grid(
+            row=row,
+            column=col,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
+    # =========================
+    # EVENTS
+    # =========================
+
+    from_combo.configure(command=lambda e: update_example())
+    to_combo.configure(command=lambda e: update_example())
+
+    
