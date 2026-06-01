@@ -46,4 +46,81 @@ def length_converter(content):
         pady=(10, 20)
     )
 
-    
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+
+    display_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=15,
+        pady=10
+    )
+
+    # =========================
+    # FROM ENTRY
+    # =========================
+
+    entry_from = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="Enter value"
+    )
+
+    entry_from.pack(
+        fill="x",
+        padx=15,
+        pady=(15, 10)
+    )
+
+    # =========================
+    # FROM UNIT
+    # =========================
+
+    units_in_meter = {
+
+        # Metric
+        "Kilometer (km)": 1000,
+        "Meter (m)": 1,
+        "Decimeter (dm)": 0.1,
+        "Centimeter (cm)": 0.01,
+        "Millimeter (mm)": 0.001,
+        "Micrometer (um)": 1e-6,
+        "Nanometer (nm)": 1e-9,
+        "Picometer (pm)": 1e-12,
+
+        # Imperial
+        "Nautical Mile (nmi)": 1852,
+        "Mile (mi)": 1609.344,
+        "Furlong (fur)": 201.168,
+        "Fathom (ftm)": 1.8288,
+        "Yard (yd)": 0.9144,
+        "Foot (ft)": 0.3048,
+        "Inch (in)": 0.0254,
+
+        # Chinese
+        "Gongli": 500,
+        "Li": 500,
+        "Zhang": 3.333333,
+        "Chi": 0.333333,
+        "Cun": 0.0333333,
+        "Fen": 0.00333333,
+        "Lii": 0.000333333,
+        "Hao": 0.0000333333,
+
+        # Astronomy
+        "Parsec (pc)": 3.0857e16,
+        "Lunar Distance (LD)": 384400000,
+        "Astronomical Unit (AU)": 149597870700,
+        "Light Year (ly)": 9.4607e15
+    }
+
+    units = list(units_in_meter.keys())
+
+   
