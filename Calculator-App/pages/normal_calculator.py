@@ -117,4 +117,27 @@ def normal_calculator(content):
             safe_expr = expr.replace("×", "*").replace("÷", "/")
             answer = eval(safe_expr, {"__builtins__": None}, {})
 
-            
+            if isinstance(answer, float):
+                answer = round(answer, 10)
+                if answer.is_integer():
+                    answer = int(answer)
+
+            result_label.configure(text=f"Result: {answer}")
+
+            history_text = f"{expr} = {answer}"
+            save_history(history_text)
+
+        except Exception:
+            result_label.configure(text="Invalid ❌")
+
+    button_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    button_frame.pack(
+        padx=15,
+        pady=10
+    )
+
+    
