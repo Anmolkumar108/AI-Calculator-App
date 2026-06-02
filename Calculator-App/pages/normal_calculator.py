@@ -161,4 +161,41 @@ def normal_calculator(content):
         (".", lambda: update_expression(".")),
     ]
 
+    row = 0
+    col = 0
+    for label, command in buttons:
+        ctk.CTkButton(
+            button_frame,
+            text=label,
+            command=command,
+            width=120,
+            height=70,
+            font=("Arial", 20, "bold"),
+            corner_radius=14
+        ).grid(
+            row=row,
+            column=col,
+            padx=8,
+            pady=8,
+            sticky="nsew"
+        )
+
+        col += 1
+        if col >= 4:
+            col = 0
+            row += 1
+
+    for i in range(4):
+        button_frame.grid_columnconfigure(i, weight=1)
+
+    note_label = ctk.CTkLabel(
+        main_frame,
+        text="History saved automatically when you press =",
+        font=("Arial", 14),
+        text_color="#94A3B8"
+    )
+
+    note_label.pack(pady=(10, 0))
+
+
     
