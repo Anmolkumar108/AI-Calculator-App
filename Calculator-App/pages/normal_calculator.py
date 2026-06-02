@@ -96,4 +96,25 @@ def normal_calculator(content):
 
     result_label.pack(padx=15, pady=15)
 
-    
+    def update_expression(value):
+        current = expression.get()
+        expression.set(current + str(value))
+
+    def clear_all():
+        expression.set("")
+        result_label.configure(text="Result: 0")
+
+    def backspace():
+        current = expression.get()
+        expression.set(current[:-1])
+
+    def calculate():
+        try:
+            expr = expression.get().strip()
+            if expr == "":
+                return
+
+            safe_expr = expr.replace("×", "*").replace("÷", "/")
+            answer = eval(safe_expr, {"__builtins__": None}, {})
+
+            
