@@ -81,4 +81,19 @@ def normal_calculator(content):
         fg_color="#1E293B"
     )
 
+    result_frame.pack(
+        fill="x",
+        padx=20,
+        pady=(0, 15)
+    )
+
+    result_label = ctk.CTkLabel(
+        result_frame,
+        text="Result: 0",
+        font=("Arial", 24, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.pack(padx=15, pady=15)
+
     
