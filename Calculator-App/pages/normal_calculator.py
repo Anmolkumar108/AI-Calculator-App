@@ -140,4 +140,25 @@ def normal_calculator(content):
         pady=10
     )
 
+    buttons = [
+        ("C", clear_all),
+        ("⌫", backspace),
+        ("÷", lambda: update_expression("/")),
+        ("×", lambda: update_expression("*")),
+        ("7", lambda: update_expression("7")),
+        ("8", lambda: update_expression("8")),
+        ("9", lambda: update_expression("9")),
+        ("-", lambda: update_expression("-")),
+        ("4", lambda: update_expression("4")),
+        ("5", lambda: update_expression("5")),
+        ("6", lambda: update_expression("6")),
+        ("+", lambda: update_expression("+")),
+        ("1", lambda: update_expression("1")),
+        ("2", lambda: update_expression("2")),
+        ("3", lambda: update_expression("3")),
+        ("=", calculate),
+        ("0", lambda: update_expression("0")),
+        (".", lambda: update_expression(".")),
+    ]
+
     
