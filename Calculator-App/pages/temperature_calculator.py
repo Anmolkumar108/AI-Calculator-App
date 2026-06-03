@@ -60,4 +60,94 @@ def temperature_calculator(content):
         pady=(0, 15)
     )
 
+    # ==========================================
+    # MEMORY FRAME
+    # ==========================================
+    memory_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+    memory_frame.pack(
+        fill="x",
+        padx=10,
+        pady=(0, 10)
+    )
+
+    # ==========================================
+    # FUNCTIONS
+    # ==========================================
+    def update_display(text=""):
+        display.delete(0, "end")
+        display.insert(0, text)
+
+    def press(value):
+
+        current = display.get()
+
+        display.delete(0, "end")
+
+        display.insert(
+            0,
+            current + str(value)
+        )
+
+    def clear():
+
+        display.delete(0, "end")
+
+        result_label.configure(
+            text="Result Here"
+        )
+
+    def backspace():
+
+        current = display.get()
+
+        display.delete(0, "end")
+
+        display.insert(
+            0,
+            current[:-1]
+        )
+
+    # ==========================================
+    # MEMORY FUNCTIONS
+    # ==========================================
+    def memory_clear():
+
+        nonlocal memory_value
+
+        memory_value = 0
+
+    def memory_recall():
+
+        display.delete(0, "end")
+
+        display.insert(
+            0,
+            str(memory_value)
+        )
+
+    def memory_add():
+
+        nonlocal memory_value
+
+        try:
+
+            memory_value += float(display.get())
+
+        except:
+            pass
+
+    def memory_subtract():
+
+        nonlocal memory_value
+
+        try:
+
+            memory_value -= float(display.get())
+
+        except:
+            pass
+
     
