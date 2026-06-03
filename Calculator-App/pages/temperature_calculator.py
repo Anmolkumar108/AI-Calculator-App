@@ -285,4 +285,55 @@ def temperature_calculator(content):
         sticky="nsew"
     )
 
+    # ==========================================
+    # CONVERT FUNCTION
+    # ==========================================
+    def convert():
+
+        try:
+
+            value = float(display.get())
+            option = combo.get()
+
+            if option == "Celsius to Fahrenheit":
+                result = (value * 9/5) + 32
+                unit = "°F"
+
+            elif option == "Fahrenheit to Celsius":
+                result = (value - 32) * 5/9
+                unit = "°C"
+
+            elif option == "Celsius to Kelvin":
+                result = value + 273.15
+                unit = "K"
+
+            elif option == "Kelvin to Celsius":
+                result = value - 273.15
+                unit = "°C"
+
+            else:
+                result_label.configure(text="❌ Select conversion type")
+                return
+
+            result_text = f"{round(result, 2)} {unit}"
+            result_label.configure(
+                text=f"Result: {result_text}"
+            )
+
+            # ==========================
+            # SAVE HISTORY
+            # ==========================
+            history_text = (
+                f"Temperature | "
+                f"{value} -> {option} = "
+                f"{result_text}"
+            )
+
+            save_history(history_text)
+
+        except Exception as e:
+            result_label.configure(
+                text=f"❌ {e}"
+            )
+
     
