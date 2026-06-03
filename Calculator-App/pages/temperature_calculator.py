@@ -463,4 +463,15 @@ def temperature_calculator(content):
                 lambda t=text: press(t)
             )
 
-   
+    # ==========================================
+    # FOOTER
+    # ==========================================
+    footer = ctk.CTkLabel(
+        main_frame,
+        text="AI Calculator • Temperature Converter",
+        font=("Arial", 14)
+    )
+
+    footer.pack(
+        pady=(0, 10)
+    )
