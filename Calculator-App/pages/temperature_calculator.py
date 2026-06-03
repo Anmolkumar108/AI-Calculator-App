@@ -336,4 +336,34 @@ def temperature_calculator(content):
                 text=f"❌ {e}"
             )
 
+    # ==========================================
+    # AUTO CONVERT
+    # ==========================================
+    def auto_convert(event=None):
+
+        if display.get().strip():
+
+            try:
+                convert()
+            except:
+                pass
+
+    # ==========================================
+    # ENTER KEY SUPPORT
+    # ==========================================
+    display.bind(
+        "<Return>",
+        lambda e: convert()
+    )
+
+    display.bind(
+        "<KP_Enter>",
+        lambda e: convert()
+    )
+
+    display.bind(
+        "<KeyRelease>",
+        auto_convert
+    )
+
     
