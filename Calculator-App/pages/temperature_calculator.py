@@ -150,4 +150,89 @@ def temperature_calculator(content):
         except:
             pass
 
+    # ==========================================
+    # MEMORY BUTTONS
+    # ==========================================
+    memory_buttons = [
+
+        ("MC", memory_clear),
+        ("MR", memory_recall),
+        ("M+", memory_add),
+        ("M-", memory_subtract)
+
+    ]
+
+    for txt, cmd in memory_buttons:
+
+        btn = ctk.CTkButton(
+            memory_frame,
+            text=txt,
+            command=cmd,
+            width=50,
+            height=35,
+            fg_color="transparent",
+            hover_color="#2f2f2f",
+            font=("Arial", 18)
+        )
+
+        btn.pack(
+            side="left",
+            padx=5
+        )
+
+    # ==========================================
+    # BUTTON FRAME
+    # ==========================================
+    btn_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="#1b1b1b"
+    )
+
+    btn_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    for i in range(8):
+        btn_frame.rowconfigure(i, weight=1)
+
+    for j in range(4):
+        btn_frame.columnconfigure(j, weight=1)
+
+    # ==========================================
+    # BUTTON CREATOR
+    # ==========================================
+    def create_btn(
+        text,
+        row,
+        col,
+        cmd,
+        color="#2f2f2f",
+        colspan=1
+    ):
+
+        btn = ctk.CTkButton(
+            btn_frame,
+            text=text,
+            command=cmd,
+            height=60,
+            corner_radius=10,
+            fg_color=color,
+            hover_color="#444",
+            font=("Arial", 20)
+        )
+
+        btn.grid(
+            row=row,
+            column=col,
+            columnspan=colspan,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
+        return btn
+
     
