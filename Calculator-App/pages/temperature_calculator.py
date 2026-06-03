@@ -235,4 +235,54 @@ def temperature_calculator(content):
 
         return btn
 
+    # ==========================================
+    # CONVERSION OPTIONS
+    # ==========================================
+    options = [
+
+        "Celsius to Fahrenheit",
+        "Fahrenheit to Celsius",
+        "Celsius to Kelvin",
+        "Kelvin to Celsius"
+
+    ]
+
+    combo = ctk.CTkComboBox(
+        btn_frame,
+        values=options,
+        height=45
+    )
+
+    combo.grid(
+        row=0,
+        column=0,
+        columnspan=4,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
+    combo.set(
+        "Celsius to Fahrenheit"
+    )
+
+    # ==========================================
+    # RESULT LABEL
+    # ==========================================
+    result_label = ctk.CTkLabel(
+        btn_frame,
+        text="Result Here",
+        font=("Arial", 22, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.grid(
+        row=1,
+        column=0,
+        columnspan=4,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
     
