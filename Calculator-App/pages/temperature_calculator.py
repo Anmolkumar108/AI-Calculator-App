@@ -366,4 +366,47 @@ def temperature_calculator(content):
         auto_convert
     )
 
+    # ==========================================
+    # SAVE BUTTON
+    # ==========================================
+    def save_current_result():
+
+        try:
+
+            value = display.get()
+
+            result = result_label.cget("text")
+
+            save_history(
+                f"Temperature | {value} = {result}"
+            )
+
+        except:
+            pass
+
+    # ==========================================
+    # NUMERIC BUTTONS
+    # ==========================================
+    buttons = [
+
+        ("7", 2, 0),
+        ("8", 2, 1),
+        ("9", 2, 2),
+        ("⌫", 2, 3),
+
+        ("4", 3, 0),
+        ("5", 3, 1),
+        ("6", 3, 2),
+        ("C", 3, 3),
+
+        ("1", 4, 0),
+        ("2", 4, 1),
+        ("3", 4, 2),
+        ("Convert", 4, 3),
+
+        ("0", 5, 0),
+        (".", 5, 1),
+        ("Save", 5, 2)
+    ]
+
     
