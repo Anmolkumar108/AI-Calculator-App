@@ -409,4 +409,58 @@ def temperature_calculator(content):
         ("Save", 5, 2)
     ]
 
-    
+    # ==========================================
+    # CREATE BUTTONS
+    # ==========================================
+    for text, row, col in buttons:
+
+        if text == "Convert":
+
+            create_btn(
+                text,
+                row,
+                col,
+                convert,
+                "#2563EB"
+            )
+
+        elif text == "C":
+
+            create_btn(
+                text,
+                row,
+                col,
+                clear,
+                "#DC2626"
+            )
+
+        elif text == "⌫":
+
+            create_btn(
+                text,
+                row,
+                col,
+                backspace,
+                "#EA580C"
+            )
+
+        elif text == "Save":
+
+            create_btn(
+                "💾",
+                row,
+                col,
+                save_current_result,
+                "#16A34A"
+            )
+
+        else:
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda t=text: press(t)
+            )
+
+   
