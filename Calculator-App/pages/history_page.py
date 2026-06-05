@@ -147,4 +147,20 @@ def show_history(content):
                     dob_calculator(content)
                 elif "currency_converter" in name or "currency" in name:
                     currency_converter(content, restore=restore_data)
-                
+                elif "unit_converter" in name or "electricity" in name:
+                    unit_converter(content, restore=restore_data)
+                elif "temperature_calculator" in name or "temperature" in name:
+                    temperature_calculator(content, restore=restore_data)
+                elif "area" in name:
+                    area(content, restore=restore_data)
+                elif "length" in name or "length_converter" in name or "length_converter_module" in name:
+                    if length_converter:
+                        length_converter(content, restore=restore_data)
+                    else:
+                        normal_calculator(content)
+                else:
+                    normal_calculator(content)
+
+            history_label.bind("<Button-1>", navigate)
+    else:
+        ctk.CTkLabel(list_frame, text="No History Found").pack(pady=10)
