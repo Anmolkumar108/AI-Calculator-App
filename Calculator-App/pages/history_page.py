@@ -65,4 +65,31 @@ def parse_restore(page, calc_text):
                 restore["to_unit"] = match.group(2).strip()
                 restore["from_unit"] = match.group(4).strip()
 
-    
+    elif "currency_converter" in page or "currency" in page:
+        parts = text.split(" = ")
+        if len(parts) == 2:
+            left, right = parts
+            amount_part = left.strip().split(" ", 1)
+            result_part = right.strip().split(" ", 1)
+            if len(amount_part) == 2 and len(result_part) == 2:
+                restore["amount"] = amount_part[0].strip()
+                restore["from_currency"] = amount_part[1].strip()
+                restore["to_currency"] = result_part[1].strip()
+
+    elif "unit_converter" in page or "electricity" in page:
+        match = re.match(r"^Electricity Bill \| ([0-9.]+) Units @ ₹([0-9.]+) = ₹([0-9.]+)$", text)
+        if match:
+            restore["units"] = match.group(1)
+            restore["rate"] = match.group(2)
+
+    elif "temperature_calculator" in page or "temperature" in page:
+        if text.startswith("Temperature | "):
+            rest = text.split("Temperature | ", 1)[1]
+            match = re.match(r"^([0-9.]+)\s*->\s*(.+?)\s*=\s*(.+)$", rest)
+            if match:
+                restore["value"] = match.group(1)
+                restore["option"] = match.group(2).strip()
+
+    return restore
+
+
