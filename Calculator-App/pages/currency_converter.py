@@ -214,7 +214,7 @@ currencies = {
     "🇳🇵 NPR": 133,
 }
 
-def currency_converter(content):
+def currency_converter(content, restore=None):
 
     clear_content(content)
 
@@ -384,7 +384,7 @@ def currency_converter(content):
     # =========================
     # CONVERT FUNCTION
     # =========================
-    def convert_currency():
+    def convert_currency(save=True):
 
         try:
 
@@ -416,13 +416,24 @@ def currency_converter(content):
                 f"{final_result} {to_curr}"
             )
 
-            save_history(history_text)
+            if save:
+                save_history(history_text)
 
         except:
 
             result.configure(
                 text="Invalid ❌"
             )
+
+    if restore and isinstance(restore, dict):
+        if restore.get("amount") is not None:
+            amount_entry.delete(0, "end")
+            amount_entry.insert(0, str(restore.get("amount")))
+        if restore.get("from_currency"):
+            from_currency.set(restore.get("from_currency"))
+        if restore.get("to_currency"):
+            to_currency.set(restore.get("to_currency"))
+        convert_currency(save=False)
 
     # =========================
     # SWAP FUNCTION

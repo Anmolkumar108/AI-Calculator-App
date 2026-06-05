@@ -14,7 +14,7 @@ def clear_content(content):
 # LENGTH CONVERTER PAGE
 # =========================
 
-def length_converter(content):
+def length_converter(content, restore=None):
 
     clear_content(content)
 
@@ -235,6 +235,19 @@ def length_converter(content):
         pady=5
     )
 
+    if restore and isinstance(restore, dict):
+        if restore.get("value") is not None:
+            entry_from.delete(0, "end")
+            entry_from.insert(0, str(restore.get("value")))
+        if restore.get("from_unit"):
+            from_unit.set(restore.get("from_unit"))
+        if restore.get("to_unit"):
+            to_unit.set(restore.get("to_unit"))
+        if restore.get("action") == "reverse":
+            reverse_convert(save=False)
+        else:
+            convert(save=False)
+
     # =========================
     # ACTIVE ENTRY
     # =========================
@@ -300,7 +313,7 @@ def length_converter(content):
     # CONVERT FUNCTION
     # =========================
 
-    def convert(event=None):
+    def convert(event=None, save=True):
 
         try:
 
@@ -324,12 +337,13 @@ def length_converter(content):
             )
 
             # SAVE HISTORY
-            history_text = (
-                f"Length Convert | "
-                f"{value} {from_u} = {round(result, 10)} {to_u}"
-            )
+            if save:
+                history_text = (
+                    f"Length Convert | "
+                    f"{value} {from_u} = {round(result, 10)} {to_u}"
+                )
 
-            save_history(history_text)
+                save_history(history_text)
 
         except:
 
@@ -341,7 +355,7 @@ def length_converter(content):
     # REVERSE CONVERT
     # =========================
 
-    def reverse_convert(event=None):
+    def reverse_convert(event=None, save=True):
 
         try:
 
@@ -362,12 +376,13 @@ def length_converter(content):
             )
 
             # SAVE HISTORY
-            history_text = (
-                f"Length Reverse | "
-                f"{value} {to_u} = {round(result, 10)} {from_u}"
-            )
+            if save:
+                history_text = (
+                    f"Length Reverse | "
+                    f"{value} {to_u} = {round(result, 10)} {from_u}"
+                )
 
-            save_history(history_text)
+                save_history(history_text)
 
         except:
 

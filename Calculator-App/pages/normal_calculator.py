@@ -13,7 +13,7 @@ def clear_content(content):
 # NORMAL CALCULATOR
 # =========================
 
-def normal_calculator(content):
+def normal_calculator(content, restore_expression=None):
     clear_content(content)
 
     scroll_frame = ctk.CTkScrollableFrame(
@@ -108,7 +108,7 @@ def normal_calculator(content):
         current = expression.get()
         expression.set(current[:-1])
 
-    def calculate():
+    def calculate(save=True):
         try:
             expr = expression.get().strip()
             if expr == "":
@@ -124,8 +124,9 @@ def normal_calculator(content):
 
             result_label.configure(text=f"Result: {answer}")
 
-            history_text = f"{expr} = {answer}"
-            save_history(history_text)
+            if save:
+                history_text = f"{expr} = {answer}"
+                save_history(history_text)
 
         except Exception:
             result_label.configure(text="Invalid ❌")
@@ -196,6 +197,10 @@ def normal_calculator(content):
     )
 
     note_label.pack(pady=(10, 0))
+
+    if restore_expression:
+        expression.set(restore_expression)
+        calculate(save=False)
 
 
     

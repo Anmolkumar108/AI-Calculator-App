@@ -4,7 +4,7 @@ from database import save_history
 # ==========================================
 # TEMPERATURE CALCULATOR PAGE
 # ==========================================
-def temperature_calculator(content):
+def temperature_calculator(content, restore=None):
 
     # ==========================================
     # CLEAR OLD CONTENT
@@ -288,7 +288,7 @@ def temperature_calculator(content):
     # ==========================================
     # CONVERT FUNCTION
     # ==========================================
-    def convert():
+    def convert(save=True):
 
         try:
 
@@ -329,12 +329,21 @@ def temperature_calculator(content):
                 f"{result_text}"
             )
 
-            save_history(history_text)
+            if save:
+                save_history(history_text)
 
         except Exception as e:
             result_label.configure(
                 text=f"❌ {e}"
             )
+
+    if restore and isinstance(restore, dict):
+        if restore.get("value") is not None:
+            display.delete(0, "end")
+            display.insert(0, str(restore.get("value")))
+        if restore.get("option"):
+            combo.set(restore.get("option"))
+        convert(save=False)
 
     # ==========================================
     # AUTO CONVERT
