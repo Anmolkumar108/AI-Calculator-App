@@ -93,3 +93,20 @@ def parse_restore(page, calc_text):
     return restore
 
 
+def show_history(content):
+
+    clear_content(content)
+
+    ctk.CTkLabel(
+
+        content,
+
+        text="📜 Calculator History",
+
+        font=("Arial", 25, "bold")
+
+    ).pack(pady=20)
+
+    records = get_history()
+
+    
