@@ -47,4 +47,22 @@ def parse_restore(page, calc_text):
             restore["from_unit"] = match.group(2).strip()
             restore["to_unit"] = match.group(4).strip()
 
+    elif "length" in page:
+        if text.startswith("Length Convert | "):
+            rest = text.split("Length Convert | ", 1)[1]
+            match = re.match(r"^([0-9.]+)\s+(.+?)\s+=\s+([0-9.]+)\s+(.+)$", rest)
+            if match:
+                restore["action"] = "convert"
+                restore["value"] = match.group(1)
+                restore["from_unit"] = match.group(2).strip()
+                restore["to_unit"] = match.group(4).strip()
+        elif text.startswith("Length Reverse | "):
+            rest = text.split("Length Reverse | ", 1)[1]
+            match = re.match(r"^([0-9.]+)\s+(.+?)\s+=\s+([0-9.]+)\s+(.+)$", rest)
+            if match:
+                restore["action"] = "reverse"
+                restore["value"] = match.group(1)
+                restore["to_unit"] = match.group(2).strip()
+                restore["from_unit"] = match.group(4).strip()
+
     
