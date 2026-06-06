@@ -250,4 +250,44 @@ def discount_calculator(content):
         pady=5
     )
 
+    # =========================
+    # CLEAR ALL BUTTON
+    # =========================
+    def clear_all():
+
+        price.delete(0, "end")
+
+        discount.delete(0, "end")
+
+        result.configure(text="₹0")
+
+    ctk.CTkButton(
+        action_frame,
+        text="Clear All",
+        command=clear_all,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12,
+        fg_color="red",
+        hover_color="darkred"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=10
+    )
+
     
