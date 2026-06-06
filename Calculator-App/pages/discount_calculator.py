@@ -67,4 +67,55 @@ def discount_calculator(content):
         pady=(15, 8)
     )
 
-    
+    # =========================
+    # DISCOUNT ENTRY
+    # =========================
+    discount = ctk.CTkEntry(
+        display_frame,
+        height=55,
+        font=("Arial", 22, "bold"),
+        justify="right",
+        placeholder_text="Discount %"
+    )
+
+    discount.pack(
+        fill="x",
+        padx=15,
+        pady=(8, 15)
+    )
+
+    # =========================
+    # RESULT FRAME
+    # =========================
+    result_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=18,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=20,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="Final Price",
+        font=("Arial", 16)
+    ).pack(
+        pady=(10, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="₹0",
+        font=("Arial", 32, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 15)
+    )
+
+   
