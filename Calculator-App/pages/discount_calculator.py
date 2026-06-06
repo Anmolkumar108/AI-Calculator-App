@@ -191,4 +191,63 @@ def discount_calculator(content):
                 text=f"₹{round(final_price,2)}"
             )
 
-            
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"Price: ₹{original_price}, "
+                f"Discount: {original_discount}% "
+                f"= Final ₹{round(final_price,2)} "
+                f"(Saved ₹{round(saved_amount,2)})"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    # ==========================================
+    # LAPTOP ENTER KEY BINDINGS (Laptop Enter Key Features)
+    # ==========================================
+    def move_to_discount(event):
+        discount.focus() # Price me Enter dabane par Discount par focus jayega
+
+    # Keybinds settings
+    price.bind("<Return>", move_to_discount)
+    discount.bind("<Return>", calculate_discount)
+
+
+    # =========================
+    # BUTTON FRAME
+    # =========================
+    action_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=5
+    )
+
+    # =========================
+    # CALCULATE BUTTON
+    # =========================
+    ctk.CTkButton(
+        action_frame,
+        text="Calculate",
+        command=calculate_discount,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12
+    ).grid(
+        row=0,
+        column=0,
+        padx=8,
+        pady=5
+    )
+
+    
