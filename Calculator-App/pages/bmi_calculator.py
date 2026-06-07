@@ -25,4 +25,85 @@ def bmi_calculator(content):
         pady=10
     )
 
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        main_frame,
+        text="⚖️ BMI Calculator",
+        font=("Arial", 28, "bold")
+    ).pack(
+        pady=(5, 15)
+    )
+
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=15
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
+    # =========================
+    # WEIGHT ENTRY
+    # =========================
+    weight = ctk.CTkEntry(
+        display_frame,
+        height=55,
+        font=("Arial", 22, "bold"),
+        justify="right",
+        placeholder_text="Enter Weight"
+    )
+
+    weight.pack(
+        fill="x",
+        padx=10,
+        pady=(10, 5)
+    )
+
+    # =========================
+    # HEIGHT ENTRY
+    # =========================
+    height = ctk.CTkEntry(
+        display_frame,
+        height=55,
+        font=("Arial", 22, "bold"),
+        justify="right",
+        placeholder_text="Enter Height"
+    )
+
+    height.pack(
+        fill="x",
+        padx=10,
+        pady=(5, 10)
+    )
+
+    # =========================
+    # WEIGHT UNIT
+    # =========================
+    weight_unit = ctk.StringVar(
+        value="Kilogram"
+    )
+
+    weight_menu = ctk.CTkComboBox(
+        main_frame,
+        values=["Kilogram", "Pounds"],
+        variable=weight_unit,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    weight_menu.pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
     
