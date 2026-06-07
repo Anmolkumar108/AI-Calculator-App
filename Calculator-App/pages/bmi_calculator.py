@@ -340,4 +340,37 @@ def bmi_calculator(content):
         (".", 3, 1)
     ]
 
-    
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+    for (text, row, col) in buttons:
+
+        if text == "BMI":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=calculate_bmi,
+                width=50,
+                height=50,
+                font=("Arial", 14, "bold"),
+                corner_radius=12,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+        elif text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=50,
+                height=50,
+                font=("Arial", 15, "bold"),
+                corner_radius=12,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
+        
