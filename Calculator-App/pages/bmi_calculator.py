@@ -387,4 +387,22 @@ def bmi_calculator(content):
                 hover_color="darkorange"
             )
 
-       
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=50,
+                height=50,
+                font=("Arial", 16, "bold"),
+                corner_radius=12
+            )
+
+        btn.grid(
+            row=row,
+            column=col,
+            padx=3,
+            pady=3,
+            sticky="nsew"
+        )
