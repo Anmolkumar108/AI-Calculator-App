@@ -212,4 +212,108 @@ def bmi_calculator(content):
 
         active_entry.insert(0, current[:-1])
 
-   
+    # =========================
+    # BMI CALCULATION
+    # =========================
+    def calculate_bmi(event=None):
+
+        try:
+
+            original_weight = weight.get()
+
+            original_height = height.get()
+
+            w = float(original_weight)
+
+            h = float(original_height)
+
+            weight_type = weight_unit.get()
+
+            height_type = height_unit.get()
+
+            # WEIGHT CONVERSION
+            if weight_type == "Pounds":
+
+                w = w * 0.453592
+
+            # HEIGHT CONVERSION
+            if height_type == "Centimeters":
+
+                h = h / 100
+
+            elif height_type == "Feet":
+
+                h = h * 0.3048
+
+            elif height_type == "Inches":
+
+                h = h * 0.0254
+
+            # VALIDATE HEIGHT
+            if h <= 0:
+                raise ValueError("Height must be greater than zero")
+
+            # BMI
+            bmi = w / (h * h)
+
+            # STATUS
+            if bmi < 18.5:
+
+                status = "Underweight"
+
+            elif bmi < 25:
+
+                status = "Normal"
+
+            elif bmi < 30:
+
+                status = "Overweight"
+
+            else:
+
+                status = "Obese"
+
+            bmi_text = f"{round(bmi,2)}"
+
+            result.configure(
+                text=f"{bmi_text} ({status})"
+            )
+
+            # SAVE HISTORY
+            history_text = (
+                f"BMI | Weight: {original_weight} {weight_type}, "
+                f"Height: {original_height} {height_type} "
+                f"= BMI {bmi_text} ({status})"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    # =========================
+    # LAPTOP ENTER KEY BINDINGS
+    # =========================
+    def move_to_height(event):
+        height.focus()
+
+    weight.bind("<Return>", move_to_height)
+    height.bind("<Return>", calculate_bmi)
+
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=10
+    )
+
+    
