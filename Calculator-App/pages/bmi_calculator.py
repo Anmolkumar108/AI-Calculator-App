@@ -183,4 +183,33 @@ def bmi_calculator(content):
 
     height.bind("<FocusIn>", set_height_active)
 
-    
+    # =========================
+    # BUTTON CLICK
+    # =========================
+    def button_click(value):
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current + str(value))
+
+    # =========================
+    # CLEAR
+    # =========================
+    def clear():
+
+        active_entry.delete(0, "end")
+
+    # =========================
+    # BACKSPACE
+    # =========================
+    def backspace():
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current[:-1])
+
+   
