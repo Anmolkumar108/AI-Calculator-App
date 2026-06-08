@@ -420,4 +420,7 @@ def currency_converter(content, restore=None):
             sticky="nsew"
         )
 
-   
+    # =========================
+    # ENTER KEY BINDING
+    # =========================
+    amount_entry.bind("<Return>", convert_currency)
