@@ -297,4 +297,60 @@ def currency_converter(content, restore=None):
         pady=5
     )
 
+    # =========================
+    # SWAP BUTTON
+    # =========================
+    ctk.CTkButton(
+        action_frame,
+        text="Swap",
+        command=swap_currency,
+        width=120,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=12,
+        fg_color="orange",
+        hover_color="darkorange"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=10
+    )
+
+    # =========================
+    # BUTTONS
+    # =========================
+    buttons = [
+
+        ("7", 0, 0),
+        ("8", 0, 1),
+        ("9", 0, 2),
+        ("⌫", 0, 3),
+
+        ("4", 1, 0),
+        ("5", 1, 1),
+        ("6", 1, 2),
+        ("C", 1, 3),
+
+        ("1", 2, 0),
+        ("2", 2, 1),
+        ("3", 2, 2),
+        ("=", 2, 3),
+
+        ("0", 3, 0),
+        (".", 3, 1),
+    ]
+
     
