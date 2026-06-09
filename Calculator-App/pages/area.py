@@ -340,4 +340,28 @@ def create_area_converter(content, restore=None):
                 sticky="nsew"
             )
 
-        
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=75,
+                height=75,
+                font=("Arial", 22, "bold"),
+                corner_radius=18,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        elif text == "Swap":
+
+            
