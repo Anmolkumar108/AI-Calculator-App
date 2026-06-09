@@ -240,4 +240,54 @@ def create_area_converter(content, restore=None):
 
         input_entry.insert(0, current[:-1])
 
+    # =========================
+    # SWAP
+    # =========================
+    def swap_units():
+
+        temp = from_unit.get()
+
+        from_unit.set(to_unit.get())
+
+        to_unit.set(temp)
+
+        convert_area()
+
+    # =========================
+    # CALCULATOR KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=20
+    )
+
+    # =========================
+    # BUTTONS
+    # =========================
+    buttons = [
+
+        ("7", 0, 0),
+        ("8", 0, 1),
+        ("9", 0, 2),
+        ("⌫", 0, 3),
+
+        ("4", 1, 0),
+        ("5", 1, 1),
+        ("6", 1, 2),
+        ("C", 1, 3),
+
+        ("1", 2, 0),
+        ("2", 2, 1),
+        ("3", 2, 2),
+        ("Swap", 2, 3),
+
+        ("0", 3, 0),
+        (".", 3, 1),
+        ("Convert", 3, 2)
+    ]
+
     
