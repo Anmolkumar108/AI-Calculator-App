@@ -84,4 +84,66 @@ def create_area_converter(content, restore=None):
         pady=15
     )
 
+    # =========================
+    # RESULT LABEL
+    # =========================
+    result_label = ctk.CTkLabel(
+        main_frame,
+        text="0",
+        font=("Arial", 45, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.pack(
+        pady=(10, 20)
+    )
+
+    # =========================
+    # FROM UNIT
+    # =========================
+    from_unit = ctk.StringVar(
+        value="Square meters"
+    )
+
+    from_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=from_unit,
+        height=55,
+        font=("Arial", 18, "bold"),
+        dropdown_font=("Arial", 16),
+        corner_radius=15,
+        state="readonly"
+    )
+
+    from_menu.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
+    # =========================
+    # TO UNIT
+    # =========================
+    to_unit = ctk.StringVar(
+        value="Square feet"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=to_unit,
+        height=55,
+        font=("Arial", 18, "bold"),
+        dropdown_font=("Arial", 16),
+        corner_radius=15,
+        state="readonly"
+    )
+
+    to_menu.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
     
