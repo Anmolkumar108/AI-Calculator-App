@@ -364,4 +364,44 @@ def create_area_converter(content, restore=None):
 
         elif text == "Swap":
 
-            
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=swap_units,
+                width=75,
+                height=75,
+                font=("Arial", 18, "bold"),
+                corner_radius=18,
+                fg_color="green",
+                hover_color="darkgreen"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=75,
+                height=75,
+                font=("Arial", 24, "bold"),
+                corner_radius=18
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+    
