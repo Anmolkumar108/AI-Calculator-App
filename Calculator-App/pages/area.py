@@ -290,4 +290,32 @@ def create_area_converter(content, restore=None):
         ("Convert", 3, 2)
     ]
 
-    
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+    for (text, row, col) in buttons:
+
+        if text == "Convert":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=convert_area,
+                width=170,
+                height=75,
+                font=("Arial", 22, "bold"),
+                corner_radius=18,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                columnspan=2,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+       
