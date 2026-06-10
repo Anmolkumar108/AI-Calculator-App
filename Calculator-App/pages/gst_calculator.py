@@ -34,4 +34,102 @@ def gst_calculator(content):
         pady=10
     )
 
+    # =========================
+    # TITLE
+    # =========================
+
+    ctk.CTkLabel(
+        scroll,
+        text="💰 GST Calculator",
+        font=("Arial", 30, "bold")
+    ).pack(
+        pady=(10, 20)
+    )
+
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+
+    display_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=15,
+        pady=10
+    )
+
+    # =========================
+    # AMOUNT ENTRY
+    # =========================
+
+    amount = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="Enter Amount"
+    )
+
+    amount.pack(
+        fill="x",
+        padx=15,
+        pady=(15, 10)
+    )
+
+    # =========================
+    # GST ENTRY
+    # =========================
+
+    gst = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="GST Percentage"
+    )
+
+    gst.pack(
+        fill="x",
+        padx=15,
+        pady=(0, 15)
+    )
+
+    # =========================
+    # RESULT FRAME
+    # =========================
+
+    result_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=15,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="GST Result",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0",
+        font=("Arial", 30, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 20)
+    )
+
     
