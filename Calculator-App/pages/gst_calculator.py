@@ -367,4 +367,39 @@ def gst_calculator(content):
         ("-", 3, 2)
     ]
 
-    
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+
+    for (text, row, col) in buttons:
+
+        # ADD GST BUTTON
+        if text == "+":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=add_gst,
+                width=55,
+                height=55,
+                font=("Arial", 20, "bold"),
+                corner_radius=14,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+        # REMOVE GST BUTTON
+        elif text == "-":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=remove_gst,
+                width=55,
+                height=55,
+                font=("Arial", 20, "bold"),
+                corner_radius=14,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
