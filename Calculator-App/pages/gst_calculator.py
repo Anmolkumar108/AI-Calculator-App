@@ -264,4 +264,68 @@ def gst_calculator(content):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # ENTER BUTTON SUPPORT
+    # =========================
+
+    def goto_gst(event=None):
+        gst.focus()
+
+    amount.bind("<Return>", goto_gst)
+    gst.bind("<Return>", add_gst)
+    # =========================
+    # BUTTON FRAME
+    # =========================
+
+    action_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=10
+    )
+
+    # =========================
+    # ADD GST BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="➕ Add GST",
+        command=add_gst,
+        width=150,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="#2563EB",
+        hover_color="#1D4ED8"
+    ).grid(
+        row=0,
+        column=0,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # REMOVE GST BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="➖ Remove GST",
+        command=remove_gst,
+        width=150,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="orange",
+        hover_color="darkorange"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
     
