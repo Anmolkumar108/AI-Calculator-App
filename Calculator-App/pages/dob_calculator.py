@@ -357,8 +357,10 @@ def dob_calculator(content):
     def move_to_current_month(event):
         current_month.focus()
 
-    
+    def move_to_current_year(event):
+        calculate_age()
 
+    
 
     # =========================
     # TODAY BUTTON
