@@ -354,6 +354,9 @@ def dob_calculator(content):
     def move_to_current_day(event):
         current_day.focus()
 
+    def move_to_current_month(event):
+        current_month.focus()
+
     
 
 
