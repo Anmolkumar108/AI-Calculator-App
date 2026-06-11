@@ -348,8 +348,10 @@ def dob_calculator(content):
     def move_to_birth_month(event):
         birth_month.focus()
 
-    
+    def move_to_birth_year(event):
+        birth_year.focus()
 
+    
 
     # =========================
     # TODAY BUTTON
