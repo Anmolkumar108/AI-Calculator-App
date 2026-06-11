@@ -364,7 +364,8 @@ def dob_calculator(content):
     birth_month.bind("<Return>", move_to_birth_year)
     birth_year.bind("<Return>", move_to_current_day)
     current_day.bind("<Return>", move_to_current_month)
-    
+    current_month.bind("<Return>", move_to_current_year)
+    current_year.bind("<Return>", calculate_age)
 
 
     # =========================
