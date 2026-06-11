@@ -351,7 +351,11 @@ def dob_calculator(content):
     def move_to_birth_year(event):
         birth_year.focus()
 
+    def move_to_current_day(event):
+        current_day.focus()
+
     
+
 
     # =========================
     # TODAY BUTTON
