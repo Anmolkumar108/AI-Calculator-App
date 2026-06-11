@@ -360,7 +360,10 @@ def dob_calculator(content):
     def move_to_current_year(event):
         calculate_age()
 
-    
+    birth_day.bind("<Return>", move_to_birth_month)
+    birth_month.bind("<Return>", move_to_birth_year)
+    )
+
 
     # =========================
     # TODAY BUTTON
