@@ -11,7 +11,12 @@ A modern Python GUI Calculator App built using CustomTkinter.
 - BMI Calculator
 - Currency Converter
 - Unit Converter
+- Area Calculator
+- Dob Calculator
+- Length Converter
+- Temperature Calculator
 - AI Assistant
+- History Pages
 - Dark Theme
 - Database History
 - Voice Assistant

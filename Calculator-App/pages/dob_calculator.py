@@ -343,6 +343,15 @@ def dob_calculator(content):
             )
 
     # =========================
+    # LAPTOP ENTER KEY BINDINGS
+    # =========================
+    def move_to_birth_month(event):
+        birth_month.focus()
+
+    
+
+
+    # =========================
     # TODAY BUTTON
     # =========================
     ctk.CTkButton(
