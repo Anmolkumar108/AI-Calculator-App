@@ -624,4 +624,43 @@ def scientific_calculator(content, restore_expression=None):
         "#a83232"
     )
 
-    
+    # ==========================================
+    # EQUAL BUTTON
+    # ==========================================
+    equal_btn = ctk.CTkButton(
+        btn_frame,
+        text="=",
+        command=calculate,
+        fg_color="#45b6ff",
+        hover_color="#1d9fff",
+        font=("Arial", 30, "bold"),
+        corner_radius=12
+    )
+
+    equal_btn.grid(
+        row=4,
+        column=4,
+        rowspan=3,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
+    # ==========================================
+    # RESTORE EXPRESSION
+    # ==========================================
+    if restore_expression:
+        expression = restore_expression
+        update_display()
+
+    # ==========================================
+    # HISTORY NOTE
+    # ==========================================
+    note_label = ctk.CTkLabel(
+        main_frame,
+        text="History saved automatically when you press = or Enter",
+        font=("Arial", 14),
+        text_color="#94A3B8"
+    )
+
+    note_label.pack(pady=(10, 0))
