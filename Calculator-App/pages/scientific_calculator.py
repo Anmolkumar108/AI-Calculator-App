@@ -355,4 +355,71 @@ def scientific_calculator(content, restore_expression=None):
 
         return btn
 
+    # ==========================================
+    # DROPDOWN MENUS
+    # ==========================================
+    trig_frame = ctk.CTkFrame(
+        btn_frame,
+        fg_color="#3a3a3a",
+        corner_radius=12
+    )
+
+    func_frame = ctk.CTkFrame(
+        btn_frame,
+        fg_color="#3a3a3a",
+        corner_radius=12
+    )
+
+    # ==========================================
+    # TRIG MENU TOGGLE
+    # ==========================================
+    def toggle_trig():
+
+        nonlocal trig_menu_visible
+
+        if trig_menu_visible:
+
+            trig_frame.grid_remove()
+
+            trig_menu_visible = False
+
+        else:
+
+            trig_frame.grid(
+                row=1,
+                column=0,
+                columnspan=4,
+                padx=5,
+                pady=5,
+                sticky="nsew"
+            )
+
+            trig_menu_visible = True
+
+    # ==========================================
+    # FUNCTION MENU TOGGLE
+    # ==========================================
+    def toggle_func():
+
+        nonlocal func_menu_visible
+
+        if func_menu_visible:
+
+            func_frame.grid_remove()
+
+            func_menu_visible = False
+
+        else:
+
+            func_frame.grid(
+                row=1,
+                column=1,
+                columnspan=4,
+                padx=5,
+                pady=5,
+                sticky="nsew"
+            )
+
+            func_menu_visible = True
+
     
