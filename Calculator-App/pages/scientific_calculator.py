@@ -603,4 +603,25 @@ def scientific_calculator(content, restore_expression=None):
                 lambda t=text: press(t)
             )
 
+    # ==========================================
+    # BACKSPACE
+    # ==========================================
+    create_btn(
+        "⌫",
+        2,
+        4,
+        backspace
+    )
+
+    # ==========================================
+    # CLEAR BUTTON
+    # ==========================================
+    create_btn(
+        "C",
+        3,
+        4,
+        clear,
+        "#a83232"
+    )
+
     
