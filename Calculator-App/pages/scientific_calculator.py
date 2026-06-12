@@ -207,4 +207,78 @@ def scientific_calculator(content, restore_expression=None):
             result_value.set("Error ❌")
             update_display()
 
-    
+    # ==========================================
+    # SCIENTIFIC FUNCTIONS
+    # ==========================================
+    def scientific(func):
+
+        nonlocal expression
+
+        try:
+            current_text = display.get().strip()
+            if not current_text:
+                return
+
+            value = safe_eval(current_text)
+            if not isinstance(value, (int, float)):
+                value = float(value)
+
+            # ------------------------
+            # TRIGONOMETRY
+            # ------------------------
+            if func == "sin":
+                ans = math.sin(math.radians(value))
+
+            elif func == "cos":
+                ans = math.cos(math.radians(value))
+
+            elif func == "tan":
+                ans = math.tan(math.radians(value))
+
+            elif func == "sec":
+                ans = 1 / math.cos(math.radians(value))
+
+            elif func == "csc":
+                ans = 1 / math.sin(math.radians(value))
+
+            elif func == "cot":
+                ans = 1 / math.tan(math.radians(value))
+
+            # ------------------------
+            # FUNCTIONS
+            # ------------------------
+            elif func == "sqrt":
+                ans = math.sqrt(value)
+
+            elif func == "square":
+                ans = value ** 2
+
+            elif func == "cube":
+                ans = value ** 3
+
+            elif func == "factorial":
+                ans = math.factorial(int(value))
+
+            elif func == "log":
+                ans = math.log10(value)
+
+            elif func == "ln":
+                ans = math.log(value)
+
+            elif func == "abs":
+                ans = abs(value)
+
+            elif func == "floor":
+                ans = math.floor(value)
+
+            elif func == "ceil":
+                ans = math.ceil(value)
+
+            elif func == "rand":
+                import random
+                ans = random.randint(1, 100)
+            
+            else:
+                ans = value
+
+            
