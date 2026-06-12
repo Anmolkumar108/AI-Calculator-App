@@ -131,6 +131,10 @@ def normal_calculator(content, restore_expression=None):
         except Exception:
             result_label.configure(text="Invalid ❌")
 
+    # =========================
+    # BUTTON GRID
+    # =========================
+
     button_frame = ctk.CTkFrame(
         main_frame,
         fg_color="transparent"
