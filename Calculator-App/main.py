@@ -77,58 +77,7 @@
 # #     font=("Arial", 25, "bold")
 # # )
 
-# # title.pack(pady=20)
-
-# # # =========================
-# # # BUTTONS
-# # # =========================
-
-# # buttons = [
-
-# #     ("🧮 Calculator", normal_calculator),
-
-# #     ("🔬 Scientific", scientific_calculator),
-
-# #     ("💰 GST", gst_calculator),
-
-# #     ("🏷️ Discount", discount_calculator),
-
-# #     ("⚖️ BMI", bmi_calculator),
-
-# #     ("🎂 DOB", dob_calculator),
-
-# #     ("💱 Currency", currency_converter),
-
-# #     ("📏 Unit", unit_converter),
-
-# #     ("📜 History", show_history),
-
-# #     ("🤖 AI", ai_section)
-
-# # ]
-
-# # for text, command in buttons:
-
-# #     ctk.CTkButton(
-
-# #         sidebar,
-
-# #         text=text,
-
-# #         height=45,
-
-# #         command=lambda cmd=command: cmd(content)
-
-# #     ).pack(
-# #         fill="x",
-# #         padx=10,
-# #         pady=5
-# #     )
-
-# # # =========================
-# # # THEME BUTTONS
-# # # =========================
-
+# # titl
 
 import customtkinter as ctk
 
