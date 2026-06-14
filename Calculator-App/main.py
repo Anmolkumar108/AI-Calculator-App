@@ -37,47 +37,6 @@
 # #     expand=True
 # # )
 
-# # # =========================
-# # # SIDEBAR
-# # # =========================
-
-# # sidebar = ctk.CTkFrame(
-# #     main_frame,
-# #     width=250
-# # )
-
-# # sidebar.pack(
-# #     side="left",
-# #     fill="y",
-# #     padx=10,
-# #     pady=10
-# # )
-
-# # # =========================
-# # # CONTENT AREA
-# # # =========================
-
-# # content = ctk.CTkFrame(main_frame)
-
-# # content.pack(
-# #     side="right",
-# #     fill="both",
-# #     expand=True,
-# #     padx=10,
-# #     pady=10
-# # )
-
-# # # =========================
-# # # TITLE
-# # # =========================
-
-# # title = ctk.CTkLabel(
-# #     sidebar,
-# #     text="🔥 My Calculator",
-# #     font=("Arial", 25, "bold")
-# # )
-
-# # titl
 
 import customtkinter as ctk
 
