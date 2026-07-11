@@ -2,9 +2,6 @@
 import math
 import sympy as sp
 
-ctk.set_appearance_mode('dark')
-ctk.set_default_color_theme('blue')
-
 x, y, z = sp.symbols('x y z')
 
 def clear_content(content):

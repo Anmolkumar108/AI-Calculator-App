@@ -1,28 +1,36 @@
 import customtkinter as ctk
-
-from pages.normal_calculator import normal_calculator
-from pages.scientific_calculator import scientific_calculator
-from pages.gst_calculator import gst_calculator
-from pages.discount_calculator import discount_calculator
-from pages.bmi_calculator import bmi_calculator
-from pages.dob_calculator import dob_calculator
-from pages.currency_converter import currency_converter
-from pages.unit_converter import unit_converter
-from pages.temperature_calculator import temperature_calculator
-from pages.area import create_area_converter as area
-from pages.history_page import show_history
-from pages.ai_section import ai_section
+import importlib
 import importlib.util
 import os
 
-# Import Length Converter with spaces in filename
-module_path = os.path.join(os.path.dirname(__file__), "pages", "Length Converter.py")
-spec = importlib.util.spec_from_file_location("length_converter_module", module_path)
-length_converter_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(length_converter_module)
-length_converter = length_converter_module.length_converter
-
 from theme import dark_theme, light_theme
+
+_module_cache = {}
+
+def load_page_module(module_name):
+    if module_name in _module_cache:
+        return _module_cache[module_name]
+
+    if module_name == "length_converter":
+        module_path = os.path.join(os.path.dirname(__file__), "pages", "Length Converter.py")
+        spec = importlib.util.spec_from_file_location("length_converter_module", module_path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+    else:
+        module = importlib.import_module(f"pages.{module_name}")
+
+    _module_cache[module_name] = module
+    return module
+
+
+def get_page_function(module_name, func_name):
+    module = load_page_module(module_name)
+    return getattr(module, func_name)
+
+
+def show_page(module_name, func_name, content):
+    page_func = get_page_function(module_name, func_name)
+    page_func(content)
 
 # =========================
 # APP SETTINGS
@@ -110,51 +118,31 @@ title.pack(pady=20)
 # =========================
 
 buttons = [
-
-    ("🧮 Calculator", normal_calculator),
-
-    ("🔬 Scientific", scientific_calculator),
-
-    ("💰 GST", gst_calculator),
-
-    ("🏷️ Discount", discount_calculator),
-
-    ("⚖️ BMI", bmi_calculator),
-
-    ("🎂 DOB", dob_calculator),
-
-    ("💱 Currency", currency_converter),
-
-    ("📏 Length Converter", length_converter),
-
-    ("📦 Unit Converter", unit_converter),
-
-    ("🌡️ Temperature", temperature_calculator),
-
-    ("📐 Area", area),
-
-    ("📜 History", show_history),
-
-    ("🤖 AI", ai_section)
-
+    ("🧮 Calculator", "normal_calculator", "normal_calculator"),
+    ("🔬 Scientific", "scientific_calculator", "scientific_calculator"),
+    ("💰 GST", "gst_calculator", "gst_calculator"),
+    ("🏷️ Discount", "discount_calculator", "discount_calculator"),
+    ("⚖️ BMI", "bmi_calculator", "bmi_calculator"),
+    ("🎂 DOB", "dob_calculator", "dob_calculator"),
+    ("💱 Currency", "currency_converter", "currency_converter"),
+    ("📏 Length Converter", "length_converter", "length_converter"),
+    ("📦 Unit Converter", "unit_converter", "unit_converter"),
+    ("🌡️ Temperature", "temperature_calculator", "temperature_calculator"),
+    ("📐 Area", "area", "create_area_converter"),
+    ("📜 History", "history_page", "show_history"),
+    ("🤖 AI", "ai_section", "ai_section")
 ]
 
 # =========================
 # CREATE BUTTONS
 # =========================
 
-for text, command in buttons:
-
+for text, module_name, func_name in buttons:
     ctk.CTkButton(
-
         sidebar,
-
         text=text,
-
         height=45,
-
-        command=lambda cmd=command: cmd(content)
-
+        command=lambda mn=module_name, fn=func_name: show_page(mn, fn, content)
     ).pack(
         fill="x",
         padx=10,
@@ -191,7 +179,7 @@ ctk.CTkButton(
 # DEFAULT PAGE
 # =========================
 
-normal_calculator(content)
+show_page("normal_calculator", "normal_calculator", content)
 
 # =========================
 # RUN APP

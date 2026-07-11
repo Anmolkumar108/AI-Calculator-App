@@ -1,4 +1,4 @@
-customtkinter
+streamlit>=1.28.0
 pyttsx3
 pillow
 sympy

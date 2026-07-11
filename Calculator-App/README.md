@@ -15,7 +15,7 @@ A modern Python GUI Calculator App built using CustomTkinter.
 - Dob Calculator
 - Length Converter
 - Temperature Calculator
-- AI Assistant
+- AI Section
 - History Pages
 - Dark Theme
 - Database History
