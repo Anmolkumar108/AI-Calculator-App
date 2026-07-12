@@ -13,3 +13,17 @@ A modern Python-based AI Calculator App built using **CustomTkinter**. This proj
 - 💱 Currency Converter
 - 📏 Unit Converter
 - 🌡️ Temperature Converter
+
+- 📐 Area Calculator
+- 📜 Calculation History
+- 🤖 AI Assistant
+- 🎨 Modern CustomTkinter UI
+- 🌙 Dark Theme Support
+
+---
+
+
+
+## ⭐ Support
+
+If you like this project, please ⭐ Star the repository.
