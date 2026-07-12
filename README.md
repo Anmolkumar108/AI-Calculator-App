@@ -105,3 +105,48 @@ python Calculator-App/main.py
 
 ---
 
+
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home](screenshots/home.png)
+
+### Scientific Calculator
+
+![Scientific](screenshots/scientific.png)
+
+### AI Assistant
+
+![AI](screenshots/ai-section.png)
+
+### History
+
+![History](screenshots/history.png)
+
+---
+
+## 🎯 Future Plans
+
+- Voice Assistant
+- More AI Features
+- Theme Customization
+- Better UI Animations
+- Online Calculation History
+- More Unit Converters
+
+---
+
+## 👨‍💻 Developer
+
+**Anmol Kumar**
+
+GitHub:
+https://github.com/Anmolkumar108
+
+---
+
+## ⭐ Support
+
+If you like this project, please ⭐ Star the repository.
