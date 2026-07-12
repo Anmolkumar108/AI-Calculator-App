@@ -27,3 +27,26 @@ A modern Python-based AI Calculator App built using **CustomTkinter**. This proj
 ## ⭐ Support
 
 If you like this project, please ⭐ Star the repository.
+
+- 📐 Area Calculator
+- 📜 Calculation History
+- 🤖 AI Assistant
+- 🎨 Modern CustomTkinter UI
+- 🌙 Dark Theme Support
+
+---
+
+## 🛠️ Built With
+
+- Python 3
+- CustomTkinter
+- SQLite
+- Requests
+- Tkinter
+- Math Module
+
+---
+
+## 📂 Project Structure
+
+```
