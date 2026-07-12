@@ -1,30 +1,15 @@
 # 🚀 AI Calculator App
 
-A modern Python GUI Calculator App built using CustomTkinter.
+A modern Python-based AI Calculator App built using **CustomTkinter**. This project provides multiple calculators and converters in one clean and user-friendly desktop application.
 
-## Features
+## ✨ Features
 
-- Normal Calculator
-- Scientific Calculator
-- GST Calculator
-- Discount Calculator
-- BMI Calculator
-- Currency Converter
-- Unit Converter
-- AI Assistant
-- Dark Theme
-- Database History
-- Voice Assistant
-
-## Technologies Used
-
-- Python
-- CustomTkinter
-- SQLite3
-- Pyttsx3
-
-## Run Project
-
-```bash
-python main.py
-```
+- 🧮 Normal Calculator
+- 🔬 Scientific Calculator
+- 💰 GST Calculator
+- 💸 Discount Calculator
+- ⚖️ BMI Calculator
+- 🎂 Age (DOB) Calculator
+- 💱 Currency Converter
+- 📏 Unit Converter
+- 🌡️ Temperature Converter
