@@ -52,36 +52,5 @@ sidebar.pack(
     pady=10
 )
 
-# =========================
-# CONTENT AREA
-# =========================
-
-content = ctk.CTkFrame(main_frame)
-
-content.pack(
-    side="right",
-    fill="both",
-    expand=True,
-    padx=10,
-    pady=10
-)
-
-# =========================
-# TITLE
-# =========================
-
-title = ctk.CTkLabel(
-    sidebar,
-    text="🔥 My Calculator",
-    font=("Arial", 25, "bold")
-)
-
-title.pack(pady=20)
-
-# =========================
-# BUTTONS
-# =========================
-
-buttons = [
 
 
