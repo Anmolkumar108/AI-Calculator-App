@@ -17,4 +17,14 @@ def load_page_module(module_name):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
     else:
-        
+        module = importlib.import_module(f"pages.{module_name}")
+
+    _module_cache[module_name] = module
+    return module
+
+
+def get_page_function(module_name, func_name):
+    module = load_page_module(module_name)
+    return getattr(module, func_name)
+
+
