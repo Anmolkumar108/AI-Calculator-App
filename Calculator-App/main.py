@@ -39,3 +39,12 @@ def show_page(module_name, func_name, content):
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
+app = ctk.CTk()
+
+app.geometry("1200x700")
+app.title("🔥 My Calculator")
+
+# =========================
+# MAIN FRAME
+# =========================
+
