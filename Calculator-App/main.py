@@ -48,3 +48,19 @@ app.title("🔥 My Calculator")
 # MAIN FRAME
 # =========================
 
+main_frame = ctk.CTkFrame(app)
+
+main_frame.pack(
+    fill="both",
+    expand=True
+)
+
+# =========================
+# SIDEBAR CONTAINER
+# =========================
+
+sidebar_container = ctk.CTkFrame(
+    main_frame,
+    width=250
+)
+
