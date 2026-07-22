@@ -71,3 +71,16 @@ sidebar_container.pack(
     pady=10
 )
 
+# =========================
+# SCROLLABLE SIDEBAR
+# =========================
+
+sidebar = ctk.CTkScrollableFrame(
+    sidebar_container
+)
+
+sidebar.pack(
+    fill="both",
+    expand=True
+)
+
