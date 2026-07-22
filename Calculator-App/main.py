@@ -133,3 +133,21 @@ buttons = [
     ("🤖 AI", "ai_section", "ai_section")
 ]
 
+# =========================
+# CREATE BUTTONS
+# =========================
+
+for text, module_name, func_name in buttons:
+    ctk.CTkButton(
+        sidebar,
+        text=text,
+        height=45,
+        command=lambda mn=module_name, fn=func_name: show_page(mn, fn, content)
+    ).pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
+
+
