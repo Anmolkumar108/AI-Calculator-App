@@ -117,3 +117,19 @@ title.pack(pady=20)
 # BUTTONS
 # =========================
 
+buttons = [
+    ("🧮 Calculator", "normal_calculator", "normal_calculator"),
+    ("🔬 Scientific", "scientific_calculator", "scientific_calculator"),
+    ("💰 GST", "gst_calculator", "gst_calculator"),
+    ("🏷️ Discount", "discount_calculator", "discount_calculator"),
+    ("⚖️ BMI", "bmi_calculator", "bmi_calculator"),
+    ("🎂 DOB", "dob_calculator", "dob_calculator"),
+    ("💱 Currency", "currency_converter", "currency_converter"),
+    ("📏 Length Converter", "length_converter", "length_converter"),
+    ("📦 Unit Converter", "unit_converter", "unit_converter"),
+    ("🌡️ Temperature", "temperature_calculator", "temperature_calculator"),
+    ("📐 Area", "area", "create_area_converter"),
+    ("📜 History", "history_page", "show_history"),
+    ("🤖 AI", "ai_section", "ai_section")
+]
+
