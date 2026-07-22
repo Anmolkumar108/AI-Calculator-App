@@ -165,3 +165,13 @@ ctk.CTkButton(
     pady=5
 )
 
+ctk.CTkButton(
+    sidebar,
+    text="☀️ Light Mode",
+    command=light_theme
+).pack(
+    fill="x",
+    padx=10,
+    pady=20
+)
+
