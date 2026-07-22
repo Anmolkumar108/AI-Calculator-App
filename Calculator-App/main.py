@@ -84,3 +84,17 @@ sidebar.pack(
     expand=True
 )
 
+# =========================
+# CONTENT AREA
+# =========================
+
+content = ctk.CTkFrame(main_frame)
+
+content.pack(
+    side="right",
+    fill="both",
+    expand=True,
+    padx=10,
+    pady=10
+)
+
