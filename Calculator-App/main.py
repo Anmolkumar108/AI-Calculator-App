@@ -84,32 +84,4 @@ title.pack(pady=20)
 
 buttons = [
 
-    ("🧮 Calculator", normal_calculator),
-
-    ("🔬 Scientific", scientific_calculator),
-
-    ("💰 GST", gst_calculator),
-
-    ("🏷️ Discount", discount_calculator),
-
-    ("⚖️ BMI", bmi_calculator),
-
-    ("🎂 DOB", dob_calculator),
-
-    ("💱 Currency", currency_converter),
-
-    ("📏 Unit", unit_converter),
-
-    ("📜 History", show_history),
-
-    ("🤖 AI", ai_section)
-
-]
-
-for text, command in buttons:
-
-    ctk.CTkButton(
-
-        sidebar,
-
 
