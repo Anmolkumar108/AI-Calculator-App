@@ -175,3 +175,9 @@ ctk.CTkButton(
     pady=20
 )
 
+# =========================
+# DEFAULT PAGE
+# =========================
+
+show_page("normal_calculator", "normal_calculator", content)
+
