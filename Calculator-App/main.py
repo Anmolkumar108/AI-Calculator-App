@@ -64,3 +64,10 @@ sidebar_container = ctk.CTkFrame(
     width=250
 )
 
+sidebar_container.pack(
+    side="left",
+    fill="y",
+    padx=10,
+    pady=10
+)
+
