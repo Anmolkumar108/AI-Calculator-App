@@ -181,3 +181,8 @@ ctk.CTkButton(
 
 show_page("normal_calculator", "normal_calculator", content)
 
+# =========================
+# RUN APP
+# =========================
+
+app.mainloop()
