@@ -148,14 +148,3 @@ ctk.CTkButton(
     pady=5
 )
 
-# =========================
-# DEFAULT PAGE
-# =========================
-
-normal_calculator(content)
-
-# =========================
-# RUN APP
-# =========================
-
-app.mainloop()
