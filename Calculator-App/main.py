@@ -112,16 +112,4 @@ for text, command in buttons:
 
         sidebar,
 
-        text=text,
-
-        height=45,
-
-        command=lambda cmd=command: cmd(content)
-
-    ).pack(
-        fill="x",
-        padx=10,
-        pady=5
-    )
-
 
