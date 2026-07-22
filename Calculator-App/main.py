@@ -28,3 +28,14 @@ def get_page_function(module_name, func_name):
     return getattr(module, func_name)
 
 
+def show_page(module_name, func_name, content):
+    page_func = get_page_function(module_name, func_name)
+    page_func(content)
+
+# =========================
+# APP SETTINGS
+# =========================
+
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("blue")
+
