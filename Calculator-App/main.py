@@ -151,3 +151,17 @@ for text, module_name, func_name in buttons:
 
 
 
+# =========================
+# THEME BUTTONS
+# =========================
+
+ctk.CTkButton(
+    sidebar,
+    text="🌙 Dark Mode",
+    command=dark_theme
+).pack(
+    fill="x",
+    padx=10,
+    pady=5
+)
+
