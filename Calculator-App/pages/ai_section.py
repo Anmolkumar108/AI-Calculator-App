@@ -223,20 +223,4 @@ tan({number}) = {result}
 log({number}) = {result}
 """
 
-        # =================================
-        # FACTORIAL
-        # =================================
-
-        elif "factorial" in lower:
-
-            number = int(
-                lower.replace("factorial", "").strip()
-            )
-
-            result = math.factorial(number)
-
-            return f"""
-{number}! = {result}
-"""
-
         
