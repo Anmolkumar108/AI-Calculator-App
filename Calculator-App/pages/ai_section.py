@@ -75,29 +75,4 @@ def ai_section(content):
         "simplify (x^2+2x+1)\n\n"
     )
 
-    # =====================================
-    # INPUT FRAME
-    # =====================================
-
-    input_frame = ctk.CTkFrame(
-        content,
-        fg_color="transparent"
-    )
-
-    input_frame.pack(pady=10)
-
-    # =====================================
-    # INPUT BOX
-    # =====================================
-
-    user_input = ctk.CTkEntry(
-        input_frame,
-        width=600,
-        height=45,
-        font=("Arial", 16),
-        placeholder_text="Ask Any Math Problem..."
-    )
-
-    user_input.grid(row=0, column=0, padx=10)
-
     
