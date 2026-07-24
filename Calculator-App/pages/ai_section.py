@@ -168,25 +168,4 @@ Explanation:
 Sine function calculates angle ratio.
 """
 
-        # =================================
-        # COS
-        # =================================
-
-        elif "cos" in lower:
-
-            number = float(
-                lower.replace("cos", "").strip()
-            )
-
-            result = math.cos(
-                math.radians(number)
-            )
-
-            return f"""
-cos({number}) = {result}
-
-Explanation:
-Cosine calculates adjacent/hypotenuse ratio.
-"""
-
         
