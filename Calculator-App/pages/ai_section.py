@@ -308,26 +308,4 @@ Expanded Form:
 {result}
 """
 
-        # =================================
-        # SIMPLIFY
-        # =================================
-
-        elif "simplify" in lower:
-
-            expression = lower.replace(
-                "simplify",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.simplify(expr)
-
-            return f"""
-Simplified Form:
-{result}
-"""
-
         
