@@ -128,44 +128,4 @@ def ai_section(content):
 
             return "Good Bye 👋"
 
-        # =================================
-        # SQRT
-        # =================================
-
-        elif "sqrt" in lower:
-
-            number = float(
-                lower.replace("sqrt", "").strip()
-            )
-
-            result = math.sqrt(number)
-
-            return f"""
-√{number} = {result}
-
-Explanation:
-Square root means a number multiplied by itself.
-"""
-
-        # =================================
-        # SIN
-        # =================================
-
-        elif "sin" in lower:
-
-            number = float(
-                lower.replace("sin", "").strip()
-            )
-
-            result = math.sin(
-                math.radians(number)
-            )
-
-            return f"""
-sin({number}) = {result}
-
-Explanation:
-Sine function calculates angle ratio.
-"""
-
         
