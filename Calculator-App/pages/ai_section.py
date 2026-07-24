@@ -264,26 +264,4 @@ Explanation:
 Differentiation completed successfully.
 """
 
-        # =================================
-        # INTEGRATION
-        # =================================
-
-        elif "integrate" in lower:
-
-            expression = lower.replace(
-                "integrate",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.integrate(expr, x)
-
-            return f"""
-Integration:
-{result}
-"""
-
         
