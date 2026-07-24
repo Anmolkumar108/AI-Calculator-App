@@ -189,38 +189,4 @@ Explanation:
 Cosine calculates adjacent/hypotenuse ratio.
 """
 
-        # =================================
-        # TAN
-        # =================================
-
-        elif "tan" in lower:
-
-            number = float(
-                lower.replace("tan", "").strip()
-            )
-
-            result = math.tan(
-                math.radians(number)
-            )
-
-            return f"""
-tan({number}) = {result}
-"""
-
-        # =================================
-        # LOG
-        # =================================
-
-        elif "log" in lower:
-
-            number = float(
-                lower.replace("log", "").strip()
-            )
-
-            result = math.log10(number)
-
-            return f"""
-log({number}) = {result}
-"""
-
         
