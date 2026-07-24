@@ -239,29 +239,4 @@ log({number}) = {result}
 {number}! = {result}
 """
 
-        # =================================
-        # DIFFERENTIATION
-        # =================================
-
-        elif "differentiate" in lower:
-
-            expression = lower.replace(
-                "differentiate",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.diff(expr, x)
-
-            return f"""
-Derivative:
-{result}
-
-Explanation:
-Differentiation completed successfully.
-"""
-
         
