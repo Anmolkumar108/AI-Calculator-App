@@ -373,37 +373,4 @@ Explanation:
 Calculation completed successfully.
 """
 
-    # =====================================
-    # SEND MESSAGE
-    # =====================================
-
-    def send_message():
-
-        message = user_input.get().strip()
-
-        if message == "":
-            return
-
-        # USER MESSAGE
-
-        chat_box.insert(
-            "end",
-            f"\n🧑 You: {message}\n\n"
-        )
-
-        # AI RESPONSE
-
-        try:
-
-            reply = solve_math(message)
-
-        except Exception as e:
-
-            reply = f"""
-❌ Invalid Input
-
-Error:
-{e}
-"""
-
-        
+    
