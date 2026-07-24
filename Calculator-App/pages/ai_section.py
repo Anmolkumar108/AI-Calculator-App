@@ -406,19 +406,4 @@ Error:
 {e}
 """
 
-        # SHOW RESPONSE
-
-        chat_box.insert(
-            "end",
-            f"🤖 AI: {reply}\n\n"
-        )
-
-        # AUTO SCROLL
-
-        chat_box.see("end")
-
-        # CLEAR INPUT
-
-        user_input.delete(0, "end")
-
-    
+        
