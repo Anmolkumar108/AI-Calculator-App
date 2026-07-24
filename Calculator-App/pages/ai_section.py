@@ -356,21 +356,4 @@ Explanation:
 Equation solved successfully.
 """
 
-        # =================================
-        # NORMAL CALCULATOR
-        # =================================
-
-        else:
-
-            expression = lower.replace("^", "**")
-
-            result = sp.sympify(expression)
-
-            return f"""
-Answer = {result}
-
-Explanation:
-Calculation completed successfully.
-"""
-
-    
+        
