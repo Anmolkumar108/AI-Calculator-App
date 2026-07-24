@@ -100,32 +100,4 @@ def ai_section(content):
 
     user_input.grid(row=0, column=0, padx=10)
 
-    # =====================================
-    # MAIN AI FUNCTION
-    # =====================================
-
-    def solve_math(message):
-
-        lower = message.lower().strip()
-
-        # =================================
-        # SIMPLE CHAT
-        # =================================
-
-        if lower in ["hello", "hi", "hey"]:
-
-            return "Hello Anmol 👋"
-
-        elif "how are you" in lower:
-
-            return "I am Fine 😄"
-
-        elif "your name" in lower:
-
-            return "I am Sanskari AI Assistant 🤖"
-
-        elif "bye" in lower:
-
-            return "Good Bye 👋"
-
-        
+    
