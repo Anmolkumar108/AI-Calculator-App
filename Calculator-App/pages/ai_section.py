@@ -330,30 +330,4 @@ Simplified Form:
 {result}
 """
 
-        # =================================
-        # EQUATION SOLVER
-        # =================================
-
-        elif "=" in lower:
-
-            left, right = lower.split("=")
-
-            left = left.replace("^", "**")
-            right = right.replace("^", "**")
-
-            equation = sp.Eq(
-                sp.sympify(left),
-                sp.sympify(right)
-            )
-
-            solution = sp.solve(equation, x)
-
-            return f"""
-Solution:
-x = {solution}
-
-Explanation:
-Equation solved successfully.
-"""
-
         
