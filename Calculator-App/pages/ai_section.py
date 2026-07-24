@@ -421,26 +421,4 @@ Error:
 
         user_input.delete(0, "end")
 
-    # =====================================
-    # SEND BUTTON
-    # =====================================
-
-    send_btn = ctk.CTkButton(
-        input_frame,
-        text="Send",
-        width=150,
-        height=45,
-        font=("Arial", 16, "bold"),
-        command=send_message
-    )
-
-    send_btn.grid(row=0, column=1, padx=10)
-
-    # =====================================
-    # ENTER KEY SUPPORT
-    # =====================================
-
-    user_input.bind(
-        "<Return>",
-        lambda event: send_message()
-    )
+    
