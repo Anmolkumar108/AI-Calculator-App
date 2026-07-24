@@ -286,26 +286,4 @@ Integration:
 {result}
 """
 
-        # =================================
-        # EXPAND
-        # =================================
-
-        elif "expand" in lower:
-
-            expression = lower.replace(
-                "expand",
-                ""
-            ).strip()
-
-            expression = expression.replace("^", "**")
-
-            expr = sp.sympify(expression)
-
-            result = sp.expand(expr)
-
-            return f"""
-Expanded Form:
-{result}
-"""
-
         
