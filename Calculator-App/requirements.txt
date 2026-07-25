@@ -1,4 +1,0 @@
-customtkinter
-pyttsx3
-pillow
-sympy
