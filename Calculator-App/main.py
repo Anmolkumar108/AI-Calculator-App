@@ -32,3 +32,26 @@ def show_page(module_name, func_name, content):
     page_func = get_page_function(module_name, func_name)
     page_func(content)
 
+# =========================
+# APP SETTINGS
+# =========================
+
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("blue")
+
+app = ctk.CTk()
+
+app.geometry("1200x700")
+app.title("🔥 My Calculator")
+
+# =========================
+# MAIN FRAME
+# =========================
+
+main_frame = ctk.CTkFrame(app)
+
+main_frame.pack(
+    fill="both",
+    expand=True
+)
+
