@@ -98,3 +98,15 @@ content.pack(
     pady=10
 )
 
+# =========================
+# TITLE
+# =========================
+
+title = ctk.CTkLabel(
+    sidebar,
+    text="🔥 My Calculator",
+    font=("Arial", 25, "bold")
+)
+
+title.pack(pady=20)
+
