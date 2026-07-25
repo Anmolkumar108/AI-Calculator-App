@@ -55,3 +55,32 @@ main_frame.pack(
     expand=True
 )
 
+# =========================
+# SIDEBAR CONTAINER
+# =========================
+
+sidebar_container = ctk.CTkFrame(
+    main_frame,
+    width=250
+)
+
+sidebar_container.pack(
+    side="left",
+    fill="y",
+    padx=10,
+    pady=10
+)
+
+# =========================
+# SCROLLABLE SIDEBAR
+# =========================
+
+sidebar = ctk.CTkScrollableFrame(
+    sidebar_container
+)
+
+sidebar.pack(
+    fill="both",
+    expand=True
+)
+
