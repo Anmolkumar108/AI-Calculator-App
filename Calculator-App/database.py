@@ -39,3 +39,10 @@ if "timestamp" not in cols:
         cur.execute("ALTER TABLE history ADD COLUMN timestamp TEXT")
     except Exception:
         pass
+if "page" not in cols:
+    try:
+        cur.execute("ALTER TABLE history ADD COLUMN page TEXT")
+    except Exception:
+        pass
+conn.commit()
+
