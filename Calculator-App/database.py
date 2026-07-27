@@ -61,4 +61,12 @@ def save_history(text):
     except Exception:
         caller_module = None
 
-    
+    timestamp = datetime.now().isoformat(sep=" ", timespec="seconds")
+
+    cur.execute(
+        "INSERT INTO history (calculation, timestamp, page) VALUES (?,?,?)",
+        (text, timestamp, caller_module)
+    )
+
+    conn.commit()
+
