@@ -30,3 +30,12 @@ CREATE TABLE IF NOT EXISTS history (
 
 conn.commit()
 
+print("Database Ready")
+
+# ===== Migration: add new columns if missing =====
+cols = [row[1] for row in cur.execute("PRAGMA table_info(history)").fetchall()]
+if "timestamp" not in cols:
+    try:
+        cur.execute("ALTER TABLE history ADD COLUMN timestamp TEXT")
+    except Exception:
+        pass
