@@ -70,3 +70,11 @@ def save_history(text):
 
     conn.commit()
 
+# =========================
+# GET HISTORY
+# =========================
+
+def get_history():
+    return cur.execute(
+        "SELECT * FROM history ORDER BY id DESC"
+    ).fetchall()
