@@ -46,3 +46,19 @@ if "page" not in cols:
         pass
 conn.commit()
 
+# =========================
+# SAVE HISTORY
+# =========================
+
+def save_history(text):
+    import inspect
+    from datetime import datetime
+
+    # detect caller module name to record which page saved this history
+    caller_module = None
+    try:
+        caller_module = inspect.stack()[1].frame.f_globals.get("__name__")
+    except Exception:
+        caller_module = None
+
+    
