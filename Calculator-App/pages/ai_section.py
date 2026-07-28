@@ -231,4 +231,9 @@ Error:
         font=('Arial', 16, 'bold'),
         command=send_message
     )
-    
+    send_btn.grid(row=0, column=1, padx=10)
+
+    user_input.bind(
+        '<Return>',
+        lambda event: send_message()
+    )
