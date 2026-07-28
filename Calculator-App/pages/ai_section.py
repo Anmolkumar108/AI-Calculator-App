@@ -206,4 +206,14 @@ Calculation completed successfully.
             f"\n🧑 You: {message}\n\n"
         )
 
+        try:
+            reply = solve_math(message)
+        except Exception as e:
+            reply = f"""
+❌ Invalid Input
+
+Error:
+{e}
+"""
+
         
