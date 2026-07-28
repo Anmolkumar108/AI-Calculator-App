@@ -223,4 +223,12 @@ Error:
         chat_box.see('end')
         user_input.delete(0, 'end')
 
+    send_btn = ctk.CTkButton(
+        input_frame,
+        text='Send',
+        width=150,
+        height=45,
+        font=('Arial', 16, 'bold'),
+        command=send_message
+    )
     
