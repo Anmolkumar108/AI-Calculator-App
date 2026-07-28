@@ -99,3 +99,20 @@ Sine function calculates angle ratio.
             number = float(lower.replace('cos', '').strip())
             result = math.cos(math.radians(number))
             return f"""
+cos({number}) = {result}
+
+Explanation:
+Cosine calculates adjacent/hypotenuse ratio.
+"""
+
+        elif 'tan' in lower:
+            number = float(lower.replace('tan', '').strip())
+            result = math.tan(math.radians(number))
+            return f"""
+tan({number}) = {result}
+"""
+
+        elif 'log' in lower:
+            number = float(lower.replace('log', '').strip())
+            result = math.log10(number)
+            return f"""
