@@ -216,4 +216,11 @@ Error:
 {e}
 """
 
-        
+        chat_box.insert(
+            'end',
+            f"🤖 AI: {reply}\n\n"
+        )
+        chat_box.see('end')
+        user_input.delete(0, 'end')
+
+    
