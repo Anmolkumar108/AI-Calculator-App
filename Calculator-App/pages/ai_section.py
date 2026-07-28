@@ -116,3 +116,22 @@ tan({number}) = {result}
             number = float(lower.replace('log', '').strip())
             result = math.log10(number)
             return f"""
+log({number}) = {result}
+"""
+
+        elif 'factorial' in lower:
+            number = int(lower.replace('factorial', '').strip())
+            result = math.factorial(number)
+            return f"""
+{number}! = {result}
+"""
+
+        elif 'differentiate' in lower:
+            expression = lower.replace('differentiate', '').strip()
+            expression = expression.replace('^', '**')
+            expr = sp.sympify(expression)
+            result = sp.diff(expr, x)
+            return f"""
+Derivative:
+{result}
+
