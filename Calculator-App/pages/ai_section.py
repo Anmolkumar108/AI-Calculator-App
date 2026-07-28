@@ -192,3 +192,18 @@ Equation solved successfully.
             return f"""
 Answer = {result}
 
+Explanation:
+Calculation completed successfully.
+"""
+
+    def send_message():
+        message = user_input.get().strip()
+        if message == '':
+            return
+
+        chat_box.insert(
+            'end',
+            f"\n🧑 You: {message}\n\n"
+        )
+
+        
