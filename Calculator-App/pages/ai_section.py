@@ -135,3 +135,18 @@ log({number}) = {result}
 Derivative:
 {result}
 
+Explanation:
+Differentiation completed successfully.
+"""
+
+        elif 'integrate' in lower:
+            expression = lower.replace('integrate', '').strip()
+            expression = expression.replace('^', '**')
+            expr = sp.sympify(expression)
+            result = sp.integrate(expr, x)
+            return f"""
+Integration:
+{result}
+"""
+
+        
