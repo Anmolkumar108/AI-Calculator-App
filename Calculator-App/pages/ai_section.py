@@ -79,3 +79,23 @@ def ai_section(content):
             number = float(lower.replace('sqrt', '').strip())
             result = math.sqrt(number)
             return f"""
+√{number} = {result}
+
+Explanation:
+Square root means a number multiplied by itself.
+"""
+
+        elif 'sin' in lower:
+            number = float(lower.replace('sin', '').strip())
+            result = math.sin(math.radians(number))
+            return f"""
+sin({number}) = {result}
+
+Explanation:
+Sine function calculates angle ratio.
+"""
+
+        elif 'cos' in lower:
+            number = float(lower.replace('cos', '').strip())
+            result = math.cos(math.radians(number))
+            return f"""
