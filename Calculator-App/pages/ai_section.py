@@ -159,4 +159,26 @@ Expanded Form:
 {result}
 """
 
-        
+        elif 'simplify' in lower:
+            expression = lower.replace('simplify', '').strip()
+            expression = expression.replace('^', '**')
+            expr = sp.sympify(expression)
+            result = sp.simplify(expr)
+            return f"""
+Simplified Form:
+{result}
+"""
+
+        elif '=' in lower:
+            left, right = lower.split('=')
+            left = left.replace('^', '**')
+            right = right.replace('^', '**')
+            equation = sp.Eq(
+                sp.sympify(left),
+                sp.sympify(right)
+            )
+            solution = sp.solve(equation, x)
+            return f"""
+Solution:
+x = {solution}
+
