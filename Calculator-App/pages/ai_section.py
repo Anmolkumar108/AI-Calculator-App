@@ -182,3 +182,13 @@ Simplified Form:
 Solution:
 x = {solution}
 
+Explanation:
+Equation solved successfully.
+"""
+
+        else:
+            expression = lower.replace('^', '**')
+            result = sp.sympify(expression)
+            return f"""
+Answer = {result}
+
