@@ -104,4 +104,22 @@ def normal_calculator(content, restore_expression=None):
         expression.set("")
         result_label.configure(text="Result: 0")
 
-    
+    def backspace():
+        current = expression.get()
+        expression.set(current[:-1])
+
+    def calculate(save=True):
+        try:
+            expr = expression.get().strip()
+            if expr == "":
+                return
+
+            safe_expr = expr.replace("×", "*").replace("÷", "/")
+            answer = eval(safe_expr, {"__builtins__": None}, {})
+
+            if isinstance(answer, float):
+                answer = round(answer, 10)
+                if answer.is_integer():
+                    answer = int(answer)
+
+           
