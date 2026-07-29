@@ -193,4 +193,18 @@ def normal_calculator(content, restore_expression=None):
     for i in range(4):
         button_frame.grid_columnconfigure(i, weight=1)
 
+    note_label = ctk.CTkLabel(
+        main_frame,
+        text="History saved automatically when you press =",
+        font=("Arial", 14),
+        text_color="#94A3B8"
+    )
+
+    note_label.pack(pady=(10, 0))
+
+    if restore_expression:
+        expression.set(restore_expression)
+        calculate(save=False)
+
+
     
