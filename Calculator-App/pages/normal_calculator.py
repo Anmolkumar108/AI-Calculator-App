@@ -166,4 +166,23 @@ def normal_calculator(content, restore_expression=None):
         (".", lambda: update_expression(".")),
     ]
 
-    
+    row = 0
+    col = 0
+    for label, command in buttons:
+        ctk.CTkButton(
+            button_frame,
+            text=label,
+            command=command,
+            width=120,
+            height=70,
+            font=("Arial", 20, "bold"),
+            corner_radius=14
+        ).grid(
+            row=row,
+            column=col,
+            padx=8,
+            pady=8,
+            sticky="nsew"
+        )
+
+        
