@@ -122,4 +122,13 @@ def normal_calculator(content, restore_expression=None):
                 if answer.is_integer():
                     answer = int(answer)
 
-           
+            result_label.configure(text=f"Result: {answer}")
+
+            if save:
+                history_text = f"{expr} = {answer}"
+                save_history(history_text)
+
+        except Exception:
+            result_label.configure(text="Invalid ❌")
+
+    
