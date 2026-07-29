@@ -28,4 +28,16 @@ def normal_calculator(content, restore_expression=None):
         pady=10
     )
 
+    main_frame = ctk.CTkFrame(
+        scroll_frame,
+        fg_color="transparent"
+    )
+
+    main_frame.pack(
+        fill="both",
+        expand=True,
+        padx=15,
+        pady=15
+    )
+
     
