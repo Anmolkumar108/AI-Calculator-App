@@ -73,4 +73,18 @@ def normal_calculator(content, restore_expression=None):
         pady=15
     )
 
+    display.bind("<Return>", lambda event: calculate())
+
+    result_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=18,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=20,
+        pady=(0, 15)
+    )
+
     
