@@ -185,4 +185,12 @@ def normal_calculator(content, restore_expression=None):
             sticky="nsew"
         )
 
-        
+        col += 1
+        if col >= 4:
+            col = 0
+            row += 1
+
+    for i in range(4):
+        button_frame.grid_columnconfigure(i, weight=1)
+
+    
