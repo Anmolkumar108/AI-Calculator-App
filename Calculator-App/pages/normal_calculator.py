@@ -57,4 +57,20 @@ def normal_calculator(content, restore_expression=None):
         pady=10
     )
 
+    expression = ctk.StringVar()
+
+    display = ctk.CTkEntry(
+        display_frame,
+        textvariable=expression,
+        height=70,
+        font=("Arial", 28, "bold"),
+        justify="right"
+    )
+
+    display.pack(
+        fill="x",
+        padx=15,
+        pady=15
+    )
+
     
