@@ -87,4 +87,21 @@ def normal_calculator(content, restore_expression=None):
         pady=(0, 15)
     )
 
+    result_label = ctk.CTkLabel(
+        result_frame,
+        text="Result: 0",
+        font=("Arial", 24, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.pack(padx=15, pady=15)
+
+    def update_expression(value):
+        current = expression.get()
+        expression.set(current + str(value))
+
+    def clear_all():
+        expression.set("")
+        result_label.configure(text="Result: 0")
+
     
