@@ -146,4 +146,39 @@ def create_area_converter(content, restore=None):
         pady=10
     )
 
-    
+    # =========================
+    # LAST HISTORY
+    # =========================
+    last_history = ""
+
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+    def convert_area(event=None, save=True):
+
+        nonlocal last_history
+
+        try:
+
+            value = float(input_entry.get())
+
+            from_text = from_unit.get()
+
+            to_text = to_unit.get()
+
+            from_value = area_units[from_text]
+
+            to_value = area_units[to_text]
+
+            # Convert
+            square_meter = value / from_value
+
+            result = square_meter * to_value
+
+            result_text = f"{result:.6f}"
+
+            result_label.configure(
+                text=result_text
+            )
+
+            
