@@ -209,4 +209,35 @@ def create_area_converter(content, restore=None):
             to_unit.set(restore.get("to_unit"))
         convert_area(save=False)
 
+    # =========================
+    # BUTTON CLICK
+    # =========================
+    def button_click(value):
+
+        current = input_entry.get()
+
+        input_entry.delete(0, "end")
+
+        input_entry.insert(0, current + str(value))
+
+    # =========================
+    # CLEAR
+    # =========================
+    def clear():
+
+        input_entry.delete(0, "end")
+
+        result_label.configure(text="0")
+
+    # =========================
+    # BACKSPACE
+    # =========================
+    def backspace():
+
+        current = input_entry.get()
+
+        input_entry.delete(0, "end")
+
+        input_entry.insert(0, current[:-1])
+
     
