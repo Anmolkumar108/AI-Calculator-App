@@ -240,4 +240,29 @@ def create_area_converter(content, restore=None):
 
         input_entry.insert(0, current[:-1])
 
+    # =========================
+    # SWAP
+    # =========================
+    def swap_units():
+
+        temp = from_unit.get()
+
+        from_unit.set(to_unit.get())
+
+        to_unit.set(temp)
+
+        convert_area()
+
+    # =========================
+    # CALCULATOR KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=20
+    )
+
     
