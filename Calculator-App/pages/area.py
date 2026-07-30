@@ -290,4 +290,118 @@ def create_area_converter(content, restore=None):
         ("Convert", 3, 2)
     ]
 
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+    for (text, row, col) in buttons:
+
+        if text == "Convert":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=convert_area,
+                width=170,
+                height=75,
+                font=("Arial", 22, "bold"),
+                corner_radius=18,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                columnspan=2,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        elif text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=75,
+                height=75,
+                font=("Arial", 22, "bold"),
+                corner_radius=18,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=75,
+                height=75,
+                font=("Arial", 22, "bold"),
+                corner_radius=18,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        elif text == "Swap":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=swap_units,
+                width=75,
+                height=75,
+                font=("Arial", 18, "bold"),
+                corner_radius=18,
+                fg_color="green",
+                hover_color="darkgreen"
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=75,
+                height=75,
+                font=("Arial", 24, "bold"),
+                corner_radius=18
+            )
+
+            btn.grid(
+                row=row,
+                column=col,
+                padx=8,
+                pady=8,
+                sticky="nsew"
+            )
+
     
