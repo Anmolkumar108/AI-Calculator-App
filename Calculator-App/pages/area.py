@@ -122,4 +122,28 @@ def create_area_converter(content, restore=None):
         pady=10
     )
 
+    # =========================
+    # TO UNIT
+    # =========================
+    to_unit = ctk.StringVar(
+        value="Square feet"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=list(area_units.keys()),
+        variable=to_unit,
+        height=55,
+        font=("Arial", 18, "bold"),
+        dropdown_font=("Arial", 16),
+        corner_radius=15,
+        state="readonly"
+    )
+
+    to_menu.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
     
