@@ -414,4 +414,7 @@ def create_area_converter(content, restore=None):
     to_menu.configure(
         command=lambda x: convert_area()
     )
-    
+    # =========================
+    # ENTER KEY BINDING
+    # =========================
+    input_entry.bind("<Return>", convert_area)
