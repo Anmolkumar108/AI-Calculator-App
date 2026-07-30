@@ -181,4 +181,32 @@ def create_area_converter(content, restore=None):
                 text=result_text
             )
 
-            
+            # SAVE HISTORY
+            history_text = (
+                f"{value} {from_text} = "
+                f"{result_text} {to_text}"
+            )
+
+            if save and history_text != last_history:
+
+                save_history(history_text)
+
+                last_history = history_text
+
+        except:
+
+            result_label.configure(
+                text="Invalid ❌"
+            )  
+
+    if restore and isinstance(restore, dict):
+        if restore.get("value") is not None:
+            input_entry.delete(0, "end")
+            input_entry.insert(0, str(restore.get("value")))
+        if restore.get("from_unit"):
+            from_unit.set(restore.get("from_unit"))
+        if restore.get("to_unit"):
+            to_unit.set(restore.get("to_unit"))
+        convert_area(save=False)
+
+    
