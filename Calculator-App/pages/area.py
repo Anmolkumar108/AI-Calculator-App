@@ -52,4 +52,18 @@ def create_area_converter(content, restore=None):
         pady=(10, 20)
     )
 
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=20
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=20,
+        pady=10
+    )
+
     
