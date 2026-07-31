@@ -128,4 +128,38 @@ def bmi_calculator(content):
         pady=5
     )
 
+    # =========================
+    # RESULT FRAME
+    # =========================
+    result_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=15,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=10,
+        pady=15
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="BMI Result",
+        font=("Arial", 16)
+    ).pack(
+        pady=(10, 3)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0",
+        font=("Arial", 30, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 10)
+    )
+
     
