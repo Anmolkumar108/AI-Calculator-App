@@ -106,4 +106,26 @@ def bmi_calculator(content):
         pady=5
     )
 
+    # =========================
+    # HEIGHT UNIT
+    # =========================
+    height_unit = ctk.StringVar(
+        value="Meters"
+    )
+
+    height_menu = ctk.CTkComboBox(
+        main_frame,
+        values=["Meters", "Centimeters", "Feet", "Inches"],
+        variable=height_unit,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    height_menu.pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
     
