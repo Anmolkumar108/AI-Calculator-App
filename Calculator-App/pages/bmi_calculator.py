@@ -375,4 +375,18 @@ def bmi_calculator(content):
 
         elif text == "⌫":
 
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=50,
+                height=50,
+                font=("Arial", 15, "bold"),
+                corner_radius=12,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
+        else:
+
             
