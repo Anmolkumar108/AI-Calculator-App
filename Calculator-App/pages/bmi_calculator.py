@@ -50,4 +50,21 @@ def bmi_calculator(content):
         pady=5
     )
 
+    # =========================
+    # WEIGHT ENTRY
+    # =========================
+    weight = ctk.CTkEntry(
+        display_frame,
+        height=55,
+        font=("Arial", 22, "bold"),
+        justify="right",
+        placeholder_text="Enter Weight"
+    )
+
+    weight.pack(
+        fill="x",
+        padx=10,
+        pady=(10, 5)
+    )
+
     
