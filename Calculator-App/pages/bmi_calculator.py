@@ -25,4 +25,29 @@ def bmi_calculator(content):
         pady=10
     )
 
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        main_frame,
+        text="⚖️ BMI Calculator",
+        font=("Arial", 28, "bold")
+    ).pack(
+        pady=(5, 15)
+    )
+
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=15
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
     
