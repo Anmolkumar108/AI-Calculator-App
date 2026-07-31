@@ -10,4 +10,19 @@ def bmi_calculator(content):
 
     clear_content(content)
 
+    # =========================
+    # MAIN FRAME
+    # =========================
+    main_frame = ctk.CTkScrollableFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    main_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
     
