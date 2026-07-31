@@ -294,4 +294,26 @@ def bmi_calculator(content):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # LAPTOP ENTER KEY BINDINGS
+    # =========================
+    def move_to_height(event):
+        height.focus()
+
+    weight.bind("<Return>", move_to_height)
+    height.bind("<Return>", calculate_bmi)
+
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=10
+    )
+
     
