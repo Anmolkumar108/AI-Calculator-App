@@ -84,4 +84,26 @@ def bmi_calculator(content):
         pady=(5, 10)
     )
 
+    # =========================
+    # WEIGHT UNIT
+    # =========================
+    weight_unit = ctk.StringVar(
+        value="Kilogram"
+    )
+
+    weight_menu = ctk.CTkComboBox(
+        main_frame,
+        values=["Kilogram", "Pounds"],
+        variable=weight_unit,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    weight_menu.pack(
+        fill="x",
+        padx=10,
+        pady=5
+    )
+
     
