@@ -175,4 +175,28 @@ def currency_converter(content, restore=None):
 
     last_history = ""
 
+    # =========================
+    # BUTTON FUNCTIONS
+    # =========================
+    def button_click(value):
+
+        current = amount_entry.get()
+
+        amount_entry.delete(0, "end")
+
+        amount_entry.insert(0, current + str(value))
+
+    def clear():
+
+        amount_entry.delete(0, "end")
+        result.configure(text="0")
+
+    def backspace():
+
+        current = amount_entry.get()
+
+        amount_entry.delete(0, "end")
+
+        amount_entry.insert(0, current[:-1])
+
     
