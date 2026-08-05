@@ -90,4 +90,31 @@ def currency_converter(content, restore=None):
         pady=15
     )
 
+    # =========================
+    # CURRENCY LIST
+    # =========================
+    currency_list = list(currencies.keys())
+
+    # =========================
+    # FROM CURRENCY
+    # =========================
+    from_currency = ctk.StringVar(
+        value="🇮🇳 INR"
+    )
+
+    from_menu = ctk.CTkComboBox(
+        main_frame,
+        values=currency_list,
+        variable=from_currency,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    from_menu.pack(
+        fill="x",
+        padx=20,
+        pady=8
+    )
+
     
