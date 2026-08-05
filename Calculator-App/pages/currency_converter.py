@@ -199,4 +199,33 @@ def currency_converter(content, restore=None):
 
         amount_entry.insert(0, current[:-1])
 
-    
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+    def convert_currency(event=None, save=True):
+
+        nonlocal last_history
+
+        try:
+
+            amount = float(amount_entry.get())
+
+            from_curr = from_currency.get()
+
+            to_curr = to_currency.get()
+
+            from_rate = currencies[from_curr]
+
+            to_rate = currencies[to_curr]
+
+            usd_amount = amount / from_rate
+
+            converted_amount = usd_amount * to_rate
+
+            final_result = round(converted_amount, 2)
+
+            result.configure(
+                text=f"{final_result} {to_curr}"
+            )
+
+            
