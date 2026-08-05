@@ -33,4 +33,30 @@ def currency_converter(content, restore=None):
 
     clear_content(content)
 
+    # =========================
+    # MAIN FRAME
+    # =========================
+    main_frame = ctk.CTkScrollableFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    main_frame.pack(
+        fill="both",
+        expand=True,
+        padx=15,
+        pady=15
+    )
+
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        main_frame,
+        text="🌍 Currency Converter",
+        font=("Arial", 30, "bold")
+    ).pack(
+        pady=(10, 20)
+    )
+
     
