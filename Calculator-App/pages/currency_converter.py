@@ -353,4 +353,71 @@ def currency_converter(content, restore=None):
         (".", 3, 1),
     ]
 
+    # =========================
+    # CREATE BUTTONS
+    # =========================
+    for (text, row, col) in buttons:
+
+        if text == "=":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=convert_currency,
+                width=55,
+                height=55,
+                font=("Arial", 18, "bold"),
+                corner_radius=12,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+        elif text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=12,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=12,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=55,
+                height=55,
+                font=("Arial", 18, "bold"),
+                corner_radius=12
+            )
+
+        btn.grid(
+            row=row,
+            column=col,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
     
