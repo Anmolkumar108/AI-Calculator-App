@@ -256,4 +256,27 @@ def currency_converter(content, restore=None):
             to_currency.set(restore.get("to_currency"))
         convert_currency(save=False)
 
+    # =========================
+    # SWAP FUNCTION
+    # =========================
+    def swap_currency():
+
+        temp = from_currency.get()
+
+        from_currency.set(to_currency.get())
+
+        to_currency.set(temp)
+
+    # =========================
+    # ACTION BUTTON FRAME
+    # =========================
+    action_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=10
+    )
+
     
