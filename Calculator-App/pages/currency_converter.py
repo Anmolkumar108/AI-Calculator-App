@@ -59,4 +59,35 @@ def currency_converter(content, restore=None):
         pady=(10, 20)
     )
 
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=18
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=15,
+        pady=10
+    )
+
+    # =========================
+    # AMOUNT ENTRY
+    # =========================
+    amount_entry = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 24, "bold"),
+        justify="right",
+        placeholder_text="Enter Amount"
+    )
+
+    amount_entry.pack(
+        fill="x",
+        padx=15,
+        pady=15
+    )
+
     
