@@ -228,4 +228,32 @@ def currency_converter(content, restore=None):
                 text=f"{final_result} {to_curr}"
             )
 
-            
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"{amount} {from_curr} = "
+                f"{final_result} {to_curr}"
+            )
+
+            if save and history_text != last_history:
+                save_history(history_text)
+                last_history = history_text
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    if restore and isinstance(restore, dict):
+        if restore.get("amount") is not None:
+            amount_entry.delete(0, "end")
+            amount_entry.insert(0, str(restore.get("amount")))
+        if restore.get("from_currency"):
+            from_currency.set(restore.get("from_currency"))
+        if restore.get("to_currency"):
+            to_currency.set(restore.get("to_currency"))
+        convert_currency(save=False)
+
+    
