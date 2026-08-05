@@ -117,4 +117,26 @@ def currency_converter(content, restore=None):
         pady=8
     )
 
+    # =========================
+    # TO CURRENCY
+    # =========================
+    to_currency = ctk.StringVar(
+        value="🇺🇸 USD"
+    )
+
+    to_menu = ctk.CTkComboBox(
+        main_frame,
+        values=currency_list,
+        variable=to_currency,
+        height=45,
+        font=("Arial", 16, "bold"),
+        state="readonly"
+    )
+
+    to_menu.pack(
+        fill="x",
+        padx=20,
+        pady=8
+    )
+
     
