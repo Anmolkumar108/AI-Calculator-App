@@ -10,4 +10,44 @@ def discount_calculator(content):
 
     clear_content(content)
 
+    # =========================
+    # MAIN FRAME
+    # =========================
+    main_frame = ctk.CTkScrollableFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    main_frame.pack(
+        fill="both",
+        expand=True,
+        padx=15,
+        pady=15
+    )
+
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        main_frame,
+        text="🏷️ Discount Calculator",
+        font=("Arial", 30, "bold")
+    ).pack(
+        pady=(10, 20)
+    )
+
+    # =========================
+    # DISPLAY FRAME
+    # =========================
+    display_frame = ctk.CTkFrame(
+        main_frame,
+        corner_radius=18
+    )
+
+    display_frame.pack(
+        fill="x",
+        padx=15,
+        pady=10
+    )
+
     
