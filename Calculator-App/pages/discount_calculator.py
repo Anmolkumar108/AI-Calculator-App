@@ -347,4 +347,30 @@ def discount_calculator(content):
                 hover_color="darkred"
             )
 
-        
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=12,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
+        else:
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=lambda t=text: button_click(t),
+                width=55,
+                height=55,
+                font=("Arial", 18, "bold"),
+                corner_radius=12
+            )
+
+       
