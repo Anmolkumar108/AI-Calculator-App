@@ -191,4 +191,22 @@ def discount_calculator(content):
                 text=f"₹{round(final_price,2)}"
             )
 
-            
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"Price: ₹{original_price}, "
+                f"Discount: {original_discount}% "
+                f"= Final ₹{round(final_price,2)} "
+                f"(Saved ₹{round(saved_amount,2)})"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    
