@@ -118,4 +118,43 @@ def discount_calculator(content):
         pady=(0, 15)
     )
 
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+    active_entry = price
+
+    def set_price_active(event):
+
+        nonlocal active_entry
+
+        active_entry = price
+
+    def set_discount_active(event):
+
+        nonlocal active_entry
+
+        active_entry = discount
+
+    price.bind("<FocusIn>", set_price_active)
+
+    discount.bind("<FocusIn>", set_discount_active)
+
+    # =========================
+    # BUTTON CLICK
+    # =========================
+    def button_click(value):
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current + str(value))
+
+    # =========================
+    # CLEAR
+    # =========================
+    def clear():
+
+        active_entry.delete(0, "end")
+
     
