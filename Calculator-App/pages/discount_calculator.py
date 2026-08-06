@@ -209,4 +209,27 @@ def discount_calculator(content):
                 text="Invalid ❌"
             )
 
+    # ==========================================
+    # LAPTOP ENTER KEY BINDINGS (Laptop Enter Key Features)
+    # ==========================================
+    def move_to_discount(event):
+        discount.focus() # Price me Enter dabane par Discount par focus jayega
+
+    # Keybinds settings
+    price.bind("<Return>", move_to_discount)
+    discount.bind("<Return>", calculate_discount)
+
+
+    # =========================
+    # BUTTON FRAME
+    # =========================
+    action_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=5
+    )
+
     
