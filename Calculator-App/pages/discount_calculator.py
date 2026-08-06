@@ -157,4 +157,38 @@ def discount_calculator(content):
 
         active_entry.delete(0, "end")
 
-    
+    # =========================
+    # BACKSPACE
+    # =========================
+    def backspace():
+
+        current = active_entry.get()
+
+        active_entry.delete(0, "end")
+
+        active_entry.insert(0, current[:-1])
+
+    # =========================
+    # CALCULATE DISCOUNT
+    # =========================
+    def calculate_discount(event=None): 
+
+        try:
+
+            original_price = price.get()
+
+            original_discount = discount.get()
+
+            p = float(original_price)
+
+            d = float(original_discount)
+
+            final_price = p - ((p * d) / 100)
+
+            saved_amount = (p * d) / 100
+
+            result.configure(
+                text=f"₹{round(final_price,2)}"
+            )
+
+            
