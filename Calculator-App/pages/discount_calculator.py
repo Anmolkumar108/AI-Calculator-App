@@ -373,4 +373,10 @@ def discount_calculator(content):
                 corner_radius=12
             )
 
-       
+        btn.grid(
+            row=row,
+            column=col,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
