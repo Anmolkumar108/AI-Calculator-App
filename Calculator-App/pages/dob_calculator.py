@@ -323,4 +323,49 @@ def dob_calculator(content):
                 f"{days} Days"
             )
 
-            
+            # =========================
+            # SAVE HISTORY
+            # =========================
+            history_text = (
+                f"AGE | DOB: "
+                f"{birth_day.get()}/"
+                f"{birth_month.get()}/"
+                f"{birth_year.get()} "
+                f"= {years}Y {months}M {days}D"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    # =========================
+    # LAPTOP ENTER KEY BINDINGS
+    # =========================
+    def move_to_birth_month(event):
+        birth_month.focus()
+
+    def move_to_birth_year(event):
+        birth_year.focus()
+
+    def move_to_current_day(event):
+        current_day.focus()
+
+    def move_to_current_month(event):
+        current_month.focus()
+
+    def move_to_current_year(event):
+        calculate_age()
+
+    birth_day.bind("<Return>", move_to_birth_month)
+    birth_month.bind("<Return>", move_to_birth_year)
+    birth_year.bind("<Return>", move_to_current_day)
+    current_day.bind("<Return>", move_to_current_month)
+    current_month.bind("<Return>", move_to_current_year)
+    current_year.bind("<Return>", calculate_age)
+
+
+    
