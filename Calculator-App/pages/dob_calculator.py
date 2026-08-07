@@ -169,4 +169,67 @@ def dob_calculator(content):
         pady=(5, 15)
     )
 
+    # =========================
+    # RESULT FRAME
+    # =========================
+    result_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=15,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="Your Age",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0 Years",
+        font=("Arial", 28, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 20)
+    )
+
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+    active_entry = birth_day
+
+    def set_active(entry):
+
+        nonlocal active_entry
+
+        active_entry = entry
+
+    entries = [
+
+        birth_day,
+        birth_month,
+        birth_year,
+        current_day,
+        current_month,
+        current_year
+
+    ]
+
+    for entry in entries:
+
+        entry.bind(
+            "<FocusIn>",
+            lambda event, e=entry: set_active(e)
+        )
+
     
