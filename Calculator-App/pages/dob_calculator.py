@@ -422,4 +422,34 @@ def dob_calculator(content):
     # =========================
     for (text, row, col) in buttons:
 
+        # AGE BUTTON
+        if text == "AGE":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=calculate_age,
+                width=55,
+                height=55,
+                font=("Arial", 15, "bold"),
+                corner_radius=14,
+                fg_color="#2563EB",
+                hover_color="#1D4ED8"
+            )
+
+        # CLEAR BUTTON
+        elif text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
         
