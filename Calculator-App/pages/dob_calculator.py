@@ -368,4 +368,30 @@ def dob_calculator(content):
     current_year.bind("<Return>", calculate_age)
 
 
+    # =========================
+    # TODAY BUTTON
+    # =========================
+    ctk.CTkButton(
+        scroll,
+        text="📅 Use Today's Date",
+        command=fill_today,
+        height=45,
+        font=("Arial", 16, "bold"),
+        corner_radius=15
+    ).pack(
+        pady=10
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+    keypad_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=15
+    )
+
     
