@@ -267,4 +267,60 @@ def dob_calculator(content):
             current[:-1]
         )
 
-    
+    # =========================
+    # TODAY DATE
+    # =========================
+    def fill_today():
+
+        today = date.today()
+
+        current_day.delete(0, "end")
+        current_day.insert(0, today.day)
+
+        current_month.delete(0, "end")
+        current_month.insert(0, today.month)
+
+        current_year.delete(0, "end")
+        current_year.insert(0, today.year)
+
+    # =========================
+    # CALCULATE AGE
+    # =========================
+    def calculate_age():
+
+        try:
+
+            birth = date(
+                int(birth_year.get()),
+                int(birth_month.get()),
+                int(birth_day.get())
+            )
+
+            current = date(
+                int(current_year.get()),
+                int(current_month.get()),
+                int(current_day.get())
+            )
+
+            years = current.year - birth.year
+            months = current.month - birth.month
+            days = current.day - birth.day
+
+            if days < 0:
+
+                months -= 1
+                days += 30
+
+            if months < 0:
+
+                years -= 1
+                months += 12
+
+            result.configure(
+                text=
+                f"{years} Years\n"
+                f"{months} Months\n"
+                f"{days} Days"
+            )
+
+            
