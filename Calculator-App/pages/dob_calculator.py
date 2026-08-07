@@ -113,4 +113,60 @@ def dob_calculator(content):
         pady=(5, 15)
     )
 
+    # =========================
+    # CURRENT DATE TITLE
+    # =========================
+    ctk.CTkLabel(
+        display_frame,
+        text="Current Date",
+        font=("Arial", 18, "bold")
+    ).pack(
+        pady=(5, 10)
+    )
+
+    # =========================
+    # CURRENT DATE ENTRIES
+    # =========================
+    current_day = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="DD"
+    )
+
+    current_day.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    current_month = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="MM"
+    )
+
+    current_month.pack(
+        fill="x",
+        padx=15,
+        pady=5
+    )
+
+    current_year = ctk.CTkEntry(
+        display_frame,
+        height=45,
+        font=("Arial", 18, "bold"),
+        justify="right",
+        placeholder_text="YYYY"
+    )
+
+    current_year.pack(
+        fill="x",
+        padx=15,
+        pady=(5, 15)
+    )
+
     
