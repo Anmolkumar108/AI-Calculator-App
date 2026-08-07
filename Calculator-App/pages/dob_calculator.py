@@ -480,4 +480,10 @@ def dob_calculator(content):
                 corner_radius=14
             )
 
-        
+        btn.grid(
+            row=row,
+            column=col,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
