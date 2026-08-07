@@ -452,4 +452,19 @@ def dob_calculator(content):
                 hover_color="darkred"
             )
 
+        # BACKSPACE BUTTON
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="orange",
+                hover_color="darkorange"
+            )
+
         
