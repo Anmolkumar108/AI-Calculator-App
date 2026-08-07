@@ -17,4 +17,30 @@ def dob_calculator(content):
 
     clear_content(content)
 
+    # =========================
+    # MAIN SCROLL FRAME
+    # =========================
+    scroll = ctk.CTkScrollableFrame(
+        content,
+        fg_color="transparent"
+    )
+
+    scroll.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    # =========================
+    # TITLE
+    # =========================
+    ctk.CTkLabel(
+        scroll,
+        text="🎂 Age Calculator",
+        font=("Arial", 30, "bold")
+    ).pack(
+        pady=(10, 20)
+    )
+
     
