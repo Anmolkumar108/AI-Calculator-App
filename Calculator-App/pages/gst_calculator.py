@@ -97,4 +97,59 @@ def gst_calculator(content):
         pady=(0, 15)
     )
 
+    # =========================
+    # RESULT FRAME
+    # =========================
+
+    result_frame = ctk.CTkFrame(
+        scroll,
+        corner_radius=20,
+        fg_color="#1E293B"
+    )
+
+    result_frame.pack(
+        fill="x",
+        padx=15,
+        pady=20
+    )
+
+    ctk.CTkLabel(
+        result_frame,
+        text="GST Result",
+        font=("Arial", 18)
+    ).pack(
+        pady=(15, 5)
+    )
+
+    result = ctk.CTkLabel(
+        result_frame,
+        text="0",
+        font=("Arial", 30, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result.pack(
+        pady=(0, 20)
+    )
+
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+
+    active_entry = amount
+
+    def set_amount_active(event):
+
+        nonlocal active_entry
+        active_entry = amount
+
+    def set_gst_active(event):
+
+        nonlocal active_entry
+        active_entry = gst
+
+    amount.bind("<FocusIn>", set_amount_active)
+
+    gst.bind("<FocusIn>", set_gst_active)
+
     
