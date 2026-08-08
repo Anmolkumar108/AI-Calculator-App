@@ -61,4 +61,40 @@ def gst_calculator(content):
         pady=10
     )
 
+    # =========================
+    # AMOUNT ENTRY
+    # =========================
+
+    amount = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="Enter Amount"
+    )
+
+    amount.pack(
+        fill="x",
+        padx=15,
+        pady=(15, 10)
+    )
+
+    # =========================
+    # GST ENTRY
+    # =========================
+
+    gst = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="GST Percentage"
+    )
+
+    gst.pack(
+        fill="x",
+        padx=15,
+        pady=(0, 15)
+    )
+
     
