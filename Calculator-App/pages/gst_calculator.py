@@ -403,4 +403,34 @@ def gst_calculator(content):
                 hover_color="darkorange"
             )
 
+        # CLEAR BUTTON
+        elif text == "C":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=clear,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="red",
+                hover_color="darkred"
+            )
+
+        # BACKSPACE BUTTON
+        elif text == "⌫":
+
+            btn = ctk.CTkButton(
+                keypad_frame,
+                text=text,
+                command=backspace,
+                width=55,
+                height=55,
+                font=("Arial", 16, "bold"),
+                corner_radius=14,
+                fg_color="#F59E0B",
+                hover_color="#D97706"
+            )
+
         
