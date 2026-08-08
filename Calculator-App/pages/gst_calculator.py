@@ -307,4 +307,38 @@ def gst_calculator(content):
         pady=5
     )
 
+    # =========================
+    # REMOVE GST BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="➖ Remove GST",
+        command=remove_gst,
+        width=150,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="orange",
+        hover_color="darkorange"
+    ).grid(
+        row=0,
+        column=1,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+
+    keypad_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=15
+    )
+
     
