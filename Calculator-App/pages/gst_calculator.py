@@ -248,4 +248,29 @@ def gst_calculator(content):
                 )
             )
 
-            
+            # SAVE HISTORY
+            history_text = (
+                f"GST Removed | "
+                f"Final: ₹{total} | "
+                f"GST: {g}% | "
+                f"Original: ₹{round(original,2)}"
+            )
+
+            save_history(history_text)
+
+        except:
+
+            result.configure(
+                text="Invalid ❌"
+            )
+
+    # =========================
+    # ENTER BUTTON SUPPORT
+    # =========================
+
+    def goto_gst(event=None):
+        gst.focus()
+
+    amount.bind("<Return>", goto_gst)
+    gst.bind("<Return>", add_gst)
+    
