@@ -16,3 +16,19 @@ from pages.unit_converter import unit_converter
 from pages.temperature_calculator import temperature_calculator
 from pages.area import create_area_converter as area
 
+length_converter = None
+try:
+    module_path = os.path.join(os.path.dirname(__file__), "Length Converter.py")
+    spec = importlib.util.spec_from_file_location("length_converter_module", module_path)
+    length_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(length_module)
+    length_converter = length_module.length_converter
+except Exception:
+    length_converter = None
+
+def clear_content(content):
+
+    for widget in content.winfo_children():
+        widget.destroy()
+
+
