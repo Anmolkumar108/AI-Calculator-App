@@ -161,4 +161,6 @@ def show_history(content):
                 else:
                     normal_calculator(content)
 
-           
+            history_label.bind("<Button-1>", navigate)
+    else:
+        ctk.CTkLabel(list_frame, text="No History Found").pack(pady=10)
