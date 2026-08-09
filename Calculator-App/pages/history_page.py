@@ -132,4 +132,25 @@ def show_history(content):
             )
             history_label.pack(fill="x", padx=4, pady=2)
 
-            
+            def navigate(event=None, name=page.lower(), restore_data=restore):
+                if "normal_calculator" in name or "normal" in name:
+                    normal_calculator(content, restore_expression=restore_data.get("expression"))
+                elif "scientific" in name:
+                    scientific_calculator(content)
+                elif "gst_calculator" in name or "gst" in name:
+                    gst_calculator(content)
+                elif "discount_calculator" in name or "discount" in name:
+                    discount_calculator(content)
+                elif "bmi_calculator" in name or "bmi" in name:
+                    bmi_calculator(content)
+                elif "dob_calculator" in name or "dob" in name:
+                    dob_calculator(content)
+                elif "currency_converter" in name or "currency" in name:
+                    currency_converter(content, restore=restore_data)
+                elif "unit_converter" in name or "electricity" in name:
+                    unit_converter(content, restore=restore_data)
+                elif "temperature_calculator" in name or "temperature" in name:
+                    temperature_calculator(content, restore=restore_data)
+                elif "area" in name:
+                    area(content, restore=restore_data)
+                
