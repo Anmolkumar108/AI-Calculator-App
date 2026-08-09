@@ -153,4 +153,12 @@ def show_history(content):
                     temperature_calculator(content, restore=restore_data)
                 elif "area" in name:
                     area(content, restore=restore_data)
-                
+                elif "length" in name or "length_converter" in name or "length_converter_module" in name:
+                    if length_converter:
+                        length_converter(content, restore=restore_data)
+                    else:
+                        normal_calculator(content)
+                else:
+                    normal_calculator(content)
+
+           
