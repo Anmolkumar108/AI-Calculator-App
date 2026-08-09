@@ -109,4 +109,27 @@ def show_history(content):
 
     records = get_history()
 
-    
+    # Create a scrollable area for history entries (plain, no colored boxes)
+    list_frame = ctk.CTkScrollableFrame(content, width=700, height=400, fg_color="transparent")
+    list_frame.pack(pady=10, fill="both", expand=False)
+
+    if records:
+        # show most recent first (get_history already orders by id DESC)
+        for record in records:
+            calc = record[1]
+            timestamp = record[2] if len(record) > 2 else ""
+            page = record[3] if len(record) > 3 else ""
+            restore = parse_restore(page.lower(), calc)
+
+            label_text = f"{calc}  —  {timestamp}"
+
+            history_label = ctk.CTkLabel(
+                list_frame,
+                text=label_text,
+                anchor="w",
+                justify="left",
+                wraplength=680
+            )
+            history_label.pack(fill="x", padx=4, pady=2)
+
+            
