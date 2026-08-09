@@ -82,4 +82,31 @@ def parse_restore(page, calc_text):
             restore["units"] = match.group(1)
             restore["rate"] = match.group(2)
 
+    elif "temperature_calculator" in page or "temperature" in page:
+        if text.startswith("Temperature | "):
+            rest = text.split("Temperature | ", 1)[1]
+            match = re.match(r"^([0-9.]+)\s*->\s*(.+?)\s*=\s*(.+)$", rest)
+            if match:
+                restore["value"] = match.group(1)
+                restore["option"] = match.group(2).strip()
+
+    return restore
+
+
+def show_history(content):
+
+    clear_content(content)
+
+    ctk.CTkLabel(
+
+        content,
+
+        text="📜 Calculator History",
+
+        font=("Arial", 25, "bold")
+
+    ).pack(pady=20)
+
+    records = get_history()
+
     
