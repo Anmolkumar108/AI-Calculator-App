@@ -299,4 +299,56 @@ def length_converter(content, restore=None):
 
         active_entry.insert(0, current[:-1])
 
+    # =========================
+    # UPDATE EXAMPLE
+    # =========================
+
+    def update_example():
+
+        example_label.configure(
+            text=f"Example: Convert {from_unit.get()} ➜ {to_unit.get()}"
+        )
+
+    # =========================
+    # CONVERT FUNCTION
+    # =========================
+
+    def convert(event=None, save=True):
+
+        try:
+
+            value = float(entry_from.get())
+
+            from_u = from_unit.get()
+            to_u = to_unit.get()
+
+            # convert to meter
+            meter = value * units_in_meter[from_u]
+
+            # convert to target
+            result = meter / units_in_meter[to_u]
+
+            # show result
+            entry_to.delete(0, "end")
+            entry_to.insert(0, str(round(result, 10)))
+
+            result_label.configure(
+                text=f"{value} {from_u}\n=\n{round(result, 10)} {to_u}"
+            )
+
+            # SAVE HISTORY
+            if save:
+                history_text = (
+                    f"Length Convert | "
+                    f"{value} {from_u} = {round(result, 10)} {to_u}"
+                )
+
+                save_history(history_text)
+
+        except:
+
+            result_label.configure(
+                text="Invalid ❌"
+            )
+
     
