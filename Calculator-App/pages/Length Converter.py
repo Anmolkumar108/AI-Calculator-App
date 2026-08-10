@@ -465,4 +465,63 @@ def length_converter(content, restore=None):
         pady=5
     )
 
+    # =========================
+    # SWAP BUTTON
+    # =========================
+
+    ctk.CTkButton(
+        action_frame,
+        text="🔄 Swap Units",
+        command=swap_units,
+        width=250,
+        height=45,
+        font=("Arial", 17, "bold"),
+        corner_radius=14,
+        fg_color="orange",
+        hover_color="darkorange"
+    ).grid(
+        row=1,
+        column=0,
+        columnspan=2,
+        padx=8,
+        pady=5
+    )
+
+    # =========================
+    # KEYPAD FRAME
+    # =========================
+
+    keypad_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    keypad_frame.pack(
+        pady=15
+    )
+
+# =========================
+    # BUTTONS
+    # =========================
+
+    buttons = [
+
+        ("7", 0, 0),
+        ("8", 0, 1),
+        ("9", 0, 2),
+        ("⌫", 0, 3),
+
+        ("4", 1, 0),
+        ("5", 1, 1),
+        ("6", 1, 2),
+        ("C", 1, 3),
+
+        ("1", 2, 0),
+        ("2", 2, 1),
+        ("3", 2, 2),
+        (".", 2, 3),
+
+        ("0", 3, 0)
+    ]
+
     
