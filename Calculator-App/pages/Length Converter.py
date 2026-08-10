@@ -61,4 +61,38 @@ def length_converter(content, restore=None):
         pady=10
     )
 
-    
+    # =========================
+    # FROM ENTRY
+    # =========================
+
+    entry_from = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="Enter value"
+    )
+
+    entry_from.pack(
+        fill="x",
+        padx=15,
+        pady=(15, 10)
+    )
+
+    # =========================
+    # FROM UNIT
+    # =========================
+
+    units_in_meter = {
+
+        # Metric
+        "Kilometer (km)": 1000,
+        "Meter (m)": 1,
+        "Decimeter (dm)": 0.1,
+        "Centimeter (cm)": 0.01,
+        "Millimeter (mm)": 0.001,
+        "Micrometer (um)": 1e-6,
+        "Nanometer (nm)": 1e-9,
+        "Picometer (pm)": 1e-12,
+
+       
