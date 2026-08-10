@@ -581,4 +581,11 @@ def length_converter(content, restore=None):
             sticky="nsew"
         )
 
+    # =========================
+    # EVENTS
+    # =========================
+
+    from_combo.configure(command=lambda e: update_example())
+    to_combo.configure(command=lambda e: update_example())
+
     
