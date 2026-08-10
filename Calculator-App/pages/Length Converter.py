@@ -351,4 +351,43 @@ def length_converter(content, restore=None):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # REVERSE CONVERT
+    # =========================
+
+    def reverse_convert(event=None, save=True):
+
+        try:
+
+            value = float(entry_to.get())
+
+            from_u = from_unit.get()
+            to_u = to_unit.get()
+
+            meter = value * units_in_meter[to_u]
+
+            result = meter / units_in_meter[from_u]
+
+            entry_from.delete(0, "end")
+            entry_from.insert(0, str(round(result, 10)))
+
+            result_label.configure(
+                text=f"{value} {to_u}\n=\n{round(result, 10)} {from_u}"
+            )
+
+            # SAVE HISTORY
+            if save:
+                history_text = (
+                    f"Length Reverse | "
+                    f"{value} {to_u} = {round(result, 10)} {from_u}"
+                )
+
+                save_history(history_text)
+
+        except:
+
+            result_label.configure(
+                text="Invalid ❌"
+            )
+
     
