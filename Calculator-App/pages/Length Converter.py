@@ -146,4 +146,43 @@ def length_converter(content, restore=None):
         pady=(0, 15)
     )
 
+    # =========================
+    # TO ENTRY
+    # =========================
+
+    entry_to = ctk.CTkEntry(
+        display_frame,
+        height=60,
+        font=("Arial", 26, "bold"),
+        justify="right",
+        placeholder_text="Result"
+    )
+
+    entry_to.pack(
+        fill="x",
+        padx=15,
+        pady=(0, 10)
+    )
+
+    # =========================
+    # TO UNIT
+    # =========================
+
+    to_combo = ctk.CTkComboBox(
+        display_frame,
+        values=units,
+        variable=to_unit,
+        width=450,
+        height=50,
+        font=("Arial", 16),
+        dropdown_font=("Arial", 15),
+        state="readonly"
+    )
+
+    to_combo.pack(
+        fill="x",
+        padx=15,
+        pady=(0, 15)
+    )
+
     
