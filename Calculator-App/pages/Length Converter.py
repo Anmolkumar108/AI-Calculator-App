@@ -588,4 +588,14 @@ def length_converter(content, restore=None):
     from_combo.configure(command=lambda e: update_example())
     to_combo.configure(command=lambda e: update_example())
 
-    
+    # =========================
+    # FOOTER
+    # =========================
+
+    ctk.CTkLabel(
+        scroll,
+        text="AI Calculator • Length Converter",
+        font=("Arial", 14)
+    ).pack(
+        pady=20
+    )    
