@@ -95,4 +95,55 @@ def length_converter(content, restore=None):
         "Nanometer (nm)": 1e-9,
         "Picometer (pm)": 1e-12,
 
-       
+        # Imperial
+        "Nautical Mile (nmi)": 1852,
+        "Mile (mi)": 1609.344,
+        "Furlong (fur)": 201.168,
+        "Fathom (ftm)": 1.8288,
+        "Yard (yd)": 0.9144,
+        "Foot (ft)": 0.3048,
+        "Inch (in)": 0.0254,
+
+        # Chinese
+        "Gongli": 500,
+        "Li": 500,
+        "Zhang": 3.333333,
+        "Chi": 0.333333,
+        "Cun": 0.0333333,
+        "Fen": 0.00333333,
+        "Lii": 0.000333333,
+        "Hao": 0.0000333333,
+
+        # Astronomy
+        "Parsec (pc)": 3.0857e16,
+        "Lunar Distance (LD)": 384400000,
+        "Astronomical Unit (AU)": 149597870700,
+        "Light Year (ly)": 9.4607e15
+    }
+
+    units = list(units_in_meter.keys())
+
+    # =========================
+    # VARIABLES
+    # =========================
+    from_unit = ctk.StringVar(value="Meter (m)")
+    to_unit = ctk.StringVar(value="Centimeter (cm)")
+
+    from_combo = ctk.CTkComboBox(
+        display_frame,
+        values=units,
+        variable=from_unit,
+        width=450,
+        height=50,
+        font=("Arial", 16),
+        dropdown_font=("Arial", 15),
+        state="readonly"
+    )
+
+    from_combo.pack(
+        fill="x",
+        padx=15,
+        pady=(0, 15)
+    )
+
+    
