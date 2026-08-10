@@ -220,4 +220,51 @@ def length_converter(content, restore=None):
         pady=(0, 20)
     )
 
+    # =========================
+    # EXAMPLE LABEL
+    # =========================
+
+    example_label = ctk.CTkLabel(
+        scroll,
+        text="Example: 1 Meter = 100 Centimeter",
+        font=("Arial", 15),
+        text_color="lightgreen"
+    )
+
+    example_label.pack(
+        pady=5
+    )
+
+    if restore and isinstance(restore, dict):
+        if restore.get("value") is not None:
+            entry_from.delete(0, "end")
+            entry_from.insert(0, str(restore.get("value")))
+        if restore.get("from_unit"):
+            from_unit.set(restore.get("from_unit"))
+        if restore.get("to_unit"):
+            to_unit.set(restore.get("to_unit"))
+        if restore.get("action") == "reverse":
+            reverse_convert(save=False)
+        else:
+            convert(save=False)
+
+    # =========================
+    # ACTIVE ENTRY
+    # =========================
+
+    active_entry = entry_from
+
+    def set_from_active(event):
+
+        nonlocal active_entry
+        active_entry = entry_from
+
+    def set_to_active(event):
+
+        nonlocal active_entry
+        active_entry = entry_to
+
+    entry_from.bind("<FocusIn>", set_from_active)
+    entry_to.bind("<FocusIn>", set_to_active)
+
     
