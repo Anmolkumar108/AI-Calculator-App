@@ -390,4 +390,37 @@ def length_converter(content, restore=None):
                 text="Invalid ❌"
             )
 
+    # =========================
+    # SWAP FUNCTION
+    # =========================
+
+    def swap_units():
+
+        temp = from_unit.get()
+
+        from_unit.set(to_unit.get())
+        to_unit.set(temp)
+
+        update_example()
+
+    # =========================
+    # ENTER BUTTON SUPPORT
+    # =========================
+
+    entry_from.bind("<Return>", convert)
+    entry_to.bind("<Return>", reverse_convert)
+
+    # =========================
+    # BUTTON FRAME
+    # =========================
+
+    action_frame = ctk.CTkFrame(
+        scroll,
+        fg_color="transparent"
+    )
+
+    action_frame.pack(
+        pady=10
+    )
+
     
