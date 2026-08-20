@@ -445,4 +445,103 @@ def scientific_calculator(content, restore_expression=None):
         2
     )
 
+    # ==========================================
+    # TRIGONOMETRY MENU
+    # ==========================================
+    trig_buttons = [
+
+        ("sin", 0, 0),
+        ("cos", 0, 1),
+        ("tan", 0, 2),
+
+        ("sec", 1, 0),
+        ("csc", 1, 1),
+        ("cot", 1, 2),
+    ]
+
+    for txt, r, c in trig_buttons:
+
+        btn = ctk.CTkButton(
+            trig_frame,
+            text=txt,
+            command=lambda t=txt: scientific(t),
+            height=55,
+            fg_color="#444",
+            hover_color="#555",
+            font=("Arial", 18)
+        )
+
+        btn.grid(
+            row=r,
+            column=c,
+            padx=3,
+            pady=3,
+            sticky="nsew"
+        )
+
+    # ==========================================
+    # FUNCTION MENU
+    # ==========================================
+    func_buttons = [
+
+        ("|x|", "abs", 0, 0),
+        ("⌊x⌋", "floor", 0, 1),
+        ("⌈x⌉", "ceil", 0, 2),
+
+        ("rand", "rand", 1, 0),
+        ("x²", "square", 1, 1),
+        ("x³", "cube", 1, 2),
+    ]
+
+    for txt, val, r, c in func_buttons:
+
+        btn = ctk.CTkButton(
+            func_frame,
+            text=txt,
+            command=lambda v=val: scientific(v),
+            height=55,
+            fg_color="#444",
+            hover_color="#555",
+            font=("Arial", 18)
+        )
+
+        btn.grid(
+            row=r,
+            column=c,
+            padx=3,
+            pady=3,
+            sticky="nsew"
+        )
+
+    # ==========================================
+    # MAIN BUTTONS
+    # ==========================================
+    buttons = [
+
+        ("√", 2, 0),
+        ("log", 2, 1),
+        ("ln", 2, 2),
+        ("mod", 2, 3),
+
+        ("7", 3, 0),
+        ("8", 3, 1),
+        ("9", 3, 2),
+        ("÷", 3, 3),
+
+        ("4", 4, 0),
+        ("5", 4, 1),
+        ("6", 4, 2),
+        ("×", 4, 3),
+
+        ("1", 5, 0),
+        ("2", 5, 1),
+        ("3", 5, 2),
+        ("-", 5, 3),
+
+        ("+/-", 6, 0),
+        ("0", 6, 1),
+        (".", 6, 2),
+        ("+", 6, 3),
+    ]
+
     
