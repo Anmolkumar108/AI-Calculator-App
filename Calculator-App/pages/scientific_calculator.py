@@ -544,4 +544,73 @@ def scientific_calculator(content, restore_expression=None):
         ("+", 6, 3),
     ]
 
-    
+    # ==========================================
+    # CREATE MAIN BUTTONS
+    # ==========================================
+    for text, row, col in buttons:
+
+        if text == "√":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("sqrt")
+            )
+
+        elif text == "log":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("log")
+            )
+
+        elif text == "ln":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: scientific("ln")
+            )
+
+        elif text == "mod":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: press("%")
+            )
+
+        elif text == "+/-":
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda: press("-")
+            )
+
+        else:
+
+            create_btn(
+                text,
+                row,
+                col,
+                lambda t=text: press(t)
+            )
+
+    # ==========================================
+    # BACKSPACE
+    # ==========================================
+    create_btn(
+        "⌫",
+        2,
+        4,
+        backspace
+    )
+
+   
