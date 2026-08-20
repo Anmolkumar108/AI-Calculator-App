@@ -281,4 +281,78 @@ def scientific_calculator(content, restore_expression=None):
             else:
                 ans = value
 
+            # Round to 10 decimal places
+            if isinstance(ans, float):
+                ans = round(ans, 10)
+                if ans.is_integer():
+                    ans = int(ans)
+
+            expression = str(ans)
             
+            result_value.set(f"Result: {ans}")
+            
+            history_text = f"{func}({value}) = {ans}"
+            save_history(history_text)
+
+            update_display()
+
+        except Exception:
+            expression = "Error"
+            result_value.set("Error ❌")
+            update_display()
+
+    # ==========================================
+    # BUTTON FRAME
+    # ==========================================
+    btn_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="#1b1b1b"
+    )
+
+    btn_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    # ==========================================
+    # GRID CONFIG
+    # ==========================================
+    for i in range(10):
+        btn_frame.rowconfigure(i, weight=1)
+
+    for j in range(5):
+        btn_frame.columnconfigure(j, weight=1)
+
+    # ==========================================
+    # BUTTON STYLE
+    # ==========================================
+    def create_btn(text, row, col, cmd,
+                   color="#2f2f2f",
+                   height=60,
+                   colspan=1):
+
+        btn = ctk.CTkButton(
+            btn_frame,
+            text=text,
+            command=cmd,
+            height=height,
+            corner_radius=10,
+            fg_color=color,
+            hover_color="#444",
+            font=("Arial", 20)
+        )
+
+        btn.grid(
+            row=row,
+            column=col,
+            columnspan=colspan,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
+        return btn
+
+    
