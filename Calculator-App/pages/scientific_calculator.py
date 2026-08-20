@@ -613,4 +613,37 @@ def scientific_calculator(content, restore_expression=None):
         backspace
     )
 
-   
+    # ==========================================
+    # CLEAR BUTTON
+    # ==========================================
+    create_btn(
+        "C",
+        3,
+        4,
+        clear,
+        "#a83232"
+    )
+
+    # ==========================================
+    # EQUAL BUTTON
+    # ==========================================
+    equal_btn = ctk.CTkButton(
+        btn_frame,
+        text="=",
+        command=calculate,
+        fg_color="#45b6ff",
+        hover_color="#1d9fff",
+        font=("Arial", 30, "bold"),
+        corner_radius=12
+    )
+
+    equal_btn.grid(
+        row=4,
+        column=4,
+        rowspan=3,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
+    
