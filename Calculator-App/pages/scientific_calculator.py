@@ -646,4 +646,21 @@ def scientific_calculator(content, restore_expression=None):
         sticky="nsew"
     )
 
-    
+    # ==========================================
+    # RESTORE EXPRESSION
+    # ==========================================
+    if restore_expression:
+        expression = restore_expression
+        update_display()
+
+    # ==========================================
+    # HISTORY NOTE
+    # ==========================================
+    note_label = ctk.CTkLabel(
+        main_frame,
+        text="History saved automatically when you press = or Enter",
+        font=("Arial", 14),
+        text_color="#94A3B8"
+    )
+
+    note_label.pack(pady=(10, 0))
