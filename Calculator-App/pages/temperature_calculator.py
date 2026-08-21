@@ -110,4 +110,95 @@ def temperature_calculator(content, restore=None):
             current[:-1]
         )
 
+    # ==========================================
+    # MEMORY FUNCTIONS
+    # ==========================================
+    def memory_clear():
+
+        nonlocal memory_value
+
+        memory_value = 0
+
+    def memory_recall():
+
+        display.delete(0, "end")
+
+        display.insert(
+            0,
+            str(memory_value)
+        )
+
+    def memory_add():
+
+        nonlocal memory_value
+
+        try:
+
+            memory_value += float(display.get())
+
+        except:
+            pass
+
+    def memory_subtract():
+
+        nonlocal memory_value
+
+        try:
+
+            memory_value -= float(display.get())
+
+        except:
+            pass
+
+    # ==========================================
+    # MEMORY BUTTONS
+    # ==========================================
+    memory_buttons = [
+
+        ("MC", memory_clear),
+        ("MR", memory_recall),
+        ("M+", memory_add),
+        ("M-", memory_subtract)
+
+    ]
+
+    for txt, cmd in memory_buttons:
+
+        btn = ctk.CTkButton(
+            memory_frame,
+            text=txt,
+            command=cmd,
+            width=50,
+            height=35,
+            fg_color="transparent",
+            hover_color="#2f2f2f",
+            font=("Arial", 18)
+        )
+
+        btn.pack(
+            side="left",
+            padx=5
+        )
+
+    # ==========================================
+    # BUTTON FRAME
+    # ==========================================
+    btn_frame = ctk.CTkFrame(
+        main_frame,
+        fg_color="#1b1b1b"
+    )
+
+    btn_frame.pack(
+        fill="both",
+        expand=True,
+        padx=10,
+        pady=10
+    )
+
+    for i in range(8):
+        btn_frame.rowconfigure(i, weight=1)
+
+    for j in range(4):
+        btn_frame.columnconfigure(j, weight=1)
+
     
