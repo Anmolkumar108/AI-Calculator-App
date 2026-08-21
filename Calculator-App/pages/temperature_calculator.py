@@ -345,4 +345,52 @@ def temperature_calculator(content, restore=None):
             combo.set(restore.get("option"))
         convert(save=False)
 
+    # ==========================================
+    # AUTO CONVERT
+    # ==========================================
+    def auto_convert(event=None):
+
+        if display.get().strip():
+
+            try:
+                convert()
+            except:
+                pass
+
+    # ==========================================
+    # ENTER KEY SUPPORT
+    # ==========================================
+    display.bind(
+        "<Return>",
+        lambda e: convert()
+    )
+
+    display.bind(
+        "<KP_Enter>",
+        lambda e: convert()
+    )
+
+    display.bind(
+        "<KeyRelease>",
+        auto_convert
+    )
+
+    # ==========================================
+    # SAVE BUTTON
+    # ==========================================
+    def save_current_result():
+
+        try:
+
+            value = display.get()
+
+            result = result_label.cget("text")
+
+            save_history(
+                f"Temperature | {value} = {result}"
+            )
+
+        except:
+            pass
+
     
