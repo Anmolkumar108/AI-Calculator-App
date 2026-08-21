@@ -201,4 +201,88 @@ def temperature_calculator(content, restore=None):
     for j in range(4):
         btn_frame.columnconfigure(j, weight=1)
 
+    # ==========================================
+    # BUTTON CREATOR
+    # ==========================================
+    def create_btn(
+        text,
+        row,
+        col,
+        cmd,
+        color="#2f2f2f",
+        colspan=1
+    ):
+
+        btn = ctk.CTkButton(
+            btn_frame,
+            text=text,
+            command=cmd,
+            height=60,
+            corner_radius=10,
+            fg_color=color,
+            hover_color="#444",
+            font=("Arial", 20)
+        )
+
+        btn.grid(
+            row=row,
+            column=col,
+            columnspan=colspan,
+            padx=4,
+            pady=4,
+            sticky="nsew"
+        )
+
+        return btn
+
+    # ==========================================
+    # CONVERSION OPTIONS
+    # ==========================================
+    options = [
+
+        "Celsius to Fahrenheit",
+        "Fahrenheit to Celsius",
+        "Celsius to Kelvin",
+        "Kelvin to Celsius"
+
+    ]
+
+    combo = ctk.CTkComboBox(
+        btn_frame,
+        values=options,
+        height=45
+    )
+
+    combo.grid(
+        row=0,
+        column=0,
+        columnspan=4,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
+    combo.set(
+        "Celsius to Fahrenheit"
+    )
+
+    # ==========================================
+    # RESULT LABEL
+    # ==========================================
+    result_label = ctk.CTkLabel(
+        btn_frame,
+        text="Result Here",
+        font=("Arial", 22, "bold"),
+        text_color="#38BDF8"
+    )
+
+    result_label.grid(
+        row=1,
+        column=0,
+        columnspan=4,
+        padx=4,
+        pady=4,
+        sticky="nsew"
+    )
+
     
