@@ -1,77 +1,112 @@
 # 🧮 Calculator App
 
-> **A modern, feature-rich desktop calculator application built with Python and CustomTkinter.**
+<p align="center">
+  <strong>A feature-rich, AI-powered desktop calculator built with Python.</strong>
+</p>
 
-A powerful **multi-functional Calculator App** designed to provide much more than basic arithmetic operations. The application combines everyday calculation tools, scientific calculations, financial utilities, health calculators, unit conversions, calculation history, and an AI-powered assistant into a single desktop application.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/GUI-CustomTkinter-green" alt="CustomTkinter">
+  <img src="https://img.shields.io/badge/Database-SQLite-orange?logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Math-SymPy-red" alt="SymPy">
+  <img src="https://img.shields.io/badge/Platform-Windows-lightgrey?logo=windows&logoColor=white" alt="Windows">
+</p>
 
-Built with **Python, CustomTkinter, SQLite, and modular programming principles**, this project focuses on creating a clean user experience while keeping the codebase organized and maintainable.
+<p align="center">
+  <a href="https://github.com/Anmolkumar108/Calculator-App-Py">Repository</a>
+  •
+  <a href="https://github.com/Anmolkumar108/Calculator-App-Py/issues">Issues</a>
+  •
+  <a href="https://github.com/Anmolkumar108/Calculator-App-Py/pulls">Pull Requests</a>
+</p>
+
+---
+
+## 📌 About The Project
+
+**Calculator App** is a multi-functional desktop utility developed with **Python and CustomTkinter**.
+
+The project goes beyond a traditional calculator by combining everyday calculations, scientific mathematics, financial utilities, health-related calculations, unit conversions, calculation history, voice functionality, and an AI assistant into a single desktop application.
+
+The application is designed with a **modular architecture**, keeping individual features separated into dedicated Python modules. This makes the codebase easier to understand, maintain, debug, and extend.
+
+> **Built as a practical Python application to explore GUI development, modular architecture, database integration, mathematical computing, and AI-powered functionality.**
 
 ---
 
 ## ✨ Features
 
-### 🧮 Calculator
+### 🧮 Standard Calculator
 
 * Basic arithmetic operations
 * Addition, subtraction, multiplication and division
 * Decimal calculations
-* Clean and responsive calculator interface
+* Clean calculator interface
+* Fast everyday calculations
 
 ### 🔬 Scientific Calculator
 
-* Advanced mathematical calculations
-* Trigonometric functions
+* Advanced mathematical operations
+* Trigonometric calculations
 * Mathematical expressions
-* Scientific operations powered by Python
+* Scientific functions
+* Powered by Python and SymPy
 
-### 💰 Financial Tools
+### 💰 Financial Calculators
 
-* **GST Calculator**
-* **Discount Calculator**
-* Quick and accurate financial calculations
+* GST Calculator
+* Discount Calculator
+* Quick financial calculations
+* Easy-to-use input and result interface
 
-### 📅 Personal & Health Tools
+### 📅 Personal & Health Utilities
 
-* **Date of Birth Calculator**
-* **BMI Calculator**
-* Age and health-related calculations
+* Date of Birth / Age Calculator
+* BMI Calculator
+* Useful personal calculation tools
 
 ### 🔄 Conversion Tools
 
-* **Currency Converter**
-* **Unit Converter**
-* **Temperature Converter**
-* **Length Converter**
-* **Area Calculator**
+* Currency Converter
+* Unit Converter
+* Temperature Converter
+* Length Converter
+* Area Calculator
 
 ### 📊 Calculation History
 
 * Stores previous calculations
 * View calculation history
-* Persistent history using SQLite database
-* Easy access to previous results
+* Persistent local storage
+* SQLite-based history management
 
 ### 🤖 AI Assistant
 
 * Integrated AI assistant section
-* Designed to provide an interactive calculation/help experience
-* Extensible architecture for adding more AI capabilities
+* Interactive assistance for calculations and queries
+* Designed with an extensible architecture for future AI capabilities
 
-### 🎨 User Interface
+### 🎙️ Voice Functionality
 
-* Modern desktop interface
-* Built using **CustomTkinter**
-* Organized navigation between different calculator modules
-* Clean and user-friendly layout
-* Modular page-based architecture
+* Voice-related functionality through Python
+* Text-to-speech support
+* Designed to make the application more interactive
+
+### 🎨 Modern Desktop UI
+
+* Built with CustomTkinter
+* Clean and organized interface
+* Feature-based navigation
+* Modular page structure
+* Desktop-focused user experience
 
 ---
 
 ## 🖥️ Application Preview
 
-### 🏠 Home / Calculator
+### 🏠 Home / Main Calculator
 
-![Home](screenshots/home.png)
+![Calculator App Home](screenshots/home.png)
 
 ### 🔬 Scientific Calculator
 
@@ -79,72 +114,34 @@ Built with **Python, CustomTkinter, SQLite, and modular programming principles**
 
 ### 🤖 AI Assistant
 
-![AI Section](screenshots/ai-section.png)
+![AI Assistant](screenshots/ai-section.png)
 
-### 📊 History
+### 📊 Calculation History
 
-![History](screenshots/history.png)
+![Calculation History](screenshots/history.png)
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology        | Purpose                              |
-| ----------------- | ------------------------------------ |
-| 🐍 Python         | Core programming language            |
-| 🎨 CustomTkinter  | Modern GUI development               |
-| 🗄️ SQLite        | Local database & history storage     |
-| ➗ SymPy           | Scientific & mathematical operations |
-| 🤖 AI Integration | AI assistant functionality           |
-| 📦 Modular Python | Feature-based project architecture   |
-| 🧰 Git & GitHub   | Version control & project management |
+| Technology           | Purpose                                |
+| -------------------- | -------------------------------------- |
+| 🐍 **Python**        | Core application development           |
+| 🎨 **CustomTkinter** | Modern desktop GUI                     |
+| 🗄️ **SQLite**       | Local data persistence                 |
+| ➗ **SymPy**          | Scientific and mathematical operations |
+| 🖼️ **Pillow**       | Image processing and GUI assets        |
+| 🔊 **pyttsx3**       | Text-to-speech functionality           |
+| 🌿 **Git**           | Version control                        |
+| 🐙 **GitHub**        | Source code hosting and collaboration  |
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Project Architecture
 
-```text
-Calculator-App/
-│
-├── pages/
-│   ├── ai_section.py
-│   ├── area.py
-│   ├── bmi_calculator.py
-│   ├── currency_converter.py
-│   ├── discount_calculator.py
-│   ├── dob_calculator.py
-│   ├── gst_calculator.py
-│   ├── history_page.py
-│   ├── LengthConverter.py
-│   ├── normal_calculator.py
-│   ├── scientific_calculator.py
-│   ├── temperature_calculator.py
-│   └── unit_converter.py
-│
-├── screenshots/
-│   ├── ai-section.png
-│   ├── history.png
-│   ├── home.png
-│   └── scientific.png
-│
-├── database.py
-├── database.db
-├── calculator_history.db
-├── main.py
-├── theme.py
-├── voice.py
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
+The application follows a **modular, feature-based architecture**.
 
----
-
-## 🧠 Architecture
-
-The application follows a **modular architecture**, where each major calculator or functionality is separated into its own Python module.
-
-For example:
+Each major functionality is separated into its own Python module instead of putting the entire application into one large file.
 
 ```text
 main.py
@@ -160,32 +157,77 @@ main.py
    ├── Temperature Converter
    ├── Length Converter
    ├── Area Calculator
-   ├── History
-   └── AI Assistant
+   ├── Calculation History
+   ├── AI Assistant
+   └── Voice Functionality
 ```
 
-This structure makes the application easier to:
+This approach improves:
 
-* Maintain
-* Debug
-* Extend
-* Test
-* Add new features
+* Maintainability
+* Readability
+* Debugging
+* Feature development
+* Code organization
+* Future scalability
 
 ---
 
-## ⚙️ Installation
+## 📁 Project Structure
+
+```text
+Calculator-App-Py/
+│
+├── Calculator-App/
+│   ├── pages/
+│   │   ├── ai_section.py
+│   │   ├── area.py
+│   │   ├── bmi_calculator.py
+│   │   ├── currency_converter.py
+│   │   ├── discount_calculator.py
+│   │   ├── dob_calculator.py
+│   │   ├── gst_calculator.py
+│   │   ├── history_page.py
+│   │   ├── LengthConverter.py
+│   │   ├── normal_calculator.py
+│   │   ├── scientific_calculator.py
+│   │   ├── temperature_calculator.py
+│   │   └── unit_converter.py
+│   │
+│   ├── database.py
+│   ├── main.py
+│   ├── theme.py
+│   └── voice.py
+│
+├── screenshots/
+│   ├── ai-section.png
+│   ├── history.png
+│   ├── home.png
+│   └── scientific.png
+│
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+> Local/generated files such as virtual environments, Python cache files, and SQLite databases are intentionally excluded from source control through `.gitignore`.
+
+---
+
+## ⚙️ Getting Started
+
+Follow the steps below to run the application locally.
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Calculator-App.git
+git clone https://github.com/Anmolkumar108/Calculator-App-Py.git
 ```
 
-### 2. Open the project
+### 2. Open the project directory
 
 ```bash
-cd Calculator-App
+cd Calculator-App-Py
 ```
 
 ### 3. Create a virtual environment
@@ -196,13 +238,13 @@ python -m venv .venv
 
 ### 4. Activate the virtual environment
 
-### Windows
+#### Windows
 
 ```bash
 .venv\Scripts\activate
 ```
 
-### macOS / Linux
+#### macOS / Linux
 
 ```bash
 source .venv/bin/activate
@@ -214,26 +256,26 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 6. Run the application
+### 6. Start the application
 
 ```bash
-python main.py
+python Calculator-App/main.py
 ```
 
 ---
 
-## 📦 Requirements
+## 📦 Dependencies
 
-The main technologies used in this project include:
+The project currently uses the following main Python packages:
 
 ```text
-Python
-CustomTkinter
-SQLite3
-SymPy
+customtkinter
+pyttsx3
+pillow
+sympy
 ```
 
-All required Python packages can be installed using:
+Install everything with:
 
 ```bash
 pip install -r requirements.txt
@@ -241,92 +283,128 @@ pip install -r requirements.txt
 
 ---
 
-## 🗄️ Database
+## 🗄️ Data & Database
 
-The application uses **SQLite** for local data persistence.
+The application uses **SQLite** for local data persistence, particularly for calculation history.
 
-Database functionality is handled through:
+Database-related functionality is handled through:
 
 ```text
-database.py
+Calculator-App/database.py
 ```
 
-The database is primarily used for storing calculation history and retrieving previous calculations.
+The application can create and use local SQLite database files during runtime.
 
-This allows the application to maintain useful data even after the application is closed.
+### Why database files are not part of the source code
 
----
+Runtime-generated database files contain local application data and are not required to reproduce the application.
 
-## 🔐 Security & Git
+Therefore, local database files should remain excluded through `.gitignore`.
 
-Sensitive or unnecessary local files should **not be pushed to GitHub**.
-
-The project uses `.gitignore` to exclude files such as:
+Example:
 
 ```gitignore
-__pycache__/
-*.pyc
-database.db
+# SQLite databases
 *.db
-.venv/
+*.sqlite
+*.sqlite3
 ```
 
-If the application uses API keys for AI or external services, those keys should be stored in environment variables rather than directly inside the source code.
+---
 
-**Never upload API keys, passwords, tokens, or other secrets to GitHub.**
+## 🔐 Security & Git Best Practices
+
+This repository follows basic source-control hygiene by excluding local and generated files.
+
+Recommended `.gitignore` entries include:
+
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+
+# IDE settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+```
+
+### 🔑 Keep secrets private
+
+API keys, passwords, tokens, credentials, and other sensitive information should **never** be committed to GitHub.
+
+If external APIs are added in the future, credentials should be stored using environment variables or another secure configuration method.
 
 ---
 
-## 🚀 Future Improvements
+## 🧠 Key Development Concepts
 
-The project is actively designed to be expandable.
-
-Possible future improvements include:
-
-* [ ] 🌙 Advanced Dark/Light Theme System
-* [ ] 🤖 More powerful AI Assistant
-* [ ] 🎙️ Voice-controlled calculations
-* [ ] 📈 Calculation statistics and analytics
-* [ ] 📤 Export calculation history
-* [ ] 📱 Responsive UI improvements
-* [ ] ☁️ Cloud synchronization
-* [ ] 🔐 User accounts and authentication
-* [ ] 🧪 Automated testing
-* [ ] 📦 Standalone Windows executable
-* [ ] 🌐 Web version of the calculator
-* [ ] 🧠 More advanced mathematical functions
-
----
-
-## 🎯 What I Learned From This Project
-
-This project helped strengthen practical development skills including:
+This project demonstrates practical experience with:
 
 * Python programming
+* Modular programming
 * Object-oriented programming
-* GUI development
-* Modular application architecture
+* GUI application development
+* Event-driven programming
 * SQLite database integration
-* File and project organization
-* API integration
+* Mathematical computing
+* Text-to-speech integration
+* Image handling
 * Error handling
-* Git & GitHub
-* User interface design
-* Building a complete desktop application
+* File organization
+* Git version control
+* GitHub repository management
 
 ---
 
-## 📸 Screenshots
+## 🚀 Roadmap
 
-The project includes screenshots demonstrating the application's interface and major modules.
+The project is designed to grow beyond its current feature set.
 
-```text
-screenshots/
-├── home.png
-├── scientific.png
-├── history.png
-└── ai-section.png
-```
+### Planned Improvements
+
+* [ ] 🌙 Advanced Dark / Light Theme System
+* [ ] 🤖 Enhanced AI Assistant
+* [ ] 🎙️ More advanced voice-controlled calculations
+* [ ] 📈 Calculation statistics and analytics
+* [ ] 📤 Export calculation history
+* [ ] 🔐 User authentication
+* [ ] ☁️ Optional cloud synchronization
+* [ ] 🧪 Automated testing
+* [ ] 📦 Standalone Windows executable
+* [ ] 🌐 Web-based version
+* [ ] 🧠 Additional scientific and mathematical tools
+* [ ] ⚡ Performance and UI improvements
+
+---
+
+## 🧪 Testing
+
+Testing and validation are an important part of the project's future development.
+
+Future versions will include automated tests for:
+
+* Mathematical calculations
+* Conversion functions
+* Financial calculations
+* BMI calculations
+* Date calculations
+* Database operations
 
 ---
 
@@ -334,39 +412,71 @@ screenshots/
 
 Contributions, suggestions, and improvements are welcome.
 
-If you have an idea that can improve the application:
-
-1. Fork the repository
-2. Create a new branch
-3. Make your changes
-4. Commit your changes
-5. Push the branch
-6. Open a Pull Request
-
-Example:
+If you would like to contribute:
 
 ```bash
-git checkout -b feature/new-feature
+# Fork the repository
+
+# Create a feature branch
+git checkout -b feature/your-feature
+
+# Make your changes
+
+# Stage changes
 git add .
-git commit -m "Add new calculator feature"
-git push origin feature/new-feature
+
+# Commit changes
+git commit -m "Add: your feature"
+
+# Push the branch
+git push origin feature/your-feature
 ```
+
+Then open a Pull Request on GitHub.
 
 ---
 
-## 📄 License
+## 🐛 Issues & Suggestions
 
-This project is currently available for educational and portfolio purposes.
+Found a bug or have an idea for improvement?
 
-A separate `LICENSE` file can be added to define the project's open-source licensing terms.
+You can open an issue in the repository:
+
+**GitHub Issues:**
+https://github.com/Anmolkumar108/Calculator-App-Py/issues
+
+When reporting a bug, please include:
+
+* What happened
+* Expected behavior
+* Steps to reproduce
+* Relevant screenshots or error messages
+
+---
+
+## 📚 Learning Outcomes
+
+Building this project provided practical experience in developing a complete desktop application rather than isolated Python programs.
+
+Key learning outcomes include:
+
+* Designing a multi-page GUI application
+* Structuring a Python project into reusable modules
+* Connecting a GUI application with SQLite
+* Implementing mathematical functionality
+* Working with third-party Python libraries
+* Managing dependencies
+* Using Git and GitHub effectively
+* Maintaining a clean project structure
+* Thinking about scalability and maintainability
 
 ---
 
 ## 👨‍💻 Developer
 
-**Anmol Singh**
+### Anmol Singh
 
-BCA Student | Python Developer | Aspiring Software Developer
+**BCA Student | Python Developer | Aspiring Software Developer**
 
 Interested in:
 
@@ -374,18 +484,32 @@ Interested in:
 Python • Software Development • AI/ML • Automation • Problem Solving
 ```
 
----
-
-## ⭐ Support
-
-If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
-
-Your feedback and suggestions are always welcome.
+This project is part of my journey toward building practical, real-world software applications.
 
 ---
 
-### 💡 Built with Python
+## ⭐ Support the Project
 
-**Designed, developed and continuously improved with Python.**
+If you find this project useful or interesting, consider giving it a ⭐ on GitHub.
 
-> *From a simple calculator to a complete multi-functional desktop utility — this project is built to learn, experiment, and grow.*
+Your feedback, suggestions, and contributions are appreciated.
+
+---
+
+## 📄 License
+
+This project is currently maintained as a **personal learning and portfolio project**.
+
+If the project is released as open-source in the future, an appropriate open-source license will be added through a dedicated `LICENSE` file.
+
+---
+
+## 🏁 Final Note
+
+> **Calculator App started as a simple calculator and evolved into a multi-functional desktop utility combining mathematics, productivity, data persistence, voice functionality, and AI.**
+
+**Built with Python. Built to learn. Built to improve. 🚀**
+
+<p align="center">
+  <strong>Made with 🐍 Python by Anmol Singh</strong>
+</p>
